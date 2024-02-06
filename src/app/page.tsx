@@ -1,5 +1,5 @@
 import Image from "next/image";
 
 export default function Home() {
-  return <div>Restaurant Van Long !</div>;
+  return <div>Restaurant Van Long</div>;
 }
