@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import "../../global.css";
+import "../../assets/sass/core.scss";
+import HeaderComponent from "src/components/layout/header.component";
+import { merriweather_Sans } from "../utils/font";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -12,8 +14,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
-      <body>{children}</body>
+    <html lang="fr" className={merriweather_Sans.className}>
+      <body>
+        <HeaderComponent />
+        {children}
+      </body>
     </html>
   );
 }
