@@ -1,0 +1,152 @@
+@import "./common.scss";
+
+.navBarContainer {
+  background-color: #8c1d18;
+  display: flex;
+  justify-content: center;
+  height: 80px;
+  transition: height 0.2s;
+
+  .menuContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .menuContainer ul {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+  }
+
+  a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+  }
+
+  a:not(.logo):after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    transition: width 0.2s;
+  }
+
+  .active:not(.logo):after {
+    width: 100%;
+  }
+
+  a:not(.logo):hover::after {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .navBarContainer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+    .navBarIconsContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+      margin: 0 15px;
+
+      span {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+      }
+      .burgerMenuIcon {
+        visibility: hidden;
+      }
+
+      .closeMenuIcon {
+        visibility: hidden;
+      }
+    }
+
+    .menuContainer {
+      position: absolute;
+      height: 0;
+    }
+
+    ul,
+    li {
+      display: none;
+    }
+
+    .responsiveMenuContainer {
+      background-color: #8c1d18;
+      width: 100%;
+      position: absolute;
+      top: 60px;
+      height: 100vh;
+      transition: height 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+    .mainTitleContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 10px;
+      color: white;
+
+      div {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+      }
+
+      svg {
+        margin-bottom: 5px;
+      }
+      h1 {
+        position: relative;
+        width: 250px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 34px;
+        text-align: center;
+        letter-spacing: 0.02em;
+      }
+      @include mainTitleContainer;
+
+      span {
+        margin-top: 5px;
+        font-size: 14px;
+      }
+    }
+
+    .responsiveMenuContainer ul {
+      height: 550px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .responsiveMenuContainer ul li {
+      display: flex;
+      margin: 30px;
+    }
+
+    a:hover {
+      font-weight: 900;
+    }
+  }
+}
