@@ -1,0 +1,42 @@
+.topSectionHomePageContainer {
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  position: relative;
+
+  div:has(img) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 350px;
+  }
+
+  div:has(p) {
+    display: flex;
+    align-items: center;
+  }
+
+  p {
+    padding: 30px;
+    text-align: center;
+    line-height: 40px;
+  }
+
+  div:first-child::after,
+  div:last-child::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 250px;
+    background-color: #798c18;
+  }
+
+  div:first-child::after,
+  div:last-child::before {
+    right: 40px;
+  }
+
+  div:last-child {
+    transform: scaleX(-1);
+  }
+}
