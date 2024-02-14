@@ -16,8 +16,8 @@ export default function Home() {
             Pascal à la rue du Champ de l’Alouette, notre restaurant
             traditionnel vietnamien vous accueille dans un cadre simple et
             chaleureux. Tous nos plats sont élaborés sur place, à partir de
-            produits frais, et vous rappelleront les saveurs subtiles <br /> de
-            la cuisine vietnamienne.
+            produits frais, et vous rappelleront les saveurs subtiles de la
+            cuisine vietnamienne.
           </p>
         </div>
         <div>
