@@ -1,44 +1,84 @@
-.topSectionHomePageContainer {
-  display: grid;
-  grid-template-columns: 25% 50% 25%;
-  position: relative;
+// .homePageContainer {
+//   height: 100vh;
+// }
 
-  div:has(img) {
+.topSectionHomePageContainer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 50vh;
+
+  div:has(svg) {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    height: 350px;
+    height: 170px;
+  }
+
+  svg {
+    height: 150px;
+    width: 140px;
   }
 
   div:has(p) {
     display: flex;
-    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
   }
 
   p {
-    padding: 30px;
+    width: 70%;
+    padding-bottom: 30px;
     text-align: center;
     line-height: 40px;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
+    font-weight: 300;
+    position: relative;
+    display: flex;
+    justify-content: center;
   }
 
-  div:first-child::after,
-  div:last-child::before {
+  p::after {
     content: "";
     position: absolute;
-    width: 1px;
-    height: 250px;
-    background-color: #798c18;
+    width: 70%;
+    height: 1px;
+    background-color: black;
+    bottom: 0;
+    left: 15%;
   }
 
-  div:first-child::after,
-  div:last-child::before {
-    right: 40px;
-  }
+  @media (max-width: 980px) {
+    grid-template-columns: 100%;
 
-  div:last-child {
-    transform: scaleX(-1);
+    div:has(svg) {
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      padding: 10px;
+    }
+
+    svg {
+      width: 75px;
+      height: 75px;
+    }
+
+    p {
+      width: 90%;
+      line-height: 35px;
+      font-size: 14px;
+      font-weight: 400;
+      border-left: 0;
+      border-right: 0;
+    }
+
+    p::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+    }
   }
 }
 
