@@ -17,6 +17,7 @@
     "prettier": "^3.2.5",
     "react": "^18",
     "react-dom": "^18",
+    "react-responsive-carousel": "^3.2.23",
     "sass": "^1.70.0"
   },
   "devDependencies": {
