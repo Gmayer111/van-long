@@ -1,18 +1,15 @@
 "use client";
-
-import Image from "next/image";
-
-import BambooImage from "public/assets/img/bamboo.png";
 import { merriweather } from "src/utils/font";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 import CarouselComponent from "src/components/carousel/carousel.component";
+import { VanLongLogo } from "public/assets/logos/van-long";
 
 export default function Home() {
   return (
-    <>
+    <div className="homePageContainer">
       <section className="topSectionHomePageContainer">
         <div>
-          <Image src={BambooImage} alt="Logo du restaurant" />
+          <VanLongLogo />
         </div>
         <div>
           <p className={merriweather.className}>
@@ -24,13 +21,10 @@ export default function Home() {
             cuisine vietnamienne.
           </p>
         </div>
-        <div>
-          <Image src={BambooImage} alt="Logo du restaurant" />
-        </div>
       </section>
       <section className="bottomSectionHomePageContainer">
         <CarouselComponent />
       </section>
-    </>
+    </div>
   );
 }
