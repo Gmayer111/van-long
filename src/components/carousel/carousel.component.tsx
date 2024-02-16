@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import BoatImage from "public/assets/img/boat.jpg";
 import EntranceImage from "public/assets/img/entrance.jpg";
 import LanternesImage from "public/assets/img/lanternes.jpg";
@@ -27,9 +28,7 @@ const CarouselComponent = () => {
       showStatus={false}
     >
       {carouselItems.map((carouselItem, index) => (
-        <div>
-          <Image src={carouselItem} alt={`Photo ${index} du restaurant`} />
-        </div>
+        <Image src={carouselItem} alt={`Photo ${index} du restaurant`} />
       ))}
     </Carousel>
   );

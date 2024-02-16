@@ -1,12 +1,7 @@
 "use client";
-
-import Image from "next/image";
-
-import BambooImage from "public/assets/img/bamboo.png";
 import { merriweather } from "src/utils/font";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 import CarouselComponent from "src/components/carousel/carousel.component";
-import { useWindowSize } from "src/utils/windowSize";
 import { VanLongLogo } from "public/assets/logos/van-long";
 
 export default function Home() {
