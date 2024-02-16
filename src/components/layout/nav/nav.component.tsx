@@ -79,9 +79,10 @@ export const NavComponent = () => {
           </div>
         )}
         <ul>
-          {linkItems.map((linkItem) =>
+          {linkItems.map((linkItem, index) =>
             menuSize && typeof linkItem.label !== "string" ? undefined : (
               <LinkItemComponent
+                key={`${linkItem}-${index}`}
                 isResponsive={displayResponsiveMenu}
                 path={linkItem.path}
                 label={linkItem.label}
