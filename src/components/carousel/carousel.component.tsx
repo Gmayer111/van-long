@@ -28,7 +28,9 @@ const CarouselComponent = () => {
       showStatus={false}
     >
       {carouselItems.map((carouselItem, index) => (
-        <Image src={carouselItem} alt={`Photo ${index} du restaurant`} />
+        <div key={`${carouselItem}-${index}`}>
+          <Image src={carouselItem} alt={`Photo ${index} du restaurant`} />
+        </div>
       ))}
     </Carousel>
   );
