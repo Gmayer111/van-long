@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "../../assets/sass/core.scss";
 import HeaderComponent from "src/components/layout/header.component";
 import { merriweather_Sans } from "../utils/font";
+import FooterComponent from "src/components/layout/footer.component";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body>
         <HeaderComponent />
         {children}
+        <FooterComponent />
       </body>
     </html>
   );
