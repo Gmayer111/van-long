@@ -3,7 +3,7 @@
 import { VanLongLogo } from "public/assets/logos/van-long";
 import { TLinkItemList } from "src/types/nav";
 import { LinkItemComponent } from "./linkItem.component";
-import { useWindowSize } from "src/utils/windowSize";
+import { useWindowSize } from "src/hooks/use-window-size";
 import { useEffect, useState } from "react";
 import MenuIcon from "public/assets/icons/menu-icon";
 import CloseIcon from "public/assets/icons/close-icon";
