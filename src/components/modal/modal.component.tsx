@@ -13,6 +13,7 @@ const ModalComponent = ({ isOpen, toggle }: TModalComponentProps) => {
   UseClickOutside({ ref: dialogRef, callBack: toggle });
 
   if (!isOpen) return null;
+
   return (
     isOpen && (
       <dialog ref={dialogRef}>

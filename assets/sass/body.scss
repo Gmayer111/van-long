@@ -103,6 +103,15 @@ section {
 body {
   line-height: 1;
 }
+
+body:has(.modalIsOpen) {
+  overflow: hidden;
+
+  header {
+    opacity: 0.7;
+  }
+}
+
 ol,
 ul {
   list-style: none;
