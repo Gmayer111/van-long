@@ -1,12 +1,9 @@
-// .homePageContainer {
-//   height: 100vh;
-// }
-
 .topSectionHomePageContainer {
   display: flex;
   flex-direction: column;
   position: relative;
   height: 50vh;
+  overflow: hidden;
 
   div:has(svg) {
     display: flex;

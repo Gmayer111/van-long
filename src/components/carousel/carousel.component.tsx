@@ -8,7 +8,7 @@ import PaintImage from "public/assets/img/paint.jpg";
 import RoomOneImage from "public/assets/img/room.jpg";
 import RoomImage from "public/assets/img/room-1.jpg";
 import RoomTwoImage from "public/assets/img/room-2.jpg";
-import { useWindowSize } from "src/utils/windowSize";
+import { useWindowSize } from "src/hooks/use-window-size";
 
 const CarouselComponent = () => {
   const size = useWindowSize();

@@ -1,0 +1,78 @@
+dialog {
+  position: absolute;
+  z-index: 1;
+  top: 300px;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  height: 250px;
+  width: 730px;
+  border-radius: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 0;
+  overflow: hidden;
+  filter: drop-shadow(2px 3px 10px rgba(0, 0, 0, 0.5));
+
+  button {
+    border: 0;
+    background-color: transparent;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    margin: 10px 20px 0 0;
+    z-index: 4;
+    cursor: pointer;
+  }
+
+  .bottomModal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 23px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+  }
+
+  p {
+    line-height: 35px;
+    letter-spacing: 0.1em;
+    color: rgb(141, 139, 139);
+    height: 50%;
+  }
+
+  span {
+    color: black;
+    font-weight: 600;
+  }
+
+  div div:last-child {
+    margin-bottom: 10px;
+    color: #7f1d1d;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    top: 200px;
+    width: auto;
+    height: 400px;
+    margin: 10px;
+
+    .bottomModal {
+      width: 90%;
+    }
+  }
+}
