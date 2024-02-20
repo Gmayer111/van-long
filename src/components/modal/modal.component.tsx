@@ -18,7 +18,7 @@ const ModalComponent = ({ isOpen, toggle }: TModalComponentProps) => {
     isOpen && (
       <dialog ref={dialogRef}>
         <button aria-label="dialogButton" onClick={() => toggle()}>
-          <CloseIcon />
+          <CloseIcon iconStroke="black" />
         </button>
         <div className="bottomModal">
           <h2>Ventes à emporter</h2>
