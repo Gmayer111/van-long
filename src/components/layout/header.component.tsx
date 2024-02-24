@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import HeaderImg from "public/assets/img/header-img.jpg";
+import HeaderImg from "public/assets/images/header-img.jpg";
 import { merriweather } from "src/utils/font";
 import { NavComponent } from "./nav/nav.component";
 

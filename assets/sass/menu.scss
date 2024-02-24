@@ -1,0 +1,139 @@
+.menuPageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h2 {
+    font-size: 32px;
+    margin: 30px;
+    text-decoration: underline;
+  }
+
+  h2,
+  h3 {
+    color: #333348;
+    font-weight: 600;
+  }
+
+  h2,
+  h3,
+  span {
+    letter-spacing: 0.025em;
+  }
+
+  > div {
+    display: grid;
+    grid-template-columns: 650px 300px;
+    margin: 22px 0;
+    position: relative;
+  }
+
+  .divider {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-bottom: 10px;
+    hr {
+      border: none;
+      border-bottom: 1px solid #333;
+      height: 5px;
+      width: 100%;
+    }
+    h3 {
+      font-size: 22px;
+      white-space: nowrap;
+      margin: 0 10px;
+    }
+  }
+
+  div > div:has(h3) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  li {
+    display: grid;
+    grid-template-columns: auto max-content;
+    grid-template-areas: "chapter page";
+    gap: 0 0.25rem;
+    padding: 10px 0;
+  }
+
+  span {
+    color: #57586e;
+  }
+
+  span:first-child {
+    text-transform: uppercase;
+    grid-area: chapter;
+    position: relative;
+    overflow: hidden;
+  }
+
+  span:first-child::after {
+    position: absolute;
+    padding-left: 0.25ch;
+    content: " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . "
+      ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . "
+      ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+    text-align: right;
+  }
+
+  div > div:has(img) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .picturesContainer {
+    justify-content: space-around;
+  }
+
+  img {
+    border-radius: 10px;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0 5px;
+    > div {
+      display: flex;
+      width: 100%;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin: 20px;
+    }
+
+    .divider h3 {
+      width: 800px;
+      white-space: break-spaces;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    li {
+      align-items: end;
+    }
+
+    span:last-child {
+      white-space: nowrap;
+    }
+
+    span {
+      font-size: 14px;
+    }
+
+    div > div:has(h3) {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    span:first-child {
+      text-transform: none;
+    }
+  }
+}
