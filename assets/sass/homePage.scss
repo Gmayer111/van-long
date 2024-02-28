@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  height: 50vh;
   overflow: hidden;
 
   div:has(svg) {
@@ -22,6 +21,10 @@
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
+  }
+
+  br {
+    display: none;
   }
 
   p {
@@ -46,7 +49,7 @@
     left: 15%;
   }
 
-  @media (max-width: 980px) {
+  @media (max-width: 768px) {
     grid-template-columns: 100%;
 
     div:has(svg) {
@@ -59,6 +62,10 @@
     svg {
       width: 75px;
       height: 75px;
+    }
+
+    br {
+      display: inline;
     }
 
     p {
@@ -95,7 +102,7 @@
   }
 
   .carousel-root .carousel .slider-wrapper .slider .slide img {
-    height: 300px;
+    height: 400px;
     width: 500px;
     object-fit: cover;
   }
