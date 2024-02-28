@@ -19,14 +19,39 @@ export const LinkItemComponent = ({
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) => {
     e.preventDefault();
-    router.push("/");
-    const href = e.currentTarget.href;
-    const targetId = href.replace(/.*\#/, "");
-    const element = document.getElementById(targetId);
+    const href = e.currentTarget.href
+      .replace("http://localhost:3000", "")
+      .split("#");
+    const path = href[0];
+    const id = href[1];
+    router.push(path!);
+    const element = document.getElementById(id!);
+
     element?.scrollIntoView({
       behavior: "smooth",
     });
     setDisplayResponsiveMenu(false);
+  };
+
+  const handleClickLink = (
+    labelValue: string,
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
+    switch (labelValue) {
+      case "LE RESTAURANT":
+        handleScrollToId(e);
+        break;
+      case "LA CARTE":
+        handleScrollToId(e);
+        break;
+      case "NOUS TROUVER":
+        handleScrollToId(e);
+        break;
+
+      default:
+        () => setDisplayResponsiveMenu(false);
+        break;
+    }
   };
 
   return (
@@ -35,11 +60,7 @@ export const LinkItemComponent = ({
         className={`${activePath === path ? "active" : ""} ${typeof label !== "string" ? "logo" : ""}`}
         scroll={false}
         href={path}
-        onClick={
-          label === "LE RESTAURANT"
-            ? handleScrollToId
-            : () => setDisplayResponsiveMenu(false)
-        }
+        onClick={(e) => handleClickLink(label as string, e)}
       >
         {label}
       </Link>

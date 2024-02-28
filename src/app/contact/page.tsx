@@ -8,7 +8,10 @@ import { CalendarIcon } from "public/assets/icons/calendar-icon";
 
 const ContactPage = () => {
   return (
-    <div className={`${merriweather.className} contactPageContainer`}>
+    <div
+      id="contact-section"
+      className={`${merriweather.className} contactPageContainer`}
+    >
       <section>
         <div>
           <h2>

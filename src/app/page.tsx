@@ -31,7 +31,10 @@ export default function Home() {
   return (
     <>
       <div className={`homePageContainer ${openModal ? "modalIsOpen" : ""}`}>
-        <section className="topSectionHomePageContainer">
+        <section
+          id="restaurant-section"
+          className="topSectionHomePageContainer"
+        >
           <div>
             <VanLongLogo />
           </div>

@@ -20,7 +20,7 @@ export const NavComponent = () => {
     },
     {
       label: "LE RESTAURANT",
-      path: "/#first-section",
+      path: "/#restaurant-section",
     },
     {
       label: <VanLongLogo />,
@@ -28,11 +28,11 @@ export const NavComponent = () => {
     },
     {
       label: "LA CARTE",
-      path: "/carte",
+      path: "/carte/#menu-section",
     },
     {
       label: "NOUS TROUVER",
-      path: "/contact",
+      path: "/contact/#contact-section",
     },
   ];
 
