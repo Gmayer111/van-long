@@ -8,7 +8,10 @@ import { merriweather } from "src/utils/font";
 const MenuPage = () => {
   const size = useWindowSize();
   return (
-    <section className={`${merriweather.className} menuPageContainer`}>
+    <section
+      id="menu-section"
+      className={`${merriweather.className} menuPageContainer`}
+    >
       <h2>Notre carte</h2>
       {MenuItems.map((menuItem) => (
         <div>
