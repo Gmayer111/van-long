@@ -1,7 +1,5 @@
 import Image from "next/image";
-import { VanLongLogo } from "public/assets/logos/van-long";
 import React from "react";
-import GoogleMapComponent from "src/components/map/google-map.component";
 import MapPicture from "public/assets/images/map.png";
 import { merriweather } from "src/utils/font";
 import Link from "next/link";
@@ -37,7 +35,6 @@ const ContactPage = () => {
             <span>Du lundi au vendredi :</span>
             <span>Le midi de 11h30 à 14h30 Le soir de 19h à 21h</span>
             <span>Le samedi et dimanche : Fermé</span>
-            {/* <span>Fermé</span> */}
           </div>
         </div>
       </section>
