@@ -7,7 +7,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     color: white;
-    font-size: 14px;
+    font-size: 0.9rem;
     letter-spacing: 1px;
     position: relative;
   }
@@ -27,7 +27,7 @@
   }
 
   > div:first-child > div:first-child > div:nth-child(1) > span:first-child {
-    font-size: 28px;
+    font-size: 1.8rem;
   }
 
   > div:first-child > div:nth-child(2) {
