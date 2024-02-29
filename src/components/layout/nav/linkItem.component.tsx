@@ -57,7 +57,7 @@ export const LinkItemComponent = ({
   return (
     <li>
       <Link
-        className={`${activePath === path ? "active" : ""} ${typeof label !== "string" ? "logo" : ""}`}
+        className={`${activePath === path.replace(/\/#\w*-\w*/gm, "") ? "active" : ""} ${typeof label !== "string" ? "logo" : ""}`}
         scroll={false}
         href={path}
         onClick={(e) => handleClickLink(label as string, e)}
