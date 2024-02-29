@@ -5,7 +5,7 @@
   justify-content: center;
 
   h2 {
-    font-size: 32px;
+    font-size: 2rem;
     margin: 30px;
     text-decoration: underline;
   }
@@ -41,7 +41,7 @@
       width: 100%;
     }
     h3 {
-      font-size: 22px;
+      font-size: 1.5rem;
       white-space: nowrap;
       margin: 0 10px;
     }
@@ -103,7 +103,7 @@
     }
 
     h2 {
-      font-size: 24px;
+      font-size: 1.7rem;
       margin: 20px;
     }
 
@@ -111,7 +111,7 @@
       width: 800px;
       white-space: break-spaces;
       text-align: center;
-      font-size: 18px;
+      font-size: 1.3rem;
     }
 
     li {
@@ -123,7 +123,8 @@
     }
 
     span {
-      font-size: 14px;
+      font-size: 0.9rem;
+      padding: 1.5px;
     }
 
     div > div:has(h3) {
