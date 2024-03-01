@@ -26,6 +26,7 @@ const CarouselComponent = () => {
       centerMode={size.width < 768 ? false : true}
       infiniteLoop
       showStatus={false}
+      showThumbs={false}
     >
       {carouselItems.map((carouselItem, index) => (
         <div key={`${carouselItem}-${index}`}>

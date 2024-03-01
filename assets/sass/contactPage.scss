@@ -40,7 +40,7 @@
 
   section:first-child > div > div:nth-child(1) {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     height: 70%;
     width: 80%;
   }
