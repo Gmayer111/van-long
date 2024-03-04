@@ -49,7 +49,7 @@ export default function Home() {
             </p>
           </div>
         </section>
-        <section>
+        <section className="bottomSectionHomePageContainer">
           <CarouselComponent />
         </section>
       </div>
