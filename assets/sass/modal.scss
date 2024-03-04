@@ -50,7 +50,7 @@ dialog {
   p {
     line-height: 35px;
     letter-spacing: 0.1em;
-    color: rgb(141, 139, 139);
+    color: $grey-500;
     height: 50%;
   }
 
@@ -61,7 +61,7 @@ dialog {
 
   div div:last-child {
     margin-bottom: 10px;
-    color: #7f1d1d;
+    color: $red-900;
     font-weight: 600;
   }
 

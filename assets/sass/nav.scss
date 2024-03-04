@@ -1,7 +1,7 @@
 @import "./common.scss";
 
 .navBarContainer {
-  background-color: #7f1d1d;
+  background-color: $red-900;
   display: flex;
   justify-content: center;
   height: 80px;
@@ -89,7 +89,7 @@
     }
 
     .responsiveMenuContainer {
-      background-color: #7f1d1d;
+      background-color: $red-900;
       width: 100%;
       position: absolute;
       top: 60px;

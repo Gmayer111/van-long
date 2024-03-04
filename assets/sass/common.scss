@@ -1,3 +1,9 @@
+$red-900: #7f1d1d;
+$grey-500: #8d8b8b;
+$grey-800: #57586e;
+$grey-900: #333348;
+$blue-700: #1c1c85;
+
 @mixin mainTitleContainer {
   h1::after,
   h1::before {
