@@ -14,7 +14,7 @@ const MenuPage = () => {
     >
       <h2>Notre carte</h2>
       {MenuItems.map((menuItem) => (
-        <div>
+        <div key={menuItem.title}>
           <div>
             <div className="divider">
               <hr />
@@ -23,7 +23,7 @@ const MenuPage = () => {
             </div>
             <ul>
               {menuItem.items.map((item) => (
-                <li>
+                <li key={item.label}>
                   <span>{item.label}</span>
                   <span>{item.price}</span>
                 </li>
@@ -35,12 +35,14 @@ const MenuPage = () => {
               className={menuItem.picture.length > 1 ? "picturesContainer" : ""}
             >
               {menuItem.picture.map((picture) => (
-                <Image
-                  src={`/assets/images/menu/${picture.path}.jpg`}
-                  width={180}
-                  height={180}
-                  alt={picture.description}
-                />
+                <div key={picture.description}>
+                  <Image
+                    src={`/assets/images/menu/${picture.path}.jpg`}
+                    width={180}
+                    height={180}
+                    alt={picture.description}
+                  />
+                </div>
               ))}
             </div>
           )}

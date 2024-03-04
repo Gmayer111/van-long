@@ -10,7 +10,7 @@ const HeaderComponent = () => {
       <div>
         <NavComponent />
         <div className={`${merriweather.className} headerImgContainer`}>
-          <Image src={HeaderImg} alt="Image de l'en-tête" />
+          <Image priority={true} src={HeaderImg} alt="Image de l'en-tête" />
           <div>
             <h1>RESTAURANT VAN LONG</h1>
           </div>
