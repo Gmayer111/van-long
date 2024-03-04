@@ -12,7 +12,7 @@
 
   h2,
   h3 {
-    color: #333348;
+    color: $grey-900;
     font-weight: 600;
   }
 
@@ -61,7 +61,7 @@
   }
 
   span {
-    color: #57586e;
+    color: $grey-800;
   }
 
   span:first-child {

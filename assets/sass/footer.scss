@@ -1,5 +1,5 @@
 .footerContainer {
-  background-color: #7f1d1d;
+  background-color: $red-900;
   padding: 50px;
   position: relative;
 
@@ -82,7 +82,6 @@
 
   @media (max-width: 1024px) {
     > div:first-child div:first-child > div:first-child > div:first-child {
-      background-color: lightblue;
       font-size: 1.6rem;
     }
 

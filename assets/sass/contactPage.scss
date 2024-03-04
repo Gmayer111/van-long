@@ -84,7 +84,7 @@
     border: none;
     font-size: calc(12px + 0.4vw);
     background-color: white;
-    color: #1c1c85;
+    color: $blue-700;
     transition: all 1s;
     padding: 20px 40px;
     margin-top: 50px;
@@ -92,7 +92,7 @@
   }
 
   a:hover {
-    background-color: #7f1d1d;
+    background-color: $red-900;
     color: white;
   }
 
