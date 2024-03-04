@@ -61,6 +61,9 @@ export const LinkItemComponent = ({
         scroll={false}
         href={path}
         onClick={(e) => handleClickLink(label as string, e)}
+        aria-label={
+          typeof label !== "string" ? "Logo cliquable de la navigation" : ""
+        }
       >
         {label}
       </Link>

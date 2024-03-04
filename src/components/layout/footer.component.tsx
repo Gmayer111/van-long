@@ -21,7 +21,7 @@ const FooterComponent = () => {
           <table>
             <thead>
               <tr>
-                <th></th>
+                <td></td>
                 <th>Midi</th>
                 <th>Soir</th>
               </tr>

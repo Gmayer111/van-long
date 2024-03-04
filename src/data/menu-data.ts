@@ -325,9 +325,9 @@ export const MenuItems: TMenuItems[] = [
     picture: [
       {
         path: "dessert-1",
-        description: "Image d'un dessert",
+        description: "Image 1 d'un dessert",
       },
-      { path: "dessert-2", description: "Image d'un dessert" },
+      { path: "dessert-2", description: "Image 2 d'un dessert" },
     ],
     items: [
       {
