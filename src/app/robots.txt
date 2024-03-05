@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://van-long.vercel.app/sitemap.xml
