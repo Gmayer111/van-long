@@ -271,7 +271,7 @@ export const MenuItems: TMenuItems[] = [
     ],
   },
   {
-    title: "Nos grillades (servies avec riz ou vermicelles)",
+    title: "Nos grillades (servies avec riz et/ou vermicelles)",
     picture: [
       {
         path: "barbecue",
