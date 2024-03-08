@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/Gmayer111/van-long/compare/v1.0.1...v1.0.2) (2024-03-08)
+
+
+### Bug Fixes
+
+* modify localStorage and fix typo ([#23](https://github.com/Gmayer111/van-long/issues/23)) ([e7d58c1](https://github.com/Gmayer111/van-long/commit/e7d58c1814b2efda6c0ebdca3c481d553bce749f))
+
 ## [1.0.1](https://github.com/Gmayer111/van-long/compare/v1.0.0...v1.0.1) (2024-03-08)
 
 
