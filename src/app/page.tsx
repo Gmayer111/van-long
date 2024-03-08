@@ -10,17 +10,17 @@ export default function Home() {
   const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== "undefined" && window.localStorage.length === 0) {
-      localStorage.setItem("visited", "true");
+    if (typeof window !== "undefined" && window.sessionStorage.length === 0) {
+      sessionStorage.setItem("visited", "true");
     }
 
     if (
       typeof window !== "undefined" &&
       !openModal &&
-      localStorage.getItem("visited") === "true"
+      sessionStorage.getItem("visited") === "true"
     ) {
       setOpenModal(true);
-      localStorage.setItem("visited", "false");
+      sessionStorage.setItem("visited", "false");
     }
   }, []);
 
