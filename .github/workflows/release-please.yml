@@ -1,3 +1,8 @@
+name: Merge Release Branch to Prod
+
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 on:
   push:
     branches:
@@ -7,15 +12,48 @@ permissions:
   contents: write
   pull-requests: write
 
-name: release-please
-
 jobs:
-  release-please:
+  setup:
+    name: Setup
     runs-on: ubuntu-latest
     outputs:
-      release_created: ${{ steps.release.outputs.release_created }}
+      target_env: ${{ steps.set-env.outputs.target_env }}
     steps:
-      - uses: google-github-actions/release-please-action@v4
+      - uses: google-github-actions/release-please-action@v3
         id: release
         with:
           release-type: node
+          package-name: release-please-action
+      - id: set-env
+        name: Set target env
+        run: |
+          if [[ "${{ steps.release.outputs.release_created }}" == "true" ]]; then
+            echo "target_env=production" >> $GITHUB_OUTPUT
+          else
+            echo "target_env=beta" >> $GITHUB_OUTPUT
+          fi
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [setup]
+    env:
+      target_env: ${{ needs.setup.outputs.target_env }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+
+      - name: Deploy Project to Production
+        if: env.target_env == 'production'
+        run: vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy Project to Beta
+        if: env.target_env == 'beta'
+        run: |
+          DEPLOYMENT_URL=$(vercel deploy --token=${{ secrets.VERCEL_TOKEN }})
+          vercel alias $DEPLOYMENT_URL ${{ vars.BETA_URL }} --token=${{ secrets.VERCEL_TOKEN }} --scope=${{ env.VERCEL_ORG_ID }}
