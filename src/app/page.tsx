@@ -45,7 +45,7 @@ export default function Home() {
               traditionnel vietnamien vous accueille dans un cadre simple et
               chaleureux. <br /> Tous nos plats sont élaborés sur place, à
               partir de produits frais, et vous rappelleront les saveurs
-              subtiles de la cuisine vietnamienne !
+              subtiles de la cuisine vietnamienne.
             </p>
           </div>
         </section>
