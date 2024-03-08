@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/Gmayer111/van-long/compare/v1.0.0...v1.0.1) (2024-03-08)
+
+
+### Bug Fixes
+
+* add new workflow rules & disabled auto vercel deploy ([#21](https://github.com/Gmayer111/van-long/issues/21)) ([3c2c97a](https://github.com/Gmayer111/van-long/commit/3c2c97a6385a1787b967fd863f12e46231dfb7df))
+
 ## 1.0.0 (2024-03-05)
 
 
