@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/Gmayer111/van-long/compare/v1.0.2...v1.0.3) (2024-03-14)
+
+
+### Bug Fixes
+
+* refacto and replace some texts ([#25](https://github.com/Gmayer111/van-long/issues/25)) ([c2b4379](https://github.com/Gmayer111/van-long/commit/c2b4379ffb17d1614d83aeefa20f47a0a863814e))
+
 ## [1.0.2](https://github.com/Gmayer111/van-long/compare/v1.0.1...v1.0.2) (2024-03-08)
 
 
