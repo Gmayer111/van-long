@@ -80,10 +80,6 @@ export const MenuItems: TMenuItems[] = [
         label: "Soupe de Tamarin aux crevettes (Canh chua)",
         price: "10€50",
       },
-      {
-        label: "Raviolis frits aux crevettes (Tom chien)",
-        price: "7€00",
-      },
     ],
   },
   {
@@ -97,19 +93,20 @@ export const MenuItems: TMenuItems[] = [
     items: [
       {
         label: "Porc au Caramel",
-        price: "11€00",
+        price: "13€50",
       },
       {
         label: "Porc au Gingembre",
-        price: "11€00",
+        price: "13€50",
       },
       {
         label: "Travers de Porc à la Citronnelle",
-        price: "11€50",
+        price: "14€00",
       },
       {
         label: "Travers de Porc laqué",
-        price: "11€50",
+        price: "14€00",
+        extra: "* Servi avec du riz nature",
       },
     ],
   },
@@ -124,15 +121,16 @@ export const MenuItems: TMenuItems[] = [
     items: [
       {
         label: "Poulet à la Citronnelle",
-        price: "11€00",
+        price: "13€50",
       },
       {
         label: "Poulet au Gingembre",
-        price: "11€00",
+        price: "13€50",
       },
       {
         label: "Poulet au Curry et lait de Coco",
-        price: "11€00",
+        price: "13€50",
+        extra: "* Servi avec du riz nature",
       },
     ],
   },
@@ -147,23 +145,24 @@ export const MenuItems: TMenuItems[] = [
     items: [
       {
         label: "Boeuf à la Citronnelle",
-        price: "11€50",
+        price: "14€00",
       },
       {
         label: "Boeuf au Curry et lait de coco",
-        price: "11€50",
+        price: "14€00",
       },
       {
         label: "Boeuf au Saté piquant",
-        price: "11€50",
+        price: "14€00",
       },
       {
         label: "Boeuf Impérial au lait de coco",
-        price: "11€50",
+        price: "14€00",
       },
       {
         label: "Boeuf sauté au Basilic au lait de coco",
-        price: "11€50",
+        price: "14€00",
+        extra: "* Servi avec du riz nature",
       },
     ],
   },
@@ -178,23 +177,24 @@ export const MenuItems: TMenuItems[] = [
     items: [
       {
         label: "Crevettes au Caramel",
-        price: "12€00",
+        price: "14€50",
       },
       {
         label: "Crevettes au Curry et lait de coco",
-        price: "12€00",
+        price: "14€50",
       },
       {
         label: "Crevettes au Basilic et lait de coco",
-        price: "12€00",
+        price: "14€50",
       },
       {
         label: "Crevettes Piquantes",
-        price: "12€00",
+        price: "14€50",
       },
       {
         label: "Crevettes à l’Aigre douce",
-        price: "12€00",
+        price: "14€50",
+        extra: "* Servi avec du riz nature",
       },
     ],
   },
@@ -203,19 +203,20 @@ export const MenuItems: TMenuItems[] = [
     items: [
       {
         label: "Filet de Poisson à la vapeur",
-        price: "12€00",
+        price: "14€50",
       },
       {
         label: "Filet de Poisson au Curry et lait de coco",
-        price: "12€00",
+        price: "14€50",
       },
       {
         label: "Filet de Poisson au Basilic et lait de coco",
-        price: "12€00",
+        price: "14€50",
       },
       {
         label: "Filet de Poisson piquant",
-        price: "12€00",
+        price: "14€50",
+        extra: "* Servi avec du riz nature",
       },
     ],
   },
@@ -331,43 +332,11 @@ export const MenuItems: TMenuItems[] = [
     ],
     items: [
       {
-        label: "Beignet à l’Ananas",
-        price: "6€00",
-      },
-      {
-        label: "Beignet de Banane",
-        price: "6€00",
-      },
-      {
-        label: "Beignet de Pomme",
-        price: "6€00",
-      },
-      {
-        label: "Nouilles sautées garnies",
-        price: "13€50",
-      },
-      {
-        label: "Nouilles sautées aux crevettes",
-        price: "14€50",
-      },
-      {
-        label: "Beignet à l’Ananas flambé",
-        price: "6€80",
-      },
-      {
-        label: "Beignet de Banane flambé",
-        price: "6€80",
-      },
-      {
-        label: "Beignet de Pomme flambé",
-        price: "6€80",
+        label: "Glace en boule (1 boule)",
+        price: "2€80",
       },
       {
         label: "Gingembre confit",
-        price: "4€50",
-      },
-      {
-        label: "Nougat mou",
         price: "4€50",
       },
       {
@@ -391,8 +360,28 @@ export const MenuItems: TMenuItems[] = [
         price: "5€00",
       },
       {
-        label: "Glace en boule (1 boule)",
-        price: "2€80",
+        label: "Beignet à l’Ananas",
+        price: "6€00",
+      },
+      {
+        label: "Beignet de Banane",
+        price: "6€00",
+      },
+      {
+        label: "Beignet de Pomme",
+        price: "6€00",
+      },
+      {
+        label: "Beignet à l’Ananas flambé",
+        price: "6€80",
+      },
+      {
+        label: "Beignet de Banane flambé",
+        price: "6€80",
+      },
+      {
+        label: "Beignet de Pomme flambé",
+        price: "6€80",
       },
     ],
   },

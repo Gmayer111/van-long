@@ -23,10 +23,13 @@ const MenuPage = () => {
             </div>
             <ul>
               {menuItem.items.map((item) => (
-                <li key={item.label}>
-                  <span>{item.label}</span>
-                  <span>{item.price}</span>
-                </li>
+                <>
+                  <li key={item.label}>
+                    <span>{item.label}</span>
+                    <span>{item.price}</span>
+                  </li>
+                  {item.extra && <span>{item.extra}</span>}
+                </>
               ))}
             </ul>
           </div>

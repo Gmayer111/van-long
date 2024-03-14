@@ -64,6 +64,11 @@
     color: $grey-800;
   }
 
+  ul > span {
+    color: $grey-900;
+    font-weight: 900;
+  }
+
   span:first-child {
     text-transform: uppercase;
     grid-area: chapter;
@@ -125,6 +130,12 @@
     span {
       font-size: 0.9rem;
       padding: 1.5px;
+    }
+
+    ul > span {
+      color: $grey-900;
+      font-size: 0.8rem;
+      font-weight: 900;
     }
 
     div > div:has(h3) {
