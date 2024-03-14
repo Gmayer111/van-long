@@ -36,7 +36,7 @@ const ContactPage = () => {
           <div>
             <span>Horaires</span>
             <span>Du lundi au vendredi :</span>
-            <span>Le midi de 11h30 à 14h30 Le soir de 19h à 21h</span>
+            <span>Le midi de 11h30 à 14h30 Le soir de 19h à 21h30</span>
             <span>Le samedi et dimanche : Fermé</span>
           </div>
         </div>
