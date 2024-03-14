@@ -30,27 +30,27 @@ const FooterComponent = () => {
               <tr>
                 <th>Lundi</th>
                 <td>11:30 - 14:30</td>
-                <td>19:00 - 22:00</td>
+                <td>19:00 - 21:30</td>
               </tr>
               <tr>
                 <th>Mardi</th>
                 <td>11:30 - 14:30</td>
-                <td>19:00 - 22:00</td>
+                <td>19:00 - 21:30</td>
               </tr>
               <tr>
                 <th>Mercredi</th>
                 <td>11:30 - 14:30</td>
-                <td>19:00 - 22:00</td>
+                <td>19:00 - 21:30</td>
               </tr>
               <tr>
                 <th>Jeudi</th>
                 <td>11:30 - 14:30</td>
-                <td>19:00 - 22:00</td>
+                <td>19:00 - 21:30</td>
               </tr>
               <tr>
                 <th>Vendredi</th>
                 <td>11:30 - 14:30</td>
-                <td>19:00 - 22:00</td>
+                <td>19:00 - 21:30</td>
               </tr>
               <tr>
                 <th>Samedi</th>

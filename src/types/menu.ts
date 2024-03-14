@@ -12,4 +12,5 @@ export type TPicture = {
 export type TItem = {
   label: string;
   price: string;
+  extra?: string;
 };
