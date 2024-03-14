@@ -23,7 +23,7 @@ const ModalComponent = ({ isOpen, toggle }: TModalComponentProps) => {
         <div className="bottomModal">
           <h2>Ventes à emporter</h2>
           <p>
-            Vous pouvez venir commander sur place ou nous appeler au{" "}
+            Vous pouvez venir commander sur place ou nous appeler au <br />
             <span>01 43 36 05 16</span>. <br />
             N’oubliez pas d’apporter votre sac en papier ! <br /> L’équipe du
             restaurant.
