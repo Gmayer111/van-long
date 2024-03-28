@@ -1,6 +1,6 @@
 # Restaurant Van Long
 
-Van Long restaurant Website located in Paris, 13th district. This website allow to display the menu and his location.
+Van Long restaurant Website located in Paris, 13th district.
 
 ## Problem
 
