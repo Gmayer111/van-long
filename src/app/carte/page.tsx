@@ -33,9 +33,13 @@ const MenuPage = () => {
               ))}
             </ul>
           </div>
-          {menuItem.picture && size.width > 768 && (
+          {menuItem.picture && (
             <div
-              className={menuItem.picture.length > 1 ? "picturesContainer" : ""}
+              className={
+                menuItem.picture.length > 1
+                  ? "picturesContainer"
+                  : "pictureContainer"
+              }
             >
               {menuItem.picture.map((picture) => (
                 <div key={picture.description}>
