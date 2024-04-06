@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/Gmayer111/van-long/compare/v1.0.3...v1.0.4) (2024-04-06)
+
+
+### Bug Fixes
+
+* display menu pictures on mobile ([#27](https://github.com/Gmayer111/van-long/issues/27)) ([41839ac](https://github.com/Gmayer111/van-long/commit/41839ac9a09afb0cb925f890bdfb3aaff3494170))
+
 ## [1.0.3](https://github.com/Gmayer111/van-long/compare/v1.0.2...v1.0.3) (2024-03-14)
 
 
