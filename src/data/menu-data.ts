@@ -106,7 +106,7 @@ export const MenuItems: TMenuItems[] = [
       {
         label: "Travers de Porc laqué",
         price: "14€00",
-        extra: "* Servi avec du riz nature",
+        extra: "* Servis avec du riz nature",
       },
     ],
   },
@@ -130,7 +130,7 @@ export const MenuItems: TMenuItems[] = [
       {
         label: "Poulet au Curry et lait de Coco",
         price: "13€50",
-        extra: "* Servi avec du riz nature",
+        extra: "* Servis avec du riz nature",
       },
     ],
   },
@@ -162,7 +162,7 @@ export const MenuItems: TMenuItems[] = [
       {
         label: "Boeuf sauté au Basilic au lait de coco",
         price: "14€00",
-        extra: "* Servi avec du riz nature",
+        extra: "* Servis avec du riz nature",
       },
     ],
   },
@@ -194,7 +194,7 @@ export const MenuItems: TMenuItems[] = [
       {
         label: "Crevettes à l’Aigre douce",
         price: "14€50",
-        extra: "* Servi avec du riz nature",
+        extra: "* Servis avec du riz nature",
       },
     ],
   },
@@ -216,7 +216,7 @@ export const MenuItems: TMenuItems[] = [
       {
         label: "Filet de Poisson piquant",
         price: "14€50",
-        extra: "* Servi avec du riz nature",
+        extra: "* Servis avec du riz nature",
       },
     ],
   },
@@ -272,7 +272,7 @@ export const MenuItems: TMenuItems[] = [
     ],
   },
   {
-    title: "Nos grillades (servies avec riz et/ou vermicelles)",
+    title: "Nos grillades (Servises avec riz et/ou vermicelles)",
     picture: [
       {
         path: "barbecue",
