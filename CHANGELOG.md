@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5](https://github.com/Gmayer111/van-long/compare/v1.0.4...v1.0.5) (2024-04-09)
+
+
+### Bug Fixes
+
+* add plurial to words ([#29](https://github.com/Gmayer111/van-long/issues/29)) ([ba4d6fc](https://github.com/Gmayer111/van-long/commit/ba4d6fc5c18b3378e9676c0c19ad20abc765c8cf))
+
 ## [1.0.4](https://github.com/Gmayer111/van-long/compare/v1.0.3...v1.0.4) (2024-04-06)
 
 
