@@ -38,12 +38,11 @@ export const LinkItemComponent = ({
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) => {
     switch (labelValue) {
+      case "ACCUEIL":
+        setDisplayResponsiveMenu(false);
+        break;
       case "LE RESTAURANT":
-        handleScrollToId(e);
-        break;
       case "LA CARTE":
-        handleScrollToId(e);
-        break;
       case "NOUS TROUVER":
         handleScrollToId(e);
         break;
