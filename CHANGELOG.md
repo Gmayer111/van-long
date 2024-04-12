@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.6](https://github.com/Gmayer111/van-long/compare/v1.0.5...v1.0.6) (2024-04-12)
+
+
+### Bug Fixes
+
+* update prices ([#32](https://github.com/Gmayer111/van-long/issues/32)) ([6326b00](https://github.com/Gmayer111/van-long/commit/6326b00c3112d37970ab3025cb03ae385af10dfe))
+
 ## [1.0.5](https://github.com/Gmayer111/van-long/compare/v1.0.4...v1.0.5) (2024-04-09)
 
 
