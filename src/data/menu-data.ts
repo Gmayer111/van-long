@@ -259,11 +259,11 @@ export const MenuItems: TMenuItems[] = [
       },
       {
         label: "Filet de Canard aux cinq épices",
-        price: "11€80",
+        price: "13€00",
       },
       {
         label: "Filet de Canard au basilic",
-        price: "11€80",
+        price: "13€00",
       },
       {
         label: "Gambas sel et poivre",
@@ -285,12 +285,12 @@ export const MenuItems: TMenuItems[] = [
         price: "13€80",
       },
       {
-        label: "Brochettes de Poulet grillées",
-        price: "13€00",
+        label: "Brochettes de Porc ou Poulet grillées",
+        price: "14€00",
       },
       {
         label: "Brochettes de Boeuf grillées",
-        price: "14€00",
+        price: "14€50",
       },
     ],
   },
@@ -317,7 +317,7 @@ export const MenuItems: TMenuItems[] = [
       },
       {
         label: "Légumes sautés",
-        price: "7€50",
+        price: "8€00",
       },
     ],
   },
