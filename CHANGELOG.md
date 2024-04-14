@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.7](https://github.com/Gmayer111/van-long/compare/v1.0.6...v1.0.7) (2024-04-14)
+
+
+### Bug Fixes
+
+* refacto header ([#31](https://github.com/Gmayer111/van-long/issues/31)) ([891dbc5](https://github.com/Gmayer111/van-long/commit/891dbc59c83bd0848de5a0cdd75f9ad9945546b5))
+
 ## [1.0.6](https://github.com/Gmayer111/van-long/compare/v1.0.5...v1.0.6) (2024-04-12)
 
 
