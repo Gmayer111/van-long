@@ -66,13 +66,22 @@ dialog {
   }
 
   @media (max-width: 768px) {
-    top: 200px;
+    top: 100px;
     width: auto;
-    height: 400px;
+    height: 310px;
     margin: 10px;
 
     .bottomModal {
       width: 90%;
+    }
+
+    h2 {
+      font-size: 18px;
+    }
+
+    p {
+      line-height: 25px;
+      font-size: 14px;
     }
   }
 }
