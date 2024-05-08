@@ -25,6 +25,8 @@ td {
 body {
   line-height: 1;
   font-size: 16px;
+  display: flex;
+  flex-direction: column;
 }
 
 body:has(.modalIsOpen) {
