@@ -1,6 +1,7 @@
 .contactPageContainer {
   display: flex;
   flex-direction: column;
+  position: relative;
 
   section:first-child {
     display: grid;

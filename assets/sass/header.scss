@@ -2,6 +2,13 @@
 
 header {
   position: relative;
+  margin-top: 80px;
+}
+
+@media (max-width: 768px) {
+  header {
+    margin-top: 60px;
+  }
 }
 
 .headerImgContainer {
@@ -11,7 +18,6 @@ header {
   justify-content: center;
   align-items: center;
   z-index: -1;
-  top: 0;
 
   img {
     width: 100%;
@@ -48,6 +54,10 @@ header {
   }
 
   @media (max-width: 768px) {
+    header {
+      top: 0;
+    }
+
     div {
       width: 265px;
       height: 80px;

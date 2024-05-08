@@ -4,8 +4,12 @@
   background-color: $red-900;
   display: flex;
   justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
   height: 80px;
   transition: height 0.2s;
+  z-index: 100;
 
   .menuContainer {
     display: flex;
