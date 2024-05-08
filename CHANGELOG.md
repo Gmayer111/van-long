@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/Gmayer111/van-long/compare/v1.0.7...v1.1.0) (2024-05-08)
+
+
+### Features
+
+* add header fixed to top position ([#35](https://github.com/Gmayer111/van-long/issues/35)) ([2619a89](https://github.com/Gmayer111/van-long/commit/2619a890f4a71c7299ccdbb72e8e0e8821a19bd7))
+
 ## [1.0.7](https://github.com/Gmayer111/van-long/compare/v1.0.6...v1.0.7) (2024-04-14)
 
 
