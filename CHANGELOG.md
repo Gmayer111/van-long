@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0](https://github.com/Gmayer111/van-long/compare/v1.1.0...v1.2.0) (2024-05-10)
+
+
+### Features
+
+* add new menu pictures ([#37](https://github.com/Gmayer111/van-long/issues/37)) ([de2a827](https://github.com/Gmayer111/van-long/commit/de2a82781ff25eb7278980929ad5d6b06be18d14))
+* add new pictures ([#40](https://github.com/Gmayer111/van-long/issues/40)) ([11c2039](https://github.com/Gmayer111/van-long/commit/11c2039dfd3de580fb824afefcb784b130173e12))
+
+
+### Bug Fixes
+
+* add responsive menu text wrap ([#39](https://github.com/Gmayer111/van-long/issues/39)) ([11b73b3](https://github.com/Gmayer111/van-long/commit/11b73b303537fa6d51f600a9f2c6b108a1f4bf39))
+
 ## [1.1.0](https://github.com/Gmayer111/van-long/compare/v1.0.7...v1.1.0) (2024-05-08)
 
 
