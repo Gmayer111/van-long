@@ -3,6 +3,16 @@ import { TMenuItems } from "src/types/menu";
 export const MenuItems: TMenuItems[] = [
   {
     title: "Nos entrées",
+    picture: [
+      {
+        path: "nems",
+        description: "Assiette de Nems",
+      },
+      {
+        path: "goi_cuon",
+        description: "Rouleau de printemps",
+      },
+    ],
     items: [
       {
         label: "Rouleau de printemps au porc et aux crevettes (Goi cuon)",
