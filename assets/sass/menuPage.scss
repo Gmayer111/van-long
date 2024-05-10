@@ -1,9 +1,44 @@
 .menuPageContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 22px 0;
+    padding: 0 10px;
+    position: relative;
+    width: 50%;
+    box-shadow: 0px 10px 20px -3px rgba(87, 88, 110, 0.3);
+    background-color: #f7f1e3;
+  }
+
+  > div > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+  }
+
+  > div > div > div:last-child:has(img) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  > div > div > div:last-child:has(img) > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  > div > div > div:last-child:has(img) > div > span {
+    margin-top: 5px;
+  }
 
   h2 {
     font-size: 2rem;
@@ -24,13 +59,6 @@
     letter-spacing: 0.025em;
   }
 
-  > div {
-    display: grid;
-    grid-template-columns: 650px 300px;
-    margin: 22px 0;
-    position: relative;
-  }
-
   .divider {
     display: flex;
     flex-direction: row;
@@ -47,11 +75,6 @@
       white-space: nowrap;
       margin: 0 10px;
     }
-  }
-
-  div > div:has(h3) {
-    display: flex;
-    flex-direction: column;
   }
 
   li {
@@ -87,29 +110,24 @@
     text-align: right;
   }
 
-  div > div:has(img) {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: center;
-  }
-
-  .picturesContainer {
-    justify-content: space-around;
-  }
-
   img {
     border-radius: 10px;
   }
 
   @media (max-width: 768px) {
-    margin: 0 15px;
     > div {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
+      width: 90%;
       margin-top: 10px;
+    }
+
+    img {
+      width: 140px;
+      height: 140px;
+    }
+
+    > div > div > div:last-child:has(img) > div > span {
+      text-wrap: wrap;
+      text-align: center;
     }
 
     .picturesContainer > div {

@@ -3,12 +3,6 @@ import { TMenuItems } from "src/types/menu";
 export const MenuItems: TMenuItems[] = [
   {
     title: "Nos entrées",
-    picture: [
-      {
-        path: "starter",
-        description: "Image d'une entrée",
-      },
-    ],
     items: [
       {
         label: "Rouleau de printemps au porc et aux crevettes (Goi cuon)",
@@ -37,7 +31,7 @@ export const MenuItems: TMenuItems[] = [
     picture: [
       {
         path: "salad",
-        description: "Image d'une salade",
+        description: "Salade de crevettes",
       },
     ],
     items: [
@@ -60,7 +54,11 @@ export const MenuItems: TMenuItems[] = [
     picture: [
       {
         path: "soup",
-        description: "Image d'une soupe",
+        description: "Soupe de Tamarin crevettes",
+      },
+      {
+        path: "pho",
+        description: "Soupe Pho",
       },
     ],
     items: [
@@ -84,12 +82,6 @@ export const MenuItems: TMenuItems[] = [
   },
   {
     title: "Nos plats au porc",
-    picture: [
-      {
-        path: "pork-dish",
-        description: "Image d'un plat au porc",
-      },
-    ],
     items: [
       {
         label: "Porc au Caramel",
@@ -114,8 +106,8 @@ export const MenuItems: TMenuItems[] = [
     title: "Nos plats au poulet",
     picture: [
       {
-        path: "chicken-dish",
-        description: "Image d'un plat au poulet",
+        path: "ga_curry",
+        description: "Poulet au curry",
       },
     ],
     items: [
@@ -138,8 +130,8 @@ export const MenuItems: TMenuItems[] = [
     title: "Nos plats au boeuf",
     picture: [
       {
-        path: "beef-dish",
-        description: "Image d'un plat au boeuf",
+        path: "bo_sate",
+        description: "Boeuf au saté",
       },
     ],
     items: [
@@ -170,8 +162,8 @@ export const MenuItems: TMenuItems[] = [
     title: "Nos plats aux crevettes",
     picture: [
       {
-        path: "prawns-dish",
-        description: "Image d'un plat aux crevettes",
+        path: "tom_basilic",
+        description: "Crevettes au Basilic",
       },
     ],
     items: [
@@ -224,8 +216,12 @@ export const MenuItems: TMenuItems[] = [
     title: "Nos spécialités de la maison",
     picture: [
       {
-        path: "speciality",
-        description: "Image d'une spécialité",
+        path: "bo_bun",
+        description: "Bo Bun",
+      },
+      {
+        path: "mi_mem",
+        description: "Nouilles sautées garnies",
       },
     ],
     items: [
@@ -275,8 +271,12 @@ export const MenuItems: TMenuItems[] = [
     title: "Nos grillades (Servises avec riz et/ou vermicelles)",
     picture: [
       {
-        path: "barbecue",
-        description: "Image d'un plat de grillade",
+        path: "heo_lui",
+        description: "Porc grillé",
+      },
+      {
+        path: "bo_lui",
+        description: "Brochettes de Boeuf",
       },
     ],
     items: [
@@ -296,12 +296,6 @@ export const MenuItems: TMenuItems[] = [
   },
   {
     title: "Nos accompagnements",
-    picture: [
-      {
-        path: "extra",
-        description: "Image d'un accompagnement",
-      },
-    ],
     items: [
       {
         label: "Riz nature",
@@ -326,9 +320,9 @@ export const MenuItems: TMenuItems[] = [
     picture: [
       {
         path: "dessert-1",
-        description: "Image 1 d'un dessert",
+        description: "Banane Tapioca et lait de coco",
       },
-      { path: "dessert-2", description: "Image 2 d'un dessert" },
+      { path: "dessert-2", description: "Mangue fraiche" },
     ],
     items: [
       {
@@ -387,12 +381,6 @@ export const MenuItems: TMenuItems[] = [
   },
   {
     title: "Nos boissons (carte des vins sur place)",
-    picture: [
-      {
-        path: "drink",
-        description: "Image d'une boisson",
-      },
-    ],
     items: [
       {
         label: "Café",
