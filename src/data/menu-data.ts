@@ -6,7 +6,7 @@ export const MenuItems: TMenuItems[] = [
     picture: [
       {
         path: "nems",
-        description: "Assiette de Nems",
+        description: "Nems au porc",
       },
       {
         path: "goi_cuon",
@@ -278,7 +278,7 @@ export const MenuItems: TMenuItems[] = [
     ],
   },
   {
-    title: "Nos grillades (Servises avec riz et/ou vermicelles)",
+    title: "Nos grillades (Servies avec riz et/ou vermicelles)",
     picture: [
       {
         path: "heo_lui",
