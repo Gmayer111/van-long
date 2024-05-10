@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/Gmayer111/van-long/compare/v1.2.0...v1.2.1) (2024-05-10)
+
+
+### Bug Fixes
+
+* menu typo ([#41](https://github.com/Gmayer111/van-long/issues/41)) ([11fedad](https://github.com/Gmayer111/van-long/commit/11fedadac11af746fe2bda90492e31425c3c420c))
+
 ## [1.2.0](https://github.com/Gmayer111/van-long/compare/v1.1.0...v1.2.0) (2024-05-10)
 
 
