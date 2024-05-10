@@ -127,6 +127,8 @@
 
     > div > div > div:last-child:has(img) > div > span {
       text-wrap: wrap;
+      white-space: normal;
+      word-break: break-word;
       text-align: center;
     }
 
