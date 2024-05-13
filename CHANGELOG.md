@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/Gmayer111/van-long/compare/v1.2.1...v1.3.0) (2024-05-13)
+
+
+### Features
+
+* update infos ([#45](https://github.com/Gmayer111/van-long/issues/45)) ([6aa9ca3](https://github.com/Gmayer111/van-long/commit/6aa9ca3f4026ea9f65801a9caa7a23705f345397))
+
 ## [1.2.1](https://github.com/Gmayer111/van-long/compare/v1.2.0...v1.2.1) (2024-05-10)
 
 
