@@ -292,7 +292,7 @@ export const MenuItems: TMenuItems[] = [
     items: [
       {
         label: "Porc grillé façon vietnamienne",
-        price: "13€80",
+        price: "14€00",
       },
       {
         label: "Brochettes de Porc ou Poulet grillées",
