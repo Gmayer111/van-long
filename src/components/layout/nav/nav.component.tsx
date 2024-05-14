@@ -8,18 +8,20 @@ import { useEffect, useState } from "react";
 import MenuIcon from "public/assets/icons/menu-icon";
 import CloseIcon from "public/assets/icons/close-icon";
 import { merriweather } from "src/utils/font";
+import { useTranslations } from "next-intl";
 
 export const NavComponent = () => {
   const size = useWindowSize();
+  const t = useTranslations("Header.Navigation");
   const [menuSize, setMenuSize] = useState(false);
   const [displayResponsiveMenu, setDisplayResponsiveMenu] = useState(false);
   const linkItems: TLinkItemList[] = [
     {
-      label: "ACCUEIL",
+      label: t("home"),
       path: "/",
     },
     {
-      label: "LE RESTAURANT",
+      label: t("restaurant"),
       path: "/#restaurant-section",
     },
     {
@@ -27,11 +29,11 @@ export const NavComponent = () => {
       path: "/",
     },
     {
-      label: "LA CARTE",
+      label: t("menu"),
       path: "/carte/#menu-section",
     },
     {
-      label: "NOUS TROUVER",
+      label: t("contact"),
       path: "/contact/#contact-section",
     },
   ];
@@ -73,9 +75,9 @@ export const NavComponent = () => {
           <div className={`${merriweather.className} mainTitleContainer`}>
             <VanLongLogo />
             <div>
-              <h1>RESTAURANT VAN LONG</h1>
+              <h1>{t("responsiveH1Logo")}</h1>
             </div>
-            <span>Cuisine vietnamienne traditionnelle</span>
+            <span>{t("responsiveTextLogo")}</span>
           </div>
         )}
         <ul>

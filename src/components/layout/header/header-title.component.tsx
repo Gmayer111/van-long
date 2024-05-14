@@ -1,14 +1,21 @@
+import { useTranslations } from "next-intl";
 import React, { useEffect, useState } from "react";
+import { THeaderTitles } from "src/types/header";
 
 export type TMenuTitleProps = {
-  headerTitle?: string;
+  headerTitle?: THeaderTitles | string;
 };
 
 const HeaderTitleComponent = ({ headerTitle }: TMenuTitleProps) => {
   const [homePage, setHomePage] = useState(true);
+  const t = useTranslations("Header.HeaderTitleComponent");
   useEffect(() => {
     setHomePage(false);
-    if (headerTitle === "RESTAURANT VAN LONG") setHomePage(true);
+    if (
+      headerTitle === "RESTAURANT VAN LONG" ||
+      headerTitle === "VAN LONG RESTAURANT"
+    )
+      setHomePage(true);
   }, [headerTitle]);
 
   return (
@@ -16,7 +23,7 @@ const HeaderTitleComponent = ({ headerTitle }: TMenuTitleProps) => {
       <div>
         <h1 className={homePage ? "customTitle" : ""}>{headerTitle}</h1>
       </div>
-      {homePage && <span>Cuisine vietnamienne traditionnelle</span>}
+      {homePage && <span>{t("responsiveTextLogo")}</span>}
     </>
   );
 };
