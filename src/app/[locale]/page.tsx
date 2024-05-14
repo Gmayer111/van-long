@@ -5,9 +5,11 @@ import CarouselComponent from "src/components/carousel/carousel.component";
 import { VanLongLogo } from "public/assets/logos/van-long";
 import { useEffect, useState } from "react";
 import ModalComponent from "src/components/modal/modal.component";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
   const [openModal, setOpenModal] = useState(false);
+  const t = useTranslations("HomePage");
 
   useEffect(() => {
     if (typeof window !== "undefined" && window.sessionStorage.length === 0) {
@@ -39,14 +41,7 @@ export default function Home() {
             <VanLongLogo />
           </div>
           <div>
-            <p className={merriweather.className}>
-              Situé dans le 13ème arrondissement de Paris depuis 1992, de la rue
-              Pascal à la rue du Champ de l’Alouette, notre restaurant
-              traditionnel vietnamien vous accueille dans un cadre simple et
-              chaleureux. <br /> Tous nos plats sont élaborés sur place, à
-              partir de produits frais, et vous rappelleront les saveurs
-              subtiles de la cuisine vietnamienne.
-            </p>
+            <p className={merriweather.className}>{t("mainParagraph")}</p>
           </div>
         </section>
         <section className="bottomSectionHomePageContainer">

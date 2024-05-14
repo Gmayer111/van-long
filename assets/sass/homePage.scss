@@ -37,6 +37,7 @@
     position: relative;
     display: flex;
     justify-content: center;
+    white-space: pre-line;
   }
 
   p::after {
