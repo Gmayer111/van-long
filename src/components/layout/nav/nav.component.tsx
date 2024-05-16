@@ -12,16 +12,16 @@ import { useTranslations } from "next-intl";
 
 export const NavComponent = () => {
   const size = useWindowSize();
-  const t = useTranslations("Header.Navigation");
+  const t = useTranslations();
   const [menuSize, setMenuSize] = useState(false);
   const [displayResponsiveMenu, setDisplayResponsiveMenu] = useState(false);
   const linkItems: TLinkItemList[] = [
     {
-      label: t("home"),
+      label: t("Header.Navigation.home"),
       path: "/",
     },
     {
-      label: t("restaurant"),
+      label: t("Header.Navigation.restaurant"),
       path: "/#restaurant-section",
     },
     {
@@ -29,11 +29,11 @@ export const NavComponent = () => {
       path: "/",
     },
     {
-      label: t("menu"),
+      label: t("Common.menuNavigation"),
       path: "/carte/#menu-section",
     },
     {
-      label: t("contact"),
+      label: t("Common.contactNavigation"),
       path: "/contact/#contact-section",
     },
   ];
@@ -75,9 +75,9 @@ export const NavComponent = () => {
           <div className={`${merriweather.className} mainTitleContainer`}>
             <VanLongLogo />
             <div>
-              <h1>{t("responsiveH1Logo")}</h1>
+              <h1>{t("Common.restaurantName").toUpperCase()}</h1>
             </div>
-            <span>{t("responsiveTextLogo")}</span>
+            <span>{t("Common.shortRestaurantDescription")}</span>
           </div>
         )}
         <ul>

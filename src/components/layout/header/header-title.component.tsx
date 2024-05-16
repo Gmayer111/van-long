@@ -8,7 +8,7 @@ export type TMenuTitleProps = {
 
 const HeaderTitleComponent = ({ headerTitle }: TMenuTitleProps) => {
   const [homePage, setHomePage] = useState(true);
-  const t = useTranslations("Header.HeaderTitleComponent");
+  const t = useTranslations();
   useEffect(() => {
     setHomePage(false);
     if (
@@ -23,7 +23,7 @@ const HeaderTitleComponent = ({ headerTitle }: TMenuTitleProps) => {
       <div>
         <h1 className={homePage ? "customTitle" : ""}>{headerTitle}</h1>
       </div>
-      {homePage && <span>{t("responsiveTextLogo")}</span>}
+      {homePage && <span>{t("Common.shortRestaurantDescription")}</span>}
     </>
   );
 };

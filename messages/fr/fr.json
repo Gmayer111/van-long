@@ -1,24 +1,14 @@
 {
   "Common": {
     "restaurantName": "Restaurant Van Long",
-    "shortRestaurantDescription": "Cuisine vietnamienne traditionnelle"
+    "shortRestaurantDescription": "Cuisine vietnamienne traditionnelle",
+    "menuNavigation": "LA CARTE",
+    "contactNavigation": "NOUS TROUVER"
   },
   "Header": {
     "Navigation": {
       "home": "ACCUEIL",
-      "restaurant": "LE RESTAURANT",
-      "menu": "LA CARTE",
-      "contact": "NOUS TROUVER",
-      "responsiveH1Logo": "RESTAURANT VAN LONG",
-      "responsiveTextLogo": "Cuisine vietnamienne traditionnelle"
-    },
-    "HeaderComponent": {
-      "home": "RESTAURANT VAN LONG",
-      "menu": "LA CARTE",
-      "contact": "NOUS TROUVER"
-    },
-    "HeaderTitleComponent": {
-      "responsiveTextLogo": "Cuisine vietnamienne traditionnelle"
+      "restaurant": "LE RESTAURANT"
     }
   },
   "HomePage": {

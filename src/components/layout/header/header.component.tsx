@@ -11,12 +11,12 @@ import { useTranslations } from "next-intl";
 
 const HeaderComponent = () => {
   const currentPath = usePathname();
-  const t = useTranslations("Header.HeaderComponent");
+  const t = useTranslations();
 
   const HeaderTitles: { [key: string]: THeaderTitles | string } = {
-    "/fr": t("home"),
-    "/fr/carte": t("menu"),
-    "/fr/contact": t("contact"),
+    "/fr": t("Common.restaurantName").toUpperCase(),
+    "/fr/carte": t("Common.menuNavigation"),
+    "/fr/contact": t("Common.contactNavigation"),
   };
 
   return (
