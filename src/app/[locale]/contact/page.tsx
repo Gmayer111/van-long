@@ -5,8 +5,10 @@ import { merriweather } from "src/utils/font";
 import Link from "next/link";
 import { MapPinIcon } from "public/assets/icons/map-pin-icon";
 import { CalendarIcon } from "public/assets/icons/calendar-icon";
+import { useTranslations } from "next-intl";
 
 const ContactPage = () => {
+  const t = useTranslations("ContactPage");
   return (
     <div
       id="contact-section"
@@ -14,16 +16,14 @@ const ContactPage = () => {
     >
       <section>
         <div>
-          <h2>
-            INFOS <br /> DU RESTAURANT
-          </h2>
+          <h2>{t("restaurantInfos")}</h2>
         </div>
         <div>
           <div>
             <MapPinIcon />
           </div>
           <div>
-            <span>Restaurant Van Long</span>
+            <span>{t("restaurantName")}</span>
             <span>9 rue du Champ de l'Aloutette</span>
             <span>75013 Paris</span>
             <span>+33 1 43 36 05 16</span>
@@ -34,11 +34,11 @@ const ContactPage = () => {
             <CalendarIcon />
           </div>
           <div>
-            <span>Horaires</span>
-            <span>Du lundi au vendredi :</span>
-            <span>Le midi de 11h30 à 14h30</span>
-            <span>Le soir de 19h à 22h00</span>
-            <span>Le samedi et dimanche : Fermé</span>
+            <span>{t("openingHours")}</span>
+            <span>{t("weekly")}</span>
+            <span>{t("lunchTime")}</span>
+            <span>{t("dinner")}</span>
+            <span>{t("closeTime")}</span>
           </div>
         </div>
       </section>
@@ -50,7 +50,7 @@ const ContactPage = () => {
           }
           target="_blank"
         >
-          Itinéraire
+          {t("itinerary")}
         </Link>
       </section>
     </div>

@@ -19,5 +19,15 @@
   },
   "HomePage": {
     "mainParagraph": "Situé dans le 13ème arrondissement de Paris depuis 1992, de la rue Pascal à la rue du Champ de l’Alouette, notre restaurant traditionnel vietnamien vous accueille dans un cadre simple et chaleureux. \nTous nos plats sont élaborés sur place, à partir de produits frais, et vous rappelleront les saveurs subtiles de la cuisine vietnamienne."
+  },
+  "ContactPage": {
+    "restaurantInfos": "INFOS \n DU \n RESTAURANT",
+    "restaurantName": "Restaurant Van Long",
+    "openingHours": "Horaires",
+    "weekly": "Du lundi au vendredi :",
+    "lunchTime": "Le midi de 11h30 à 14h30",
+    "dinner": "Le soir de 19h à 21h30",
+    "closeTime": "Le samedi et dimanche : Fermé",
+    "itinerary": "Itinéraire"
   }
 }
