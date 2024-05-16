@@ -1,4 +1,8 @@
 {
+  "Common": {
+    "restaurantName": "Restaurant Van Long",
+    "shortRestaurantDescription": "Cuisine vietnamienne traditionnelle"
+  },
   "Header": {
     "Navigation": {
       "home": "ACCUEIL",
@@ -29,5 +33,19 @@
     "dinner": "Le soir de 19h à 21h30",
     "closeTime": "Le samedi et dimanche : Fermé",
     "itinerary": "Itinéraire"
+  },
+  "Footer": {
+    "openingHours": "HORAIRES D'OUVERTURE",
+    "lunch": "Midi",
+    "dinner": "Soir",
+    "monday": "Lundi",
+    "tuesday": "Mardi",
+    "wednesday": "Mercredi",
+    "thursday": "Jeudi",
+    "friday": "Vendredi",
+    "saturday": "Samedi",
+    "sunday": "Dimanche",
+    "close": "Fermé",
+    "webSiteCreated": "Créé par Restaurant Van Long"
   }
 }
