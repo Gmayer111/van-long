@@ -1,12 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { MenuItems } from "src/data/menu-data";
-import { useWindowSize } from "src/hooks/use-window-size";
 import { merriweather } from "src/utils/font";
+import { MenuItemsComponent } from "./menu-data";
 
 const MenuPage = () => {
-  const size = useWindowSize();
+  const data = MenuItemsComponent();
   return (
     <section
       id="menu-section"
@@ -14,7 +13,7 @@ const MenuPage = () => {
     >
       <div>
         <h2>Notre carte</h2>
-        {MenuItems.map((menuItem) => (
+        {data.map((menuItem) => (
           <div key={menuItem.title}>
             <div>
               <div className="divider">
