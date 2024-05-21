@@ -40,7 +40,7 @@
   },
   "ModalComponent": {
     "takeAway": "Take away",
-    "mainParagraph": "You can order by phone at <br /><span>01 43 36 05 16</span>. <br /> Don't forget your tote bag ! <br /> Van Long team.",
-    "visaAccespted": "French credit card accepted from a minimum of 15 EUR"
+    "mainParagraph": "You can order by phone at \n<spanLines>01 43 36 05 16</spanLines>\n Don't forget your tote bag ! \nVan Long team.",
+    "visaAccepted": "French credit card accepted from a minimum of 15 EUR"
   }
 }

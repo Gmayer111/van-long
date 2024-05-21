@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import CloseIcon from "public/assets/icons/close-icon";
 import { useRef } from "react";
 import { UseClickOutside } from "src/hooks/use-click-outside";
@@ -9,6 +10,7 @@ type TModalComponentProps = {
 
 const ModalComponent = ({ isOpen, toggle }: TModalComponentProps) => {
   const dialogRef = useRef(null);
+  const t = useTranslations("ModalComponent");
 
   UseClickOutside({ ref: dialogRef, callBack: toggle });
 
@@ -21,14 +23,13 @@ const ModalComponent = ({ isOpen, toggle }: TModalComponentProps) => {
           <CloseIcon iconStroke="black" />
         </button>
         <div className="bottomModal">
-          <h2>Ventes à emporter</h2>
+          <h2>{t("takeAway")}</h2>
           <p>
-            Vous pouvez venir commander sur place ou nous appeler au <br />
-            <span>01 43 36 05 16</span>. <br />
-            N’oubliez pas d’apporter votre sac en papier ! <br /> L’équipe du
-            restaurant.
+            {t.rich("mainParagraph", {
+              spanLines: (chunks) => <span>{chunks}</span>,
+            })}
           </p>
-          <div>CB acceptée à partir de 15€</div>
+          <div>{t("visaAccepted")}</div>
         </div>
       </dialog>
     )
