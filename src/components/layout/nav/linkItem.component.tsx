@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { TLinkItemList } from "src/types/nav";
+import { TLabelNavValues, TLinkItemList } from "src/types/nav";
 
 type TLinkItemComponentProps = TLinkItemList & {
   isResponsive?: boolean;
@@ -22,33 +22,32 @@ export const LinkItemComponent = ({
     const href = e.currentTarget.href
       .replace("http://localhost:3000", "")
       .split("#");
+
     const path = href[0];
     const id = href[1];
     router.push(path!);
-    const element = document.getElementById(id!);
-
-    element?.scrollIntoView({
+    document.getElementById(id!)?.scrollIntoView({
       behavior: "smooth",
     });
     setDisplayResponsiveMenu(false);
   };
 
   const handleClickLink = (
-    labelValue: string,
+    labelValue: TLabelNavValues,
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) => {
     switch (labelValue) {
-      case "ACCUEIL":
+      case "ACCUEIL" || "HOME":
         setDisplayResponsiveMenu(false);
         break;
-      case "LE RESTAURANT":
-      case "LA CARTE":
-      case "NOUS TROUVER":
+      case "LE RESTAURANT" || "RESTAURANT":
+      case "LA CARTE" || "MENU":
+      case "NOUS TROUVER" || "FIND US":
         handleScrollToId(e);
         break;
 
       default:
-        () => setDisplayResponsiveMenu(false);
+        setDisplayResponsiveMenu(false);
         break;
     }
   };
@@ -59,7 +58,7 @@ export const LinkItemComponent = ({
         className={`${activePath === path.replace(/\/#\w*-\w*/gm, "") ? "active" : ""} ${typeof label !== "string" ? "logo" : ""}`}
         scroll={false}
         href={path}
-        onClick={(e) => handleClickLink(label as string, e)}
+        onClick={(e) => handleClickLink(label as TLabelNavValues, e)}
         aria-label={
           typeof label !== "string" ? "Logo cliquable de la navigation" : ""
         }

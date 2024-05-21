@@ -9,12 +9,19 @@ import MenuIcon from "public/assets/icons/menu-icon";
 import CloseIcon from "public/assets/icons/close-icon";
 import { merriweather } from "src/utils/font";
 import { useTranslations } from "next-intl";
+import { locales } from "src/types/locales";
+import { useRouter } from "next/navigation";
+import { usePathname } from "src/navigation";
 
 export const NavComponent = () => {
   const size = useWindowSize();
   const t = useTranslations();
   const [menuSize, setMenuSize] = useState(false);
+  let path = usePathname();
+  let router = useRouter();
+
   const [displayResponsiveMenu, setDisplayResponsiveMenu] = useState(false);
+
   const linkItems: TLinkItemList[] = [
     {
       label: t("Header.Navigation.home"),
@@ -93,6 +100,17 @@ export const NavComponent = () => {
             )
           )}
         </ul>
+        {!displayResponsiveMenu && (
+          <div>
+            <ul>
+              {locales.map((locale) => (
+                <li onClick={() => router.push(`/${locale}${path}`)}>
+                  {locale.toUpperCase()}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </section>
   );
