@@ -1,152 +1,152 @@
 {
   "MenuPage": {
+    "mainTitle": "Our Menu",
     "Menu": {
       "starters": {
-        "title": "Nos entrées",
+        "title": "Our starters",
         "nem": {
-          "description": "Nems au porc",
-          "label": "Nems au porc"
+          "description": "Crispy Spring rolls",
+          "label": "Crispy Spring rolls with ground pork"
         },
         "springRolls": {
-          "description": "Rouleau de printemps",
-          "label": "Rouleau de printemps au porc et aux crevettes (Goi cuon)"
+          "description": "Spring roll",
+          "label": "Spring roll with pork and shrimp (Goi cuon)"
         },
-        "haKao": "Raviolis à la vapeur crevettes (Ha kao)",
-        "banhCuon": "Crêpes vietnamiennes au porc (Banh cuon)",
-        "tomChien": "Raviolis frits aux crevettes (Tom chien)"
+        "haKao": "Steamed shrimps ravioli (Ha kao)",
+        "banhCuon": "Steamed dumpling with ground pork and ham (Banh cuon)",
+        "tomChien": "Fried shrimps ravioli (Tom chien)"
       },
       "salads": {
-        "title": "Nos salades",
+        "title": "Our salads",
         "prawnsSalad": {
-          "description": "Salade de crevettes",
-          "label": "Salade aux crevettes (Goi tom)"
+          "description": "Shrimps Salad",
+          "label": "Salad with shrimps (Goi tom)"
         },
-        "spicyBeefSalad": "Salade au boeuf piquant (Goi bo)",
-        "chickenSalad": "Salade au poulet (Goi ga)"
+        "spicyBeefSalad": "Salad with spicy beef (Goi bo)",
+        "chickenSalad": "Salad with chicken (Goi ga)"
       },
       "soups": {
-        "title": "Nos soupes",
+        "title": "Our soups",
         "tamarindSoup": {
-          "description": "Soupe de Tamarin crevettes",
-          "label": "Soupe de Tamarin aux crevettes (Canh chua)"
+          "description": "Sweet&Sour soup",
+          "label": "Sweet&Sour soup with shrimps and pineapple (Canh chua)"
         },
         "pho": {
-          "description": "Soupe Pho",
-          "label": "Soupe Tonkinoise (Pho)"
+          "description": "Beef Pho",
+          "label": "Beef Pho with sliced rare beef"
         },
-        "raviolisSoup": "Soupe de Raviolis aux crevettes",
-        "saigoneseSoup": "Soupe Saïgonnaise (Hu Tieu)"
+        "raviolisSoup": "Wonton egg noodle Soup with shrimps",
+        "saigoneseSoup": "Soup with sliced pork & rice noodles (Hu Tieu)"
       },
       "porkDishes": {
-        "title": "Nos plats au porc",
-        "caramelPork": "Porc au Caramel",
-        "lemongrassPork": "Travers de Porc à la Citronnelle",
-        "gingerPork": "Porc au Gingembre",
-        "glazedPork": "Travers de Porc laqué"
+        "title": "Our pork dishes",
+        "caramelPork": "Caramel Pork",
+        "lemongrassPork": "Pork ribs with lemongrass",
+        "gingerPork": "Pork with ginger",
+        "glazedPork": "Glazed pork ribs"
       },
       "chickenDishes": {
-        "title": "Nos plats au poulet",
+        "title": "Our chicken dishes",
         "curryChicken": {
-          "description": "Poulet au curry",
-          "label": "Poulet au Curry et lait de Coco"
+          "description": "Curry chicken",
+          "label": "Chicken sauteed w/curry & coconut milk"
         },
-        "lemongrassChicken": "Poulet à la Citronnelle",
-        "gingerChicken": "Poulet au Gingembre"
+        "lemongrassChicken": "Chicken sauteed w/lemongrass",
+        "gingerChicken": "Chicken sauteed w/ginger"
       },
       "beefDishes": {
-        "title": "Nos plats au boeuf",
+        "title": "Our beef dishes",
         "satayBeef": {
-          "description": "Boeuf au saté",
-          "label": "Boeuf au Saté piquant"
+          "description": "Spicy Beef",
+          "label": "Tender beef sauteed w/house spicy satay"
         },
-        "lemongrassBeef": "Boeuf à la Citronnelle",
-        "curryBeef": "Boeuf au Curry et lait de coco",
-        "imperialBeef": "Boeuf Impérial au lait de coco",
-        "basilBeef": "Boeuf sauté au Basilic au lait de coco"
+        "lemongrassBeef": "Tender beef sauteed w/lemongrass",
+        "curryBeef": "Tender beef sauteed w/curry & coconut milk",
+        "imperialBeef": "Tender beef sauteed w/pineapple & coconut milk",
+        "basilBeef": "Tender beef sauteed w/basil & coconut milk"
       },
       "prawnsDishes": {
-        "title": "Nos plats aux crevettes",
+        "title": "Our shrimp dishes",
         "basilPrawns": {
-          "description": "Crevettes au Basilic",
-          "label": "Crevettes au Basilic et lait de coco"
+          "description": "Shrimps sauteed w/basil",
+          "label": "Shrimps sauteed w/basil & coconut milk"
         },
-        "caramelPrawns": "Crevettes au Caramel",
-        "curryPrawns": "Crevettes au Curry et lait de coco",
-        "spicyPrawns": "Crevettes Piquantes",
-        "sweetSourPrawns": "Crevettes à l’Aigre douce"
+        "caramelPrawns": "Shrimps sauteed w/caramel",
+        "curryPrawns": "Shrimps sauteed w/curry & coconut milk",
+        "spicyPrawns": "Shrimps sauteed w/home spicy sauce",
+        "sweetSourPrawns": "Shrimps sauteed w/sweet & sour sauce"
       },
       "fishesDishes": {
-        "title": "Nos plats de poissons",
-        "steamedFishe": "Filet de Poisson à la vapeur",
-        "curryFish": "Filet de Poisson au Curry et lait de coco",
-        "basilFish": "Filet de Poisson au Basilic et lait de coco",
-        "spicyFish": "Filet de Poisson piquant"
+        "title": "Our fish dishes",
+        "steamedFishe": "Steamed fish fillet",
+        "curryFish": "Fish fillet w/curry & coconut milk",
+        "basilFish": "Fish fillet w/basil & coconut milk",
+        "spicyFish": "Fish fillet w/home spicy sauce"
       },
       "specialities": {
-        "title": "Nos plats aux crevettes",
-        "boBun": "Bo Bun",
-        "largeBoBun": "Grand Bo Bun",
-        "friedNoodles": "Nouilles sautées garnies",
-        "crispyNoodles": "Nouilles croustillantes garnies",
-        "prawnsFriedNoodles": "Nouilles sautées aux crevettes",
-        "lucLacBeef": "Boeuf Luc Lac",
-        "crispyPork": "Porc croustillant garnis",
-        "spicyDuck": "Filet de Canard aux cinq épices",
-        "basilDuck": "Filet de Canard au basilic",
-        "kingPrawns": "Gambas sel et poivre"
+        "title": "Our specialities",
+        "boBun": "Bo Bun (beef, fried rolls, lettuce, vermicelli, nuoc mam and peanuts)",
+        "largeBoBun": "Big Bo Bun (beef, fried rolls, lettuce, vermicelli, nuoc mam and peanuts)",
+        "friedNoodles": "Noodles served w/ chicken, pork & mixed vegetables",
+        "crispyNoodles": "Crispy noodles served w/ chicken, pork & mixed vegetables",
+        "prawnsFriedNoodles": "Noodles served w/ shrimps & mixed vegetables",
+        "lucLacBeef": "Shaking Beef (marinated tender beef w/ tomato rice)",
+        "crispyPork": "Crispy Pork belly served w/ rice or vermicelli",
+        "spicyDuck": "Five Spices Duck fillet",
+        "basilDuck": "Duck fillet w/ Basil"
       },
       "grills": {
-        "title": "Nos grillades (Servies avec riz et/ou vermicelles)",
+        "title": "Our Grill dishes (served w/ rice or vermicelli)",
         "grilledPork": {
-          "description": "Porc grillé",
-          "label": "Porc grillé façon vietnamienne"
+          "description": "Grilled Pork",
+          "label": "Grilled Pork"
         },
         "brochettesBeef": {
-          "description": "Brochettes de Boeuf",
-          "label": "Brochettes de Boeuf grillées"
+          "description": "Grilled Beef skewers",
+          "label": "Grilled Beef skewers"
         },
-        "brochettesPork": "Brochettes de Porc ou Poulet grillées"
+        "brochettesPork": "Grilled Pork or Chicken skewers"
       },
       "extra": {
-        "title": "Nos accompagnements",
-        "rice": "Riz nature",
-        "cantoneseRice": "Riz cantonnais",
-        "plainFriedNoodles": "Nouilles sautées natures",
-        "stirFriedVegetables": "Légumes sautés"
+        "title": "Our side dishes",
+        "rice": "Bowl of rice",
+        "cantoneseRice": "Fried rice w/ pork",
+        "plainFriedNoodles": "Sauteed egg noodles",
+        "stirFriedVegetables": "Mixed vegetables"
       },
       "desserts": {
-        "title": "Nos desserts",
+        "title": "Our Desserts",
         "bananaTapioca": {
-          "description": "Banane Tapioca et lait de coco"
+          "description": "Banana coconut tapioca pudding"
         },
         "freshMango": {
-          "description": "Mangue fraiche",
-          "label": "1/2 Mangue"
+          "description": "Fresh Mango",
+          "label": "Fresh Mango"
         },
-        "iceCream": "Glace en boule (1 boule)",
-        "ginger": "Gingembre confit",
-        "nougat": "Nougat mou",
-        "lychees": "Lychee en sirop",
-        "cocoPearl": "Perle de coco",
-        "homemadeDessert": "Dessert maison du moment",
-        "pineappleFritter": "Beignet à l’Ananas",
-        "bananaFritter": "Beignet de Banane",
-        "appleFritter": "Beignet de pomme",
-        "flamedPineappleFritter": "Beignet à l’Ananas flambé",
-        "flamedBananaFritter": "Beignet de Banane flambé",
-        "flamedAppleFritter": "Beignet de pomme flambé"
+        "iceCream": "Ice cream (1 scoop)",
+        "ginger": "Candied ginger",
+        "nougat": "Chewy sesame peanut candy",
+        "lychees": "Lychee syrup",
+        "cocoPearl": "Hot coconuts pearls",
+        "homemadeDessert": "Homemade desserts",
+        "pineappleFritter": "Pineapple fritter",
+        "bananaFritter": "Banana fritter",
+        "appleFritter": "Apple fritter",
+        "flamedPineappleFritter": "Flambéed Pineapple fritter",
+        "flamedBananaFritter": "Flambéed Banana fritter",
+        "flamedAppleFritter": "Flambéed Apple fritter"
       },
       "drinks": {
-        "title": "Nos boissons (carte des vins sur place)",
-        "coffee": "Café",
-        "jasminTea": "Thé au Jasmin",
-        "greenTea": "Thé vert",
-        "gingerTea": "Thé au gingembre",
-        "sodaAndJuice": "Jus de fruits et sodas",
-        "soyMilk": "Lait de soja",
-        "cocoJuice": "Jus de coco"
+        "title": "Our drinks (wines list on site)",
+        "coffee": "Coffee",
+        "jasminTea": "Jasmin Tea",
+        "greenTea": "Green Tea",
+        "gingerTea": "Ginger Tea",
+        "sodaAndJuice": "Juice & sodas",
+        "soyMilk": "Soy milk (hot or cold)",
+        "cocoJuice": "Coconut juice"
       },
-      "supplement": "* Servis avec du riz nature"
+      "supplement": "* Served w/ Jasmine rice"
     }
   }
 }

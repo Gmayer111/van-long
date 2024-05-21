@@ -1,5 +1,6 @@
 {
   "MenuPage": {
+    "mainTitle": "Notre carte",
     "Menu": {
       "starters": {
         "title": "Nos entrées",
@@ -83,7 +84,7 @@
         "spicyFish": "Filet de Poisson piquant"
       },
       "specialities": {
-        "title": "Nos plats aux crevettes",
+        "title": "Nos spécialités",
         "boBun": "Bo Bun",
         "largeBoBun": "Grand Bo Bun",
         "friedNoodles": "Nouilles sautées garnies",
@@ -92,8 +93,7 @@
         "lucLacBeef": "Boeuf Luc Lac",
         "crispyPork": "Porc croustillant garnis",
         "spicyDuck": "Filet de Canard aux cinq épices",
-        "basilDuck": "Filet de Canard au basilic",
-        "kingPrawns": "Gambas sel et poivre"
+        "basilDuck": "Filet de Canard au basilic"
       },
       "grills": {
         "title": "Nos grillades (Servies avec riz et/ou vermicelles)",

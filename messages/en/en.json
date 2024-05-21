@@ -1,41 +1,46 @@
 {
   "Common": {
-    "restaurantName": "Restaurant Van Long",
-    "shortRestaurantDescription": "Cuisine vietnamienne traditionnelle",
-    "menuNavigation": "LA CARTE",
-    "contactNavigation": "NOUS TROUVER"
+    "restaurantName": "Van Long Restaurant",
+    "shortRestaurantDescription": "Traditional Vietnamese cuisine",
+    "menuNavigation": "MENU",
+    "contactNavigation": "FIND US"
   },
   "Header": {
     "Navigation": {
-      "home": "ACCUEIL",
-      "restaurant": "LE RESTAURANT"
+      "home": "HOME",
+      "restaurant": "RESTAURANT"
     }
   },
   "HomePage": {
-    "mainParagraph": "Situé dans le 13ème arrondissement de Paris depuis 1992, de la rue Pascal à la rue du Champ de l’Alouette, notre restaurant traditionnel vietnamien vous accueille dans un cadre simple et chaleureux. \nTous nos plats sont élaborés sur place, à partir de produits frais, et vous rappelleront les saveurs subtiles de la cuisine vietnamienne."
+    "mainParagraph": "Located in the 13th district of Paris since 1992, from rue Pascal to rue du Champ de l'Alouette, our traditional Vietnamese restaurant welcomes you in a simple and warm setting. All our dishes are prepared on the spot, using fresh produce, and will remind you of the subtle flavours of Vietnamese cuisine."
   },
   "ContactPage": {
-    "restaurantInfos": "INFOS \n DU \n RESTAURANT",
-    "restaurantName": "Restaurant Van Long",
-    "openingHours": "Horaires",
-    "weekly": "Du lundi au vendredi :",
-    "lunchTime": "Le midi de 11h30 à 14h30",
-    "dinner": "Le soir de 19h à 21h30",
-    "closeTime": "Le samedi et dimanche : Fermé",
-    "itinerary": "Itinéraire"
+    "restaurantInfos": "GENERAL \n INFORMATION",
+    "restaurantName": "Van Long Restaurant",
+    "openingHours": "Opening hours",
+    "weekly": "From Monday to Friday :",
+    "lunchTime": "From 11:30AM to 2:30PM",
+    "dinner": "From 7PM to 10PM",
+    "closeTime": "Saturday and Sunday : Closed",
+    "itinerary": "Itinerary"
   },
   "Footer": {
-    "openingHours": "HORAIRES D'OUVERTURE",
-    "lunch": "Midi",
-    "dinner": "Soir",
-    "monday": "Lundi",
-    "tuesday": "Mardi",
-    "wednesday": "Mercredi",
-    "thursday": "Jeudi",
-    "friday": "Vendredi",
-    "saturday": "Samedi",
-    "sunday": "Dimanche",
-    "close": "Fermé",
-    "webSiteCreated": "Créé par Restaurant Van Long"
+    "openingHours": "OPENING HOURS",
+    "lunch": "Lunch",
+    "dinner": "Dinner",
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "close": "Closed",
+    "webSiteCreated": "Created by Van Long Restaurant"
+  },
+  "ModalComponent": {
+    "takeAway": "Take away",
+    "mainParagraph": "You can order by phone at <br /><span>01 43 36 05 16</span>. <br /> Don't forget your tote bag ! <br /> Van Long team.",
+    "visaAccespted": "French credit card accepted from a minimum of 15 EUR"
   }
 }

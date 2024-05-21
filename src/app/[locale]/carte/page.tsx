@@ -3,16 +3,18 @@
 import Image from "next/image";
 import { merriweather } from "src/utils/font";
 import { MenuItemsComponent } from "./menu-data";
+import { useTranslations } from "next-intl";
 
 const MenuPage = () => {
   const data = MenuItemsComponent();
+  const t = useTranslations("MenuPage");
   return (
     <section
       id="menu-section"
       className={`${merriweather.className} menuPageContainer`}
     >
       <div>
-        <h2>Notre carte</h2>
+        <h2>{t('mainTitle')}</h2>
         {data.map((menuItem) => (
           <div key={menuItem.title}>
             <div>

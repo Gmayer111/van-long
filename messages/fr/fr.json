@@ -37,5 +37,10 @@
     "sunday": "Dimanche",
     "close": "Fermé",
     "webSiteCreated": "Créé par Restaurant Van Long"
+  },
+  "ModalComponent": {
+    "takeAway": "Ventes à emporter",
+    "mainParagraph": "Vous pouvez venir commander sur place ou nous appeler au \n<spanLines>01 43 36 05 16</spanLines> \nN’oubliez pas d’apporter votre sac en papier ! \nL’équipe du restaurant.",
+    "visaAccepted": "CB acceptée à partir de 15€"
   }
 }

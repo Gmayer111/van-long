@@ -274,10 +274,6 @@ export const MenuItemsComponent = () => {
           label: t("specialities.basilDuck"),
           price: "13€00",
         },
-        {
-          label: t("specialities.kingPrawns"),
-          price: "15€90",
-        },
       ],
     },
     {
