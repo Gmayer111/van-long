@@ -21,7 +21,7 @@ export default async function RootLayout({
 }>) {
   const messages = await getMessages();
   return (
-    <html lang="fr" className={merriweather_Sans.className}>
+    <html lang={locale} className={merriweather_Sans.className}>
       <body>
         <NextIntlClientProvider messages={messages}>
           <HeaderComponent />
