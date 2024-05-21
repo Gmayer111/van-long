@@ -25,6 +25,7 @@
     font-weight: 300;
     line-height: 2rem;
     word-spacing: 1rem;
+    white-space: pre-line;
   }
 
   section:first-child > div:not(div:first-child) {
@@ -111,10 +112,6 @@
       height: 40%;
       width: 100%;
       text-align: center;
-    }
-
-    br {
-      display: none;
     }
 
     section:first-child > div:not(div:first-child) {

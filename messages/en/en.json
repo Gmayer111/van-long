@@ -1,0 +1,46 @@
+{
+  "Common": {
+    "restaurantName": "Van Long Restaurant",
+    "shortRestaurantDescription": "Traditional Vietnamese cuisine",
+    "menuNavigation": "MENU",
+    "contactNavigation": "FIND US"
+  },
+  "Header": {
+    "Navigation": {
+      "home": "HOME",
+      "restaurant": "RESTAURANT"
+    }
+  },
+  "HomePage": {
+    "mainParagraph": "Located in the 13th district of Paris since 1992, from rue Pascal to rue du Champ de l'Alouette, our traditional Vietnamese restaurant welcomes you in a simple and warm setting. All our dishes are prepared on the spot, using fresh produce, and will remind you of the subtle flavours of Vietnamese cuisine."
+  },
+  "ContactPage": {
+    "restaurantInfos": "GENERAL \n INFORMATION",
+    "restaurantName": "Van Long Restaurant",
+    "openingHours": "Opening hours",
+    "weekly": "From Monday to Friday :",
+    "lunchTime": "From 11:30AM to 2:30PM",
+    "dinner": "From 7PM to 10PM",
+    "closeTime": "Saturday and Sunday : Closed",
+    "itinerary": "Itinerary"
+  },
+  "Footer": {
+    "openingHours": "OPENING HOURS",
+    "lunch": "Lunch",
+    "dinner": "Dinner",
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "close": "Closed",
+    "webSiteCreated": "Created by Van Long Restaurant"
+  },
+  "ModalComponent": {
+    "takeAway": "Take away",
+    "mainParagraph": "You can order by phone at \n<spanLines>01 43 36 05 16</spanLines>\n Don't forget your tote bag ! \nVan Long team.",
+    "visaAccepted": "French credit card accepted from a minimum of 15 EUR"
+  }
+}

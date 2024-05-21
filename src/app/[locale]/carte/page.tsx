@@ -1,20 +1,21 @@
 "use client";
 
 import Image from "next/image";
-import { MenuItems } from "src/data/menu-data";
-import { useWindowSize } from "src/hooks/use-window-size";
 import { merriweather } from "src/utils/font";
+import { MenuItemsComponent } from "./menu-data";
+import { useTranslations } from "next-intl";
 
 const MenuPage = () => {
-  const size = useWindowSize();
+  const data = MenuItemsComponent();
+  const t = useTranslations("MenuPage");
   return (
     <section
       id="menu-section"
       className={`${merriweather.className} menuPageContainer`}
     >
       <div>
-        <h2>Notre carte</h2>
-        {MenuItems.map((menuItem) => (
+        <h2>{t('mainTitle')}</h2>
+        {data.map((menuItem) => (
           <div key={menuItem.title}>
             <div>
               <div className="divider">

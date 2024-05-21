@@ -1,14 +1,16 @@
+import { useTranslations } from "next-intl";
 import React from "react";
 import { merriweather } from "src/utils/font";
 
 const FooterComponent = () => {
+  const t = useTranslations();
   return (
     <footer className={`${merriweather.className} footerContainer`}>
       <div>
         <div>
           <div>
-            <span>RESTAURANT VAN LONG</span>
-            <span>Cuisine Vietnamienne traditionnelle</span>
+            <span>{t("Common.restaurantName").toUpperCase()}</span>
+            <span>{t("Common.shortRestaurantDescription")}</span>
           </div>
           <div>
             <span>9 rue du Champ de l'Aloutette</span>
@@ -17,57 +19,57 @@ const FooterComponent = () => {
           </div>
         </div>
         <div>
-          <span>HORAIRES D'OUVERTURE</span>
+          <span>{t("Footer.openingHours")}</span>
           <table>
             <thead>
               <tr>
                 <td></td>
-                <th>Midi</th>
-                <th>Soir</th>
+                <th>{t("Footer.lunch")}</th>
+                <th>{t("Footer.dinner")}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th>Lundi</th>
+                <th>{t("Footer.monday")}</th>
                 <td>11:30 - 14:30</td>
                 <td>19:00 - 22:00</td>
               </tr>
               <tr>
-                <th>Mardi</th>
+                <th>{t("Footer.tuesday")}</th>
                 <td>11:30 - 14:30</td>
                 <td>19:00 - 22:00</td>
               </tr>
               <tr>
-                <th>Mercredi</th>
+                <th>{t("Footer.wednesday")}</th>
                 <td>11:30 - 14:30</td>
                 <td>19:00 - 22:00</td>
               </tr>
               <tr>
-                <th>Jeudi</th>
+                <th>{t("Footer.thursday")}</th>
                 <td>11:30 - 14:30</td>
                 <td>19:00 - 22:00</td>
               </tr>
               <tr>
-                <th>Vendredi</th>
+                <th>{t("Footer.friday")}</th>
                 <td>11:30 - 14:30</td>
                 <td>19:00 - 22:00</td>
               </tr>
               <tr>
-                <th>Samedi</th>
-                <td>Fermé</td>
-                <td>Fermé</td>
+                <th>{t("Footer.saturday")}</th>
+                <td>{t("Footer.close")}</td>
+                <td>{t("Footer.close")}</td>
               </tr>
               <tr>
-                <th>Dimanche</th>
-                <td>Fermé</td>
-                <td>Fermé</td>
+                <th>{t("Footer.sunday")}</th>
+                <td>{t("Footer.close")}</td>
+                <td>{t("Footer.close")}</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
       <div>
-        <span>Créé par Restaurant Van Long</span>
+        <span>{t("Footer.webSiteCreated")}</span>
       </div>
     </footer>
   );

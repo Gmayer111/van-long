@@ -10,6 +10,7 @@
   height: 80px;
   transition: height 0.2s;
   z-index: 100;
+  color: #fff;
 
   .menuContainer {
     display: flex;
@@ -18,7 +19,7 @@
     width: 100%;
   }
 
-  .menuContainer ul {
+  .menuContainer > ul {
     position: absolute;
     display: flex;
     justify-content: space-around;
@@ -27,10 +28,43 @@
     width: 70%;
   }
 
+  .menuContainer div > ul {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50px;
+  }
+
+  .menuContainer div > ul li {
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .menuContainer div > ul li:hover {
+    font-weight: 900;
+  }
+
+  .menuContainer div > ul::after {
+    content: "";
+    position: absolute;
+    height: 20%;
+    width: 1px;
+    background-color: #fff;
+  }
+
   a {
     position: relative;
     text-decoration: none;
-    color: white;
+    color: #fff;
     font-size: 0.7rem;
     letter-spacing: 0.1rem;
   }
@@ -40,7 +74,7 @@
     position: absolute;
     width: 0;
     height: 1px;
-    background-color: white;
+    background-color: #fff;
     bottom: 0;
     left: 0;
     transition: width 0.2s;
@@ -85,11 +119,21 @@
     .menuContainer {
       position: absolute;
       height: 0;
+      justify-content: flex-end;
     }
 
     ul,
     li {
       display: none;
+    }
+
+    .menuContainer div > ul {
+      right: 15px;
+      position: relative;
+    }
+
+    .menuContainer div > ul::after {
+      height: 100%;
     }
 
     .responsiveMenuContainer {
