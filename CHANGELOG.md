@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.4.0](https://github.com/Gmayer111/van-long/compare/v1.3.0...v1.4.0) (2024-05-22)
+
+
+### Features
+
+* add next-intl ([#44](https://github.com/Gmayer111/van-long/issues/44)) ([2815e3b](https://github.com/Gmayer111/van-long/commit/2815e3bd035f805217ae03e8ae958d87d2721066))
+
+
+### Bug Fixes
+
+* add default fr locale ([#48](https://github.com/Gmayer111/van-long/issues/48)) ([808fedc](https://github.com/Gmayer111/van-long/commit/808fedc08fbb23953a521c9a0feb93f2fa2c1ae5))
+
 ## [1.3.0](https://github.com/Gmayer111/van-long/compare/v1.2.1...v1.3.0) (2024-05-13)
 
 
