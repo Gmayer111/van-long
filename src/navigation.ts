@@ -4,9 +4,11 @@ import {
 } from "next-intl/navigation";
 import { locales } from "./types/locales";
 
-export const localePrefix = "always"; // Default
+export const localePrefix = "always";
 
 export const pathnames = {
+  "/": "/",
+  "/contact": "/contact",
   "/carte": {
     fr: "/carte",
     en: "/menu",
