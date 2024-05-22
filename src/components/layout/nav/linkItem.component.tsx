@@ -20,10 +20,6 @@ export const LinkItemComponent = ({
   ) => {
     e.preventDefault();
     const href = e.currentTarget.href
-      // .replace(
-      //   /(http:\/\/|https:\/\/)?[a-zA-Z0-9]{2,}(\.[a-zA-Z0-9]{2,})(\.[a-zA-Z0-9]{2,})?/,
-      //   ""
-      // )
       .replace("http://localhost:3000", "")
       .split("#");
 
