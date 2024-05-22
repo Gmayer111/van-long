@@ -3,22 +3,19 @@
 import { VanLongLogo } from "public/assets/logos/van-long";
 import { TLinkItemList } from "src/types/nav";
 import { LinkItemComponent } from "./linkItem.component";
-import { useWindowSize } from "src/hooks/use-window-size";
 import { useEffect, useState } from "react";
 import MenuIcon from "public/assets/icons/menu-icon";
 import CloseIcon from "public/assets/icons/close-icon";
 import { merriweather } from "src/utils/font";
 import { useTranslations } from "next-intl";
-import { locales } from "src/types/locales";
-import { useRouter } from "next/navigation";
-import { usePathname } from "src/navigation";
+import { Link, usePathname } from "src/navigation";
+import { useWindowSize } from "src/hooks/use-window-size";
 
 export const NavComponent = () => {
   const size = useWindowSize();
   const t = useTranslations();
   const [menuSize, setMenuSize] = useState(false);
-  let path = usePathname();
-  let router = useRouter();
+  let pathName = usePathname();
 
   const [displayResponsiveMenu, setDisplayResponsiveMenu] = useState(false);
 
@@ -102,13 +99,12 @@ export const NavComponent = () => {
         </ul>
         {!displayResponsiveMenu && (
           <div>
-            <ul>
-              {locales.map((locale) => (
-                <li onClick={() => router.push(`/${locale}${path}`)}>
-                  {locale.toUpperCase()}
-                </li>
-              ))}
-            </ul>
+            <Link href={pathName} locale="fr">
+              FR
+            </Link>
+            <Link href={pathName} locale="en">
+              EN
+            </Link>
           </div>
         )}
       </div>

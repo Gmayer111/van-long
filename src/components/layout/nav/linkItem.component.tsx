@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { TLabelNavValues, TLinkItemList } from "src/types/nav";
+import { usePathname, useRouter } from "src/navigation";
+import { TLabelNavValues, TLinkItemList, TPathnames } from "src/types/nav";
 
 type TLinkItemComponentProps = TLinkItemList & {
   isResponsive?: boolean;
@@ -20,10 +20,14 @@ export const LinkItemComponent = ({
   ) => {
     e.preventDefault();
     const href = e.currentTarget.href
+      // .replace(
+      //   /(http:\/\/|https:\/\/)?[a-zA-Z0-9]{2,}(\.[a-zA-Z0-9]{2,})(\.[a-zA-Z0-9]{2,})?/,
+      //   ""
+      // )
       .replace("http://localhost:3000", "")
       .split("#");
 
-    const path = href[0];
+    const path = href[0] as TPathnames;
     const id = href[1];
     router.push(path!);
     document.getElementById(id!)?.scrollIntoView({
@@ -36,19 +40,10 @@ export const LinkItemComponent = ({
     labelValue: TLabelNavValues,
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) => {
-    switch (labelValue) {
-      case "ACCUEIL" || "HOME":
-        setDisplayResponsiveMenu(false);
-        break;
-      case "LE RESTAURANT" || "RESTAURANT":
-      case "LA CARTE" || "MENU":
-      case "NOUS TROUVER" || "FIND US":
-        handleScrollToId(e);
-        break;
-
-      default:
-        setDisplayResponsiveMenu(false);
-        break;
+    if (labelValue === "ACCUEIL" || labelValue === "HOME") {
+      setDisplayResponsiveMenu(false);
+    } else {
+      handleScrollToId(e);
     }
   };
 

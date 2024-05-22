@@ -4,20 +4,20 @@ import HeaderImg from "public/assets/images/header-img.jpg";
 import { merriweather } from "src/utils/font";
 import { NavComponent } from "../nav/nav.component";
 import HeaderTitleComponent from "./header-title.component";
-import { usePathname } from "next/navigation";
 import { THeaderTitles } from "src/types/header";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
+import { usePathname } from "src/navigation";
+import { TPathnames } from "src/types/nav";
 
 const HeaderComponent = () => {
   const currentPath = usePathname();
-  const locale = useLocale();
 
   const t = useTranslations();
 
-  const HeaderTitles: { [key: string]: THeaderTitles | string } = {
-    [`/${locale}`]: t("Common.restaurantName").toUpperCase(),
-    [locale === "fr" ? "/fr/carte" : "/en/menu"]: t("Common.menuNavigation"),
-    [`/${locale}/contact`]: t("Common.contactNavigation"),
+  const HeaderTitles: { [key in TPathnames]: THeaderTitles | string } = {
+    "/": t("Common.restaurantName").toUpperCase(),
+    "/carte": t("Common.menuNavigation"),
+    "/contact": t("Common.contactNavigation"),
   };
 
   return (
