@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/Gmayer111/van-long/compare/v1.4.0...v1.4.1) (2024-05-22)
+
+
+### Bug Fixes
+
+* remove console log ([#49](https://github.com/Gmayer111/van-long/issues/49)) ([0aa6d74](https://github.com/Gmayer111/van-long/commit/0aa6d74a54af2fa409b503ffbd755f8b0b07d8d0))
+
 ## [1.4.0](https://github.com/Gmayer111/van-long/compare/v1.3.0...v1.4.0) (2024-05-22)
 
 
