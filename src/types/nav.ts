@@ -14,3 +14,5 @@ export type TLinkItemList = {
   label: string | ReactNode;
   path: string;
 };
+
+export type TPathnames = "/" | "/contact" | "/carte";

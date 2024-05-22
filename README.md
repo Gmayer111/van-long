@@ -1,10 +1,6 @@
 # Restaurant Van Long
 
-Van Long restaurant Website located in Paris, 13th district.
-
-## Problem
-
-Currently built with Wordpress, the aim of this development is to migrate to NextJS.
+Van Long restaurant located in Paris, 13th district.
 
 ## Tech stack
 
@@ -13,8 +9,7 @@ Currently built with Wordpress, the aim of this development is to migrate to Nex
 
 ## How to run
 
-1. check node version, sould be >= node v18
-2. yarn install && yarn dev
+1. yarn install && yarn dev
 
 ## Actual URL Link
 
