@@ -18,11 +18,11 @@ export const MenuItemsComponent = () => {
       ],
       items: [
         {
-          label: t("starters.nem.label"),
+          label: t("starters.springRolls.label"),
           price: "5€00",
         },
         {
-          label: t("starters.springRolls.label"),
+          label: t("starters.nem.label"),
           price: "7€00",
         },
         {
