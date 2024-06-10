@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.2](https://github.com/Gmayer111/van-long/compare/v1.4.1...v1.4.2) (2024-06-10)
+
+
+### Bug Fixes
+
+* starters prices adjustment ([#51](https://github.com/Gmayer111/van-long/issues/51)) ([6e33bf7](https://github.com/Gmayer111/van-long/commit/6e33bf704e3b8c345a7e9db4d4a1c7ee7b6bd28e))
+
 ## [1.4.1](https://github.com/Gmayer111/van-long/compare/v1.4.0...v1.4.1) (2024-05-22)
 
 
