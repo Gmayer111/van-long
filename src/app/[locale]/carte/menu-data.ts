@@ -81,15 +81,15 @@ export const MenuItemsComponent = () => {
         },
         {
           label: t("soups.saigoneseSoup"),
-          price: "10€50",
+          price: "11€00",
         },
         {
           label: t("soups.pho.label"),
-          price: "11€80",
+          price: "12€00",
         },
         {
           label: t("soups.tamarindSoup.label"),
-          price: "10€50",
+          price: "10€80",
         },
       ],
     },
@@ -312,7 +312,7 @@ export const MenuItemsComponent = () => {
         },
         {
           label: t("extra.cantoneseRice"),
-          price: "7€50",
+          price: "7€80",
         },
         {
           label: t("extra.plainFriedNoodles"),
@@ -396,7 +396,7 @@ export const MenuItemsComponent = () => {
       items: [
         {
           label: t("drinks.coffee"),
-          price: "2€00",
+          price: "2€20",
         },
         {
           label: t("drinks.jasminTea"),
