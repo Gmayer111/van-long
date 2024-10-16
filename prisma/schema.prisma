@@ -12,3 +12,34 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model DishService {
+  id        Int       @id @default(autoincrement())
+  title     String
+  dishs     Dish[]
+  pictures  Picture[]
+  updatedAt DateTime  @updatedAt
+  createdAt DateTime  @default(now())
+}
+
+model Dish {
+  id            Int         @id @default(autoincrement())
+  label         String      @unique
+  price         Int
+  DishService   DishService @relation(fields: [dishServiceId], references: [id])
+  dishServiceId Int
+  updatedAt     DateTime    @updatedAt
+  createdAt     DateTime    @default(now())
+
+  @@index([label])
+}
+
+model Picture {
+  id            Int          @id @default(autoincrement())
+  imageUrl      String
+  description   String
+  DishService   DishService? @relation(fields: [dishServiceId], references: [id])
+  dishServiceId Int?
+  updatedAt     DateTime     @updatedAt
+  createdAt     DateTime     @default(now())
+}
