@@ -1,5 +1,4 @@
 import React from "react";
-import { FieldValues, RegisterOptions } from "react-hook-form";
 
 export type TFields = {
   items: (TFieldItem & TInputForm & TSelectForm)[];
@@ -13,7 +12,6 @@ export type TFieldItem = {
   disabled?: boolean;
   label?: string;
   errorMessage?: string;
-  registerOptions?: RegisterOptions<FieldValues, string>;
 };
 
 export type TFieldElement = "input" | "select" | "multi-select" | "textarea";
