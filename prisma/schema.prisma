@@ -1,0 +1,46 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+model DishService {
+  id        Int       @id @default(autoincrement())
+  title     String
+  dishs     Dish[]
+  pictures  Picture[]
+  updatedAt DateTime  @updatedAt
+  createdAt DateTime  @default(now())
+}
+
+model Dish {
+  id            Int         @id @default(autoincrement())
+  label         String      @unique
+  price         Int
+  DishService   DishService @relation(fields: [dishServiceId], references: [id])
+  dishServiceId Int
+  updatedAt     DateTime    @updatedAt
+  createdAt     DateTime    @default(now())
+
+  @@index([label])
+}
+
+model Picture {
+  id            Int          @id @default(autoincrement())
+  imageUrl      String
+  description   String
+  DishService   DishService? @relation(fields: [dishServiceId], references: [id])
+  dishServiceId Int?
+  updatedAt     DateTime     @updatedAt
+  createdAt     DateTime     @default(now())
+}
