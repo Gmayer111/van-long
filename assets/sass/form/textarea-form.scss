@@ -1,0 +1,22 @@
+.textarea-container {
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.textarea-form {
+  background-color: $grey-50;
+  border-width: 1px;
+  border-color: $grey-400;
+  color: $grey-900;
+  border-radius: 0.5rem;
+  padding: 0.625rem;
+  display: block;
+  font-size: $text-sm;
+  box-sizing: border-box;
+}
+
+.textarea-form:focus {
+  border-color: transparent;
+}

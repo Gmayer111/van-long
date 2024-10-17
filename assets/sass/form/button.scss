@@ -1,0 +1,60 @@
+.button-form {
+  color: white;
+  background-color: $primary-600;
+  border-color: $primary-600;
+  border-radius: 0.5rem;
+  text-align: center;
+  padding: 0.625rem 1.25rem;
+  font-weight: $font-medium;
+  height: min-content;
+  width: max-content;
+  cursor: pointer;
+  box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+    rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0;
+  transition: all 0.2s, box-shadow 0.08s ease-in;
+}
+
+.button-form:hover {
+  background-color: $primary-700;
+}
+
+.button-form:focus {
+  box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+    rgba(50, 50, 93, 0.2) 0 6px 15px 0, rgba(0, 0, 0, 0.1) 0 2px 2px 0,
+    rgba(50, 151, 211, 0.3) 0 0 0 4px;
+  outline: none;
+}
+
+.button-form:disabled {
+  cursor: default;
+  background-color: #a3c0f0;
+}
+
+.button-form svg {
+  width: 0.625rem;
+  height: 0.625rem;
+  margin-inline-start: 0.75rem;
+}
+
+.button-container .neutral {
+  color: $grey-500;
+  border-color: $grey-200;
+  box-shadow: none;
+  border-width: 1px;
+  background-color: #fff;
+}
+
+.button-container .neutral:hover {
+  background-color: $grey-100;
+}
+
+.button-container .alert {
+  background-color: $red-600;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.button-container .alert:hover {
+  background-color: $red-700;
+  border-color: transparent;
+}

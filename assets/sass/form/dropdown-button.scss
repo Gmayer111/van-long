@@ -1,0 +1,62 @@
+.dropwdown-button-container {
+  position: relative;
+}
+
+.dropwdown-icon-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem;
+  font-size: $text-sm;
+  font-weight: $font-medium;
+  text-align: center;
+  color: $grey-500;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.dropwdown-icon-button:hover {
+  color: $grey-800;
+}
+
+.dropwdown-icon-button:focus {
+  outline: none;
+}
+
+.dropwdown-icon-button svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.dropdown-list-container {
+  position: absolute;
+  right: 0;
+  margin: 0px;
+  border-radius: 0.25rem;
+  border-color: $grey-100;
+  width: 11rem;
+  display: block;
+  z-index: 10;
+  background-color: white;
+  border-width: 1px 0 0 0;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+.dropdown-list-container ul {
+  font-size: $text-sm;
+}
+
+.dropdown-list-container ul li {
+  display: block;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.dropdown-list-container ul li:hover {
+  background-color: $grey-100;
+  border-radius: 0.25rem;
+}
+
+tbody tr:last-child td:last-child .dropdown-list-container {
+  bottom: 20px;
+}
