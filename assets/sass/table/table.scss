@@ -1,0 +1,83 @@
+.table-root-container {
+  background-color: white;
+  position: relative;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  overflow: hidden;
+  border-radius: 0.5rem;
+  width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+}
+
+.table-header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  font-size: $text-sm;
+  text-align: left;
+  color: $grey-500;
+}
+
+thead {
+  font-size: $text-sm;
+  color: $grey-700;
+  text-transform: uppercase;
+  background-color: $grey-50;
+  font-weight: $font-bold;
+}
+
+thead tr th {
+  padding: 1rem 1rem;
+}
+
+thead tr th:last-child {
+  text-align: center;
+}
+
+tbody tr {
+  border-bottom: 1px solid $grey-300;
+  cursor: pointer;
+}
+
+tbody tr:hover {
+  background-color: $grey-100;
+}
+
+tbody tr th {
+  padding: 0.75rem 1rem;
+  font-size: $font-medium;
+  color: $grey-900;
+  white-space: nowrap;
+}
+
+tbody tr td {
+  padding: 0.75rem 1rem;
+  vertical-align: middle;
+}
+
+tbody tr td:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0.875rem;
+  // pointer-events: none;
+  // cursor: none;
+}
+
+@media screen and (min-width: 1536px) {
+  .table-root-container {
+    width: 1660px;
+  }
+}
