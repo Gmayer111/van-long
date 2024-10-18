@@ -1,9 +1,9 @@
 import createIntlMiddleware from "next-intl/middleware";
 import { pathnames, localePrefix } from "./navigation";
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 export default async function middleware(request: NextRequest) {
-  const defaultLocale = request.cookies.get("NEXT_LOCALE")?.value || "fr";
+  const defaultLocale = "fr";
 
   const handleI18nRouting = createIntlMiddleware({
     locales: ["fr", "en"],
@@ -17,5 +17,5 @@ export default async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/(fr|en)/:path*", "/((?!_next|_vercel|.*\\..*).*)"],
+  matcher: ["/", "/(fr|en)/:path*", "/((?!admin|_next|_vercel|.*\\..*).*)"],
 };
