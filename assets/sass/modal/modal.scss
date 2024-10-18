@@ -1,0 +1,99 @@
+.modal-container {
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(42, 43, 44, 0.5);
+}
+
+.modal-container:nth-child(1) {
+  position: relative;
+  padding: 1rem;
+  width: 100%;
+  max-width: 42rem;
+  height: 100%;
+}
+
+.modal-content-container {
+  opacity: 1;
+  position: relative;
+  padding: 1rem;
+  width: 42rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+.modal-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  border-bottom: 1px solid $grey-200;
+}
+
+.modal-header-container h3 {
+  font-size: $text-lg;
+  font-weight: $font-semibold;
+  color: $grey-900;
+}
+
+.modal-header-container h3 button svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.cancel-modal-container {
+  width: 26rem;
+}
+
+.cancel-content-modal-container p {
+  margin-bottom: 1rem;
+  color: $grey-500;
+  text-align: center;
+}
+
+.cancel-content-modal-container div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.modal-container .cancel-modal-container .modal-header-container {
+  border-bottom: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 0;
+}
+
+.trashIcon-modal-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.trashIcon-modal-container svg {
+  width: 2.75rem;
+  height: 2.75rem;
+  color: $grey-400;
+}
+
+.buttons-action-modal-container {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  justify-content: space-between;
+}
