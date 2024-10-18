@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.6.0](https://github.com/Gmayer111/van-long/compare/v1.5.0...v1.6.0) (2024-10-18)
+
+
+### Features
+
+* add admin dashboard page ([#61](https://github.com/Gmayer111/van-long/issues/61)) ([16f5c09](https://github.com/Gmayer111/van-long/commit/16f5c097ac97d603435ff5ac7979590be7a06900))
+* create dashboard and dashboard sidebar component ([#59](https://github.com/Gmayer111/van-long/issues/59)) ([8bf7606](https://github.com/Gmayer111/van-long/commit/8bf7606ca163040fdaeaa2eabe4e4d1a1a834123))
+* create form and fields components ([#58](https://github.com/Gmayer111/van-long/issues/58)) ([ea5fcb5](https://github.com/Gmayer111/van-long/commit/ea5fcb5cc6431da664bf25f9e2da6afbdb5e27de))
+* create modal dashboard component ([#60](https://github.com/Gmayer111/van-long/issues/60)) ([17494a8](https://github.com/Gmayer111/van-long/commit/17494a8f2df308fe6b661ef5ac15ea1d5e6eb8c7))
+* create table component ([#57](https://github.com/Gmayer111/van-long/issues/57)) ([8090f9a](https://github.com/Gmayer111/van-long/commit/8090f9ad4510c3325d92db78199344c990666717))
+* setup prisma & create db ([#55](https://github.com/Gmayer111/van-long/issues/55)) ([680126c](https://github.com/Gmayer111/van-long/commit/680126c54a3b94250ae2049a0f696f79fcb587ae))
+
 ## [1.5.0](https://github.com/Gmayer111/van-long/compare/v1.4.2...v1.5.0) (2024-08-26)
 
 
