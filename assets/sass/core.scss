@@ -1,4 +1,5 @@
 @import "./utilities/variables";
+@import "./sidebar/dashboard-sidebar.scss";
 @import "./body.scss";
 @import "./header.scss";
 @import "./nav.scss";
@@ -14,5 +15,6 @@
 @import "./form/input-form.scss";
 @import "./form/select-form.scss";
 @import "./form/textarea-form.scss";
-@import "./sidebar/dashboard-sidebar.scss";
 @import "./modal/modal.scss";
+@import "./layout/admin-layout.scss";
+@import "./layout/dashboard-layout.scss";
