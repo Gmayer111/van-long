@@ -9,6 +9,9 @@
     "lint": "next lint",
     "postinstall": "prisma generate && prisma migrate deploy"
   },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+  },
   "engines": {
     "yarn": "^1.22.17",
     "npm": "please-use-yarn"
@@ -23,7 +26,8 @@
     "react": "^18",
     "react-dom": "^18",
     "react-responsive-carousel": "^3.2.23",
-    "sass": "^1.70.0"
+    "sass": "^1.70.0",
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
     "@types/node": "^20",
