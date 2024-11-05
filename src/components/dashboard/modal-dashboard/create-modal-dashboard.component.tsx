@@ -12,7 +12,7 @@ export type TCreateModalProps = Pick<
   modalFields: TFields[];
   displayModal: boolean;
   isEditModal?: boolean;
-  handleSubmit: () => void;
+  handleAction: (formData: FormData) => void;
 };
 
 const CreateModalDashboard = ({
@@ -21,13 +21,13 @@ const CreateModalDashboard = ({
   closeModal,
   modalHeaderTitle,
   isEditModal,
-  handleSubmit,
+  handleAction,
 }: TCreateModalProps) => {
   if (!displayModal) return null;
 
   return (
     <Modal closeModal={closeModal} modalHeaderTitle={modalHeaderTitle}>
-      <FormRoot onSubmit={handleSubmit} isModalForm={true}>
+      <FormRoot handleAction={handleAction} isModalForm={true}>
         <FormItems fieldItems={modalFields} />
         <div className="buttons-action-modal-container">
           <ButtonForm
