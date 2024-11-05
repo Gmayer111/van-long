@@ -3,7 +3,7 @@ import Button from "./form-fields/button/button-form.component";
 
 export type TFormRootProps = {
   children: React.ReactNode;
-  onSubmit: () => void;
+  handleAction: (formData: FormData) => void;
   title?: string;
   paragraph?: string;
   isLoading?: boolean;
@@ -14,12 +14,12 @@ const FormRoot = ({
   children,
   title,
   paragraph,
-  onSubmit,
+  handleAction,
   isLoading = false,
   isModalForm,
 }: TFormRootProps) => {
   return (
-    <form onSubmit={onSubmit}>
+    <form action={handleAction}>
       <div className="form-header-container">
         <h1>{title}</h1>
         {paragraph && <p>{paragraph}</p>}
