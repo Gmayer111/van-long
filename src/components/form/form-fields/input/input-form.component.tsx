@@ -1,4 +1,4 @@
-import React, { forwardRef, useId } from "react";
+import React, { forwardRef, useId, useState } from "react";
 import { TFieldItem, TInputForm } from "../../form";
 import LabelForm from "../../common/label-form.component";
 import ErrorMessage from "../../common/error-message.component";
@@ -17,10 +17,11 @@ const InputForm = forwardRef<
       inputType,
       label,
       errorMessage,
-      ...otherProps
+      defaultValue,
     },
     ref
   ) => {
+    const [inputDefaultValue, setInputDefaultValue] = useState(defaultValue);
     const id = useId();
 
     return (
@@ -35,7 +36,8 @@ const InputForm = forwardRef<
           ref={ref}
           className="input-form"
           aria-label={label}
-          {...otherProps}
+          onChange={(e) => setInputDefaultValue(e.target.value)}
+          value={inputDefaultValue}
         />
         <ErrorMessage errorMessage={errorMessage} />
       </div>

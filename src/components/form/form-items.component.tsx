@@ -18,6 +18,7 @@ const FormItems = ({ fieldItems }: TFormItemsProps) => {
               key={item.name}
               inputType={item.inputType}
               placeholder={item.placeholder}
+              defaultValue={item.defaultValue}
               label={item.label}
               name={item.name}
             />

@@ -18,6 +18,7 @@ export type TFieldElement = "input" | "select" | "multi-select" | "textarea";
 
 export type TInputForm = {
   inputType?: TFieldType;
+  defaultValue?: string | number;
 };
 
 export type TFieldType =
