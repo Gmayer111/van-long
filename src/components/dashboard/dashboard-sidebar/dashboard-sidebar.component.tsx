@@ -2,15 +2,17 @@
 import Link from "next/link";
 import React, { ReactNode } from "react";
 
-type TSidebarItems = {
+export type TSidebarItems = {
   path: string;
   icon: ReactNode;
   content: string;
 };
 
-const sidebarItems: Array<TSidebarItems> = [];
+export type TDashboardSidebarProps = {
+  sidebarItems: Array<TSidebarItems>;
+};
 
-const DashboardSidebar = () => {
+const DashboardSidebar = ({ sidebarItems }: TDashboardSidebarProps) => {
   return (
     <aside className="dashboard-sidebar-container">
       <div>
