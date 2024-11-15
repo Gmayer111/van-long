@@ -26,13 +26,11 @@ model DishService {
 model Dish {
   id            Int         @id @default(autoincrement())
   label         String      @unique
-  price         Int
+  price         Decimal
   DishService   DishService @relation(fields: [dishServiceId], references: [id])
   dishServiceId Int
   updatedAt     DateTime    @updatedAt
   createdAt     DateTime    @default(now())
-
-  @@index([label])
 }
 
 model Picture {
