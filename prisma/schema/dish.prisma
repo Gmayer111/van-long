@@ -1,0 +1,9 @@
+model Dish {
+    id            Int         @id @default(autoincrement())
+    label         String      @unique
+    price         Float
+    DishService   DishService @relation(fields: [dishServiceId], references: [id])
+    dishServiceId Int
+    updatedAt     DateTime    @updatedAt
+    createdAt     DateTime    @default(now())
+}

@@ -1,0 +1,9 @@
+model Picture {
+    id            Int          @id @default(autoincrement())
+    imageUrl      String
+    description   String
+    DishService   DishService? @relation(fields: [dishServiceId], references: [id])
+    dishServiceId Int?
+    updatedAt     DateTime     @updatedAt
+    createdAt     DateTime     @default(now())
+}
