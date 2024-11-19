@@ -5,7 +5,7 @@ import React, { ReactNode } from "react";
 export type TTableProps<T, K extends keyof T> = {
   columns: Array<TColumnDefinitionType<T, K>>;
   data: Array<T>;
-  selectedItem: (value: any) => void;
+  selectedItem: (value: T) => void;
   handleAction: (value: any) => void;
 };
 
