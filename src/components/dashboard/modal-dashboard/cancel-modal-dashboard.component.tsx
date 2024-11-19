@@ -1,41 +1,41 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import Modal, { TModalProps } from "./modal.component";
 import ButtonForm from "src/components/form/form-fields/button/button-form.component";
 
-export type TCreateModalProps = Pick<
-  TModalProps,
-  "closeModal" | "modalHeaderTitle"
-> & {
-  displayModal: boolean;
+export type TCreateModalProps = Pick<TModalProps, "modalHeaderTitle"> & {
   handleDeleteItem: VoidFunction;
+  isDeleteModal: string;
+  isCloseModal: Dispatch<SetStateAction<string>>;
 };
 
 const CancelModalDashboard = ({
-  displayModal,
-  closeModal,
+  isCloseModal,
   modalHeaderTitle,
+  isDeleteModal,
   handleDeleteItem,
 }: TCreateModalProps) => {
-  if (!displayModal) return null;
+  if (!isDeleteModal) return null;
 
   return (
-    <Modal
-      isCancelModal={true}
-      closeModal={closeModal}
-      modalHeaderTitle={modalHeaderTitle}
-    >
-      <div className="cancel-content-modal-container">
-        <p>Etes-vous sur de vouloir supprimer cet article ?</p>
-        <div>
-          <ButtonForm colorButton="neutral" onClick={closeModal}>
-            Non, merci
-          </ButtonForm>
-          <ButtonForm colorButton="alert" onClick={handleDeleteItem}>
-            Oui, je suis sur
-          </ButtonForm>
+    isDeleteModal && (
+      <Modal
+        isCancelModal={true}
+        closeModal={isCloseModal}
+        modalHeaderTitle={modalHeaderTitle}
+      >
+        <div className="cancel-content-modal-container">
+          <p>Etes-vous sur de vouloir supprimer cet article ?</p>
+          <div>
+            <ButtonForm colorButton="neutral" onClick={() => isCloseModal("")}>
+              Non, merci
+            </ButtonForm>
+            <ButtonForm colorButton="alert" onClick={handleDeleteItem}>
+              Oui, je suis sur
+            </ButtonForm>
+          </div>
         </div>
-      </div>
-    </Modal>
+      </Modal>
+    )
   );
 };
 
