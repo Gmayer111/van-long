@@ -1,0 +1,8 @@
+model DishService {
+    id        Int       @id @default(autoincrement())
+    title     String
+    dishs     Dish[]
+    pictures  Picture[]
+    updatedAt DateTime  @updatedAt
+    createdAt DateTime  @default(now())
+}
