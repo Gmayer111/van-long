@@ -1,4 +1,4 @@
-import React, { forwardRef, useId, useState } from "react";
+import React, { forwardRef, useEffect, useId, useState } from "react";
 import { TFieldItem, TInputForm } from "../../form";
 import LabelForm from "../../common/label-form.component";
 import ErrorMessage from "../../common/error-message.component";
@@ -23,6 +23,14 @@ const InputForm = forwardRef<
   ) => {
     const [inputDefaultValue, setInputDefaultValue] = useState(defaultValue);
     const id = useId();
+
+    useEffect(() => {
+      if (defaultValue) {
+        setInputDefaultValue(defaultValue);
+      } else {
+        setInputDefaultValue("");
+      }
+    }, [defaultValue]);
 
     return (
       <div className="input-container">
