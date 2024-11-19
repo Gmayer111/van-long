@@ -1,11 +1,11 @@
-import React, { ReactNode, useRef } from "react";
+import React, { Dispatch, ReactNode, SetStateAction, useRef } from "react";
 import { TrashIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { UseClickOutside } from "src/hooks/use-click-outside";
 import ButtonForm from "src/components/form/form-fields/button/button-form.component";
 
 export type TModalProps = {
   children: ReactNode;
-  closeModal: () => void;
+  closeModal: Dispatch<SetStateAction<string>>;
   modalHeaderTitle?: string;
   isCancelModal?: boolean;
 };
@@ -18,7 +18,11 @@ const Modal = ({
 }: TModalProps) => {
   const modalRef = useRef(null);
 
-  UseClickOutside({ ref: modalRef, callBack: closeModal });
+  const handleCloseModal = () => {
+    closeModal("");
+  };
+
+  UseClickOutside({ ref: modalRef, callBack: handleCloseModal });
   return (
     <div className="modal-container">
       <div>
@@ -30,7 +34,7 @@ const Modal = ({
         >
           <div className="modal-header-container">
             <h3>{modalHeaderTitle}</h3>
-            <ButtonForm hasIconButton={true} onClick={closeModal}>
+            <ButtonForm hasIconButton={true} onClick={handleCloseModal}>
               <XMarkIcon />
             </ButtonForm>
             {isCancelModal && (
