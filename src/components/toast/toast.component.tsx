@@ -8,7 +8,7 @@ export type TToastProps = {
   message: string;
 };
 
-const iconsType = {
+const ICONSTYPE = {
   success: {
     icon: <BellAlertIcon />,
     colorIconClassName: "success-icon",
@@ -29,9 +29,9 @@ export const Toast = ({ message, type }: TToastProps) => {
   return (
     <div className="toast-container" role="alert">
       <div
-        className={`toast-icon-container ${type && iconsType[type].colorIconClassName}`}
+        className={`toast-icon-container ${type && ICONSTYPE[type].colorIconClassName}`}
       >
-        {type && iconsType[type].icon}
+        {type && ICONSTYPE[type].icon}
       </div>
       <div className="toast-content-container">{message}</div>
       <div className="toast-btn-container" aria-label="close">
