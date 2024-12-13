@@ -2,12 +2,7 @@
  * @jest-environment node
  */
 import { Prisma } from "@prisma/client";
-import {
-  createDish,
-  deleteDish,
-  getDishsService,
-  updateDish,
-} from "./dishs.actions";
+import { createDish, deleteDish, updateDish } from "./dishs.actions";
 import { prismaMock } from "prisma/singleton";
 
 jest.mock("next/cache", () => ({
@@ -17,30 +12,6 @@ jest.mock("next/cache", () => ({
 describe("dishs.actions", () => {
   beforeEach(() => {
     jest.restoreAllMocks();
-  });
-
-  describe("when using get all method", () => {
-    const mockDishsService = {
-      id: 1,
-      title: "starters",
-      updatedAt: new Date("01 Jan 1970 00:00:00 GMT"),
-      createdAt: new Date("01 Jan 1970 00:00:00 GMT"),
-    };
-    it("should return all dishs", async () => {
-      prismaMock.dishService.findFirst.mockResolvedValue(mockDishsService);
-
-      const result = await getDishsService("starters");
-
-      expect(prismaMock.dishService.findFirst).toHaveBeenCalledWith({
-        where: {
-          title: "starters",
-        },
-        include: {
-          dishs: true,
-        },
-      });
-      expect(result).toBe(mockDishsService);
-    });
   });
 
   const mockDish = {
