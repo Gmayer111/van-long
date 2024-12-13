@@ -4,17 +4,6 @@ import { Prisma } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 import prisma from "../../../../lib/db";
 
-export async function getDishsService(pathnameParams: string) {
-  return await prisma.dishService.findFirst({
-    where: {
-      title: pathnameParams,
-    },
-    include: {
-      dishs: true,
-    },
-  });
-}
-
 export async function createDish(
   dishServiceId: number,
   formData: FormData,
