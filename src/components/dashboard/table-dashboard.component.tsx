@@ -30,7 +30,8 @@ const TableDashboard = <T, K extends keyof T>({
   handleDeleteModalAction,
   setModalActionForm,
   modalActionForm,
-}: Pick<TTableProps<T, K>, "columns" | "data"> & TTableDashboardProps) => {
+}: Omit<TTableProps<T, K>, "handleAction" | "selectedItem"> &
+  TTableDashboardProps) => {
   const [displayModal, setDisplayModal] = useState("");
   const [isCreateEditModal, setIsCreateEditModal] = useState("");
   const [isDeleteModal, setIsDeleteModal] = useState("");
@@ -77,7 +78,7 @@ const TableDashboard = <T, K extends keyof T>({
   }));
 
   return (
-    <div>
+    <div className="table-dashboard-container">
       <h1>{title}</h1>
       <TableRoot>
         <TableHeader>
