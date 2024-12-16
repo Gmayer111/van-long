@@ -1,28 +1,26 @@
-"use client";
-import { RocketLaunchIcon } from "@heroicons/react/24/solid";
+import { FaceSmileIcon, HeartIcon } from "@heroicons/react/24/solid";
 import React from "react";
-import DashboardSidebar, {
-  TSidebarItems,
-} from "src/components/dashboard/dashboard-sidebar/dashboard-sidebar.component";
-import { ToastProvider } from "../providers/toast.provider";
+import DashboardSidebar from "src/components/dashboard/dashboard-sidebar/dashboard-sidebar.component";
+import { getAllDishServices } from "../actions/dishs-service/dish-services.actions";
+import { ToastProvider } from "src/app/admin/providers/toast-client.provider";
 
 type TDashboardLayout = {
   children: React.ReactNode;
 };
 
-const DashboardLayout = ({ children }: TDashboardLayout) => {
-  const sidebarItems: Array<TSidebarItems> = [
-    {
-      content: "Entrées",
-      path: "/admin/dashboard/starters",
-      icon: <RocketLaunchIcon />,
-    },
-    {
-      content: "Soupes",
-      path: "/admin/dashboard/soup",
-      icon: <RocketLaunchIcon />,
-    },
-  ];
+const DashboardLayout = async ({ children }: TDashboardLayout) => {
+  const dishServices = await getAllDishServices();
+
+  if (!dishServices) return <div>Chargement...</div>;
+
+  const sidebarItems = dishServices.map((dishService, index) => {
+    let alternateIcon = index % 2;
+    return {
+      content: dishService.title,
+      path: `/admin/dashboard/${dishService.title}`,
+      icon: alternateIcon === 0 ? <FaceSmileIcon /> : <HeartIcon />,
+    };
+  });
   return (
     <ToastProvider>
       <div className="dashboard-layout">
