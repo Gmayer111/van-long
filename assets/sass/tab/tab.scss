@@ -1,0 +1,19 @@
+.tab-contaienr {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: $text-sm;
+  font-weight: $font-medium;
+  text-align: center;
+  color: $grey-500;
+  border-bottom: 1px $grey-200;
+}
+
+.tab-list-constainer {
+  margin-left: 1rem;
+  display: inline-block;
+  padding: 1rem;
+  color: $primary-600;
+  background-color: $grey-100;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
