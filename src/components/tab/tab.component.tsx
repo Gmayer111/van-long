@@ -12,7 +12,7 @@ type TTabItem = {
 
 const Tab = ({ tabItems }: TTabProps) => {
   return (
-    <ul className="tab-container">
+    <ul className="tab-container" aria-label="tabitems">
       {tabItems.map((content, index) => (
         <li className="tab-list-constainer" key={`${content}-${index}`}>
           <Link href={content.path}>{content.content}</Link>
