@@ -9,6 +9,7 @@ import {
   deletePicture,
   updatePicture,
 } from "src/app/admin/actions/pictures/pictures.actions";
+import { TTabProps } from "src/components/tab/tab.component";
 
 type TPicture = {
   id: number;
@@ -35,7 +36,8 @@ const PicturesDashboard = ({
   dishServiceTitle,
   pictures,
   dishServiceId,
-}: TPicturesDashboardProps) => {
+  tabItems,
+}: TPicturesDashboardProps & TTabProps) => {
   const [selectedPicture, setSelectedPicture] = useState<TPicture | undefined>(
     undefined
   );
@@ -56,7 +58,7 @@ const PicturesDashboard = ({
       items: [
         {
           fieldElement: "input",
-          inputType: "text",
+          inputType: "file",
           placeholder: "/chemin/vers/image",
           defaultValue: selectedPicture && selectedPicture.imageUrl,
           label: "Url de l'image",
@@ -110,7 +112,10 @@ const PicturesDashboard = ({
 
   const handleDeleteAuthor = async () => {
     if (selectedPicture) {
-      const result = await deletePicture(selectedPicture?.id, dishServiceTitle);
+      const result = await deletePicture(
+        selectedPicture?.id,
+        selectedPicture.imageUrl
+      );
       if (result?.error) {
         showToast({ message: result?.error, type: "alert" });
       } else {
@@ -122,6 +127,7 @@ const PicturesDashboard = ({
 
   return (
     <TableDashboard
+      tabItems={tabItems}
       title={`Les ${dishServiceTitle}`}
       data={pictures as Array<TTableData>}
       fields={fields}

@@ -9,6 +9,7 @@ import CancelModalDashboard from "./modal-dashboard/cancel-modal-dashboard.compo
 import { TFields } from "../form/form";
 import DropdownButton from "../form/form-fields/dropdown-button/dropdown-button.component";
 import { useTitle } from "src/utils/string-formatter";
+import Tab, { TTabProps } from "../tab/tab.component";
 
 export type TTableDashboardProps = {
   title: string;
@@ -30,8 +31,10 @@ const TableDashboard = <T, K extends keyof T>({
   handleDeleteModalAction,
   setModalActionForm,
   modalActionForm,
+  tabItems,
 }: Omit<TTableProps<T, K>, "handleAction" | "selectedItem"> &
-  TTableDashboardProps) => {
+  TTableDashboardProps &
+  TTabProps) => {
   const [displayModal, setDisplayModal] = useState("");
   const [isCreateEditModal, setIsCreateEditModal] = useState("");
   const [isDeleteModal, setIsDeleteModal] = useState("");
@@ -80,6 +83,7 @@ const TableDashboard = <T, K extends keyof T>({
   return (
     <div className="table-dashboard-container">
       <h1>{title}</h1>
+      <Tab tabItems={tabItems} />
       <TableRoot>
         <TableHeader>
           <ButtonForm
@@ -89,6 +93,7 @@ const TableDashboard = <T, K extends keyof T>({
             Ajouter
           </ButtonForm>
         </TableHeader>
+
         <Table
           selectedItem={selectedItem}
           columns={columns}
