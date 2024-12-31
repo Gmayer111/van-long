@@ -45,7 +45,12 @@ const InputForm = forwardRef<
           className="input-form"
           aria-label={label}
           onChange={(e) => setInputDefaultValue(e.target.value)}
-          value={inputDefaultValue}
+          value={inputType !== "file" ? inputDefaultValue : undefined}
+          accept={
+            inputType === "file"
+              ? "image/png, image/jpeg, image/jpg"
+              : undefined
+          }
         />
         <ErrorMessage errorMessage={errorMessage} />
       </div>
