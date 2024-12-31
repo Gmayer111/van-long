@@ -9,6 +9,7 @@ import {
   updateDish,
 } from "src/app/admin/actions/dishs/dishs.actions";
 import { useToast } from "src/app/admin/providers/toast.provider";
+import { TTabProps } from "src/components/tab/tab.component";
 
 type TDish = {
   id: number;
@@ -35,7 +36,8 @@ const DishsDashboard = ({
   dishServiceTitle,
   dishs,
   dishServiceId,
-}: TDishsDashboardProps) => {
+  tabItems,
+}: TDishsDashboardProps & TTabProps) => {
   const [selectedDish, setSelectedDish] = useState<TDish | undefined>(
     undefined
   );
@@ -122,6 +124,7 @@ const DishsDashboard = ({
 
   return (
     <TableDashboard
+      tabItems={tabItems}
       title={`Les ${dishServiceTitle}`}
       data={dishs as Array<TTableData>}
       fields={fields}

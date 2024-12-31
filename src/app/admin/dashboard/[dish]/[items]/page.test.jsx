@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import Page from "./page";
-import StartersDashboard from "src/components/dashboard/starters/starters-dashboard.component";
+import DishsDashboard from "src/components/dashboard/dishs-items/dishs-dashboard.component";
 
 describe("Page", () => {
   const dishs = [
@@ -13,6 +13,16 @@ describe("Page", () => {
       createdAt: new Date("01 Jan 1970 00:00:00 GMT"),
     },
   ];
+  const tabItems = [
+    {
+      content: "dishs",
+      path: `/admin/dashboard/starters/dishs`,
+    },
+    {
+      content: "pictures",
+      path: `/admin/dashboard/starters/pictures`,
+    },
+  ];
   it("should return loading if no data", async () => {
     render(await Page({ params: "starters" }));
     const loading = screen.getByText("Chargement...");
@@ -21,7 +31,8 @@ describe("Page", () => {
 
   it("should return the right title", async () => {
     render(
-      <StartersDashboard
+      <DishsDashboard
+        tabItems={tabItems}
         dishServiceTitle="starters"
         dishServiceId={1}
         dishs={dishs}
