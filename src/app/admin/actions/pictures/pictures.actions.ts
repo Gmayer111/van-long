@@ -3,22 +3,30 @@
 import { Prisma } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 import prisma from "../../../../lib/db";
+import { unlink, writeFile, rename } from "fs/promises";
+import path from "path";
 
 export async function createPicture(
   dishServiceId: number,
   formData: FormData,
-  path?: string
+  urlPath?: string
 ) {
+  const image = formData.get("imageUrl") as File;
+  const buffer = Buffer.from(await image.arrayBuffer());
+  const fileName = image.name.replaceAll(" ", "_");
+  const pathToPicture = path.join(process.cwd(), "public/assets/" + fileName);
+
   try {
+    await writeFile(pathToPicture, buffer as any);
     await prisma.picture.create({
       data: {
-        imageUrl: formData.get("imageUrl") as string,
+        imageUrl: pathToPicture,
         description: formData.get("description") as string,
         dishServiceId,
       },
     });
 
-    revalidatePath(`/admin/dahsboard/${path}`);
+    revalidatePath(`/admin/dahsboard/${urlPath}`);
   } catch (error) {
     if (error instanceof Prisma.PrismaClientKnownRequestError) {
       if (error.code === "P2002") {
@@ -32,9 +40,17 @@ export async function createPicture(
 export async function updatePicture(
   imageUrl: string,
   formData: FormData,
-  path?: string
+  urlPath?: string
 ) {
+  const existingImage = path.join(imageUrl);
+  const image = formData.get("imageUrl") as File;
+  const buffer = Buffer.from(await image.arrayBuffer());
+  const fileName = image.name.replaceAll(" ", "_");
+  const pathToPicture = path.join(process.cwd(), "public/assets/" + fileName);
+
   try {
+    await unlink(existingImage);
+
     await prisma.picture.update({
       where: {
         imageUrl,
@@ -44,7 +60,7 @@ export async function updatePicture(
         description: formData.get("description") as string,
       },
     });
-    revalidatePath(`/admin/dahsboard/${path}`);
+    revalidatePath(`/admin/dahsboard/${urlPath}`);
   } catch (error) {
     if (error instanceof Prisma.PrismaClientKnownRequestError) {
       return { error: error.message };
@@ -52,8 +68,13 @@ export async function updatePicture(
   }
 }
 
-export async function deletePicture(pictureId: number, path?: string) {
+export async function deletePicture(
+  pictureId: number,
+  pathToPicture: string,
+  path?: string
+) {
   try {
+    await unlink(pathToPicture);
     await prisma.picture.delete({
       where: {
         id: pictureId,
