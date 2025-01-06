@@ -1,5 +1,44 @@
 # Changelog
 
+## [1.6.0](https://github.com/Gmayer111/van-long/compare/v1.5.0...v1.6.0) (2025-01-06)
+
+
+### Features
+
+* add admin dashboard page ([#61](https://github.com/Gmayer111/van-long/issues/61)) ([16f5c09](https://github.com/Gmayer111/van-long/commit/16f5c097ac97d603435ff5ac7979590be7a06900))
+* add aria label to tab component ([#82](https://github.com/Gmayer111/van-long/issues/82)) ([171af3c](https://github.com/Gmayer111/van-long/commit/171af3ce89b56f4ac1ae5262833ab3d8a40f6e61))
+* add input default value props ([#65](https://github.com/Gmayer111/van-long/issues/65)) ([7033c9b](https://github.com/Gmayer111/van-long/commit/7033c9b49c38717a9f01514997502a4a0f026bf7))
+* add sidebar items as props ([#68](https://github.com/Gmayer111/van-long/issues/68)) ([6be2efe](https://github.com/Gmayer111/van-long/commit/6be2efe66142bbd07c7a0b1c7e521073479e6dd4))
+* adding routing tab behavior ([#83](https://github.com/Gmayer111/van-long/issues/83)) ([498b261](https://github.com/Gmayer111/van-long/commit/498b2615fe097677c1073e205bf8b4e726d7b416))
+* create dashboard and dashboard sidebar component ([#59](https://github.com/Gmayer111/van-long/issues/59)) ([8bf7606](https://github.com/Gmayer111/van-long/commit/8bf7606ca163040fdaeaa2eabe4e4d1a1a834123))
+* create dish service actions with tests ([#77](https://github.com/Gmayer111/van-long/issues/77)) ([64051fb](https://github.com/Gmayer111/van-long/commit/64051fb464339daf48e8c741565675a39fc9094e))
+* create dishs page ([#75](https://github.com/Gmayer111/van-long/issues/75)) ([5378dd1](https://github.com/Gmayer111/van-long/commit/5378dd186cecfa39b304e06d0f631a6951259f57))
+* create form and fields components ([#58](https://github.com/Gmayer111/van-long/issues/58)) ([ea5fcb5](https://github.com/Gmayer111/van-long/commit/ea5fcb5cc6431da664bf25f9e2da6afbdb5e27de))
+* create modal dashboard component ([#60](https://github.com/Gmayer111/van-long/issues/60)) ([17494a8](https://github.com/Gmayer111/van-long/commit/17494a8f2df308fe6b661ef5ac15ea1d5e6eb8c7))
+* create pictures actions ([#79](https://github.com/Gmayer111/van-long/issues/79)) ([a0491d9](https://github.com/Gmayer111/van-long/commit/a0491d9302ba7f1789f19948ec18282522fe3369))
+* create pictures dashboard component ([#80](https://github.com/Gmayer111/van-long/issues/80)) ([eb974dc](https://github.com/Gmayer111/van-long/commit/eb974dc652c262f9928d16e775e90e1298071c14))
+* create prisma client instance ([#63](https://github.com/Gmayer111/van-long/issues/63)) ([0f5587c](https://github.com/Gmayer111/van-long/commit/0f5587c33b414a1f65f7b3254c779343c81fcf00))
+* create tab component ([#81](https://github.com/Gmayer111/van-long/issues/81)) ([412925d](https://github.com/Gmayer111/van-long/commit/412925df6233b7cff245c30dddb9095d2b68ee2a))
+* create table component ([#57](https://github.com/Gmayer111/van-long/issues/57)) ([8090f9a](https://github.com/Gmayer111/van-long/commit/8090f9ad4510c3325d92db78199344c990666717))
+* create toast component ([#72](https://github.com/Gmayer111/van-long/issues/72)) ([6290823](https://github.com/Gmayer111/van-long/commit/6290823dd0885f733ce398a1969fd8a765db0c26))
+* refacto app and main layouts ([#64](https://github.com/Gmayer111/van-long/issues/64)) ([2f0c873](https://github.com/Gmayer111/van-long/commit/2f0c873db33c7ac6f4499fa15951e3824664078d))
+* refacto dashboard behavior ([#69](https://github.com/Gmayer111/van-long/issues/69)) ([2d7b860](https://github.com/Gmayer111/van-long/commit/2d7b8605df0efb02fc70fb3165c5f2be8b13906d))
+* refacto prisma structure with new migration ([#70](https://github.com/Gmayer111/van-long/issues/70)) ([fd12260](https://github.com/Gmayer111/van-long/commit/fd122604ac87c78fd3d188e0782f5122aae4ca03))
+* refacto sidebar dashboard layout ([#78](https://github.com/Gmayer111/van-long/issues/78)) ([b73d46e](https://github.com/Gmayer111/van-long/commit/b73d46e8c1a4e9f035976e7891c47421a27d6aec))
+* replace submit action form ([#66](https://github.com/Gmayer111/van-long/issues/66)) ([5ab438e](https://github.com/Gmayer111/van-long/commit/5ab438ecd7dbed71ebe9359a53e2627c2a56b3e0))
+* seeding database ([#62](https://github.com/Gmayer111/van-long/issues/62)) ([d292d16](https://github.com/Gmayer111/van-long/commit/d292d16c8981d1b8a8b440a424990d25fa938106))
+* setup prisma & create db ([#55](https://github.com/Gmayer111/van-long/issues/55)) ([680126c](https://github.com/Gmayer111/van-long/commit/680126c54a3b94250ae2049a0f696f79fcb587ae))
+* updating prices ([#89](https://github.com/Gmayer111/van-long/issues/89)) ([2556fd0](https://github.com/Gmayer111/van-long/commit/2556fd03c205d2dadfa64cfa7a105f4c0a517b14))
+
+
+### Bug Fixes
+
+* add toast style to core and replace const typo ([#73](https://github.com/Gmayer111/van-long/issues/73)) ([5426848](https://github.com/Gmayer111/van-long/commit/5426848d647f4435983f6653ebd3cceb120c39b7))
+* change table dashboard props ([#71](https://github.com/Gmayer111/van-long/issues/71)) ([fd6181a](https://github.com/Gmayer111/van-long/commit/fd6181a5e031b1c85dad6a4791a1179c76502907))
+* modify dish price type with migrations ([#67](https://github.com/Gmayer111/van-long/issues/67)) ([b7fe6ea](https://github.com/Gmayer111/van-long/commit/b7fe6eac3d9b49484cefc264f6e82dc88d683d3f))
+* move toast to bottom & add overflow-x to hidden ([#74](https://github.com/Gmayer111/van-long/issues/74)) ([200eba0](https://github.com/Gmayer111/van-long/commit/200eba0c620d848bd2999c81081e3f638c2de237))
+* replace table dashboard props ([#76](https://github.com/Gmayer111/van-long/issues/76)) ([3ae9104](https://github.com/Gmayer111/van-long/commit/3ae9104a8ea452a8e3efc9de72a987e7e574b454))
+
 ## [1.5.0](https://github.com/Gmayer111/van-long/compare/v1.4.2...v1.5.0) (2024-08-26)
 
 
