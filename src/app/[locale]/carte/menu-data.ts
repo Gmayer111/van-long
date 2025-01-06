@@ -50,15 +50,15 @@ export const MenuItemsComponent = () => {
       items: [
         {
           label: t("salads.spicyBeefSalad"),
-          price: "9€80",
+          price: "10€00",
         },
         {
           label: t("salads.prawnsSalad.label"),
-          price: "9€80",
+          price: "10€00",
         },
         {
           label: t("salads.chickenSalad"),
-          price: "9€80",
+          price: "10€00",
         },
       ],
     },
@@ -77,19 +77,19 @@ export const MenuItemsComponent = () => {
       items: [
         {
           label: t("soups.raviolisSoup"),
-          price: "8€00",
+          price: "8€50",
         },
         {
           label: t("soups.saigoneseSoup"),
-          price: "11€00",
+          price: "11€50",
         },
         {
           label: t("soups.pho.label"),
-          price: "12€00",
+          price: "12€50",
         },
         {
           label: t("soups.tamarindSoup.label"),
-          price: "10€80",
+          price: "11€50",
         },
       ],
     },
@@ -98,19 +98,19 @@ export const MenuItemsComponent = () => {
       items: [
         {
           label: t("porkDishes.caramelPork"),
-          price: "13€50",
+          price: "13€80",
         },
         {
           label: t("porkDishes.gingerPork"),
-          price: "13€50",
+          price: "13€80",
         },
         {
           label: t("porkDishes.lemongrassPork"),
-          price: "14€00",
+          price: "14€50",
         },
         {
           label: t("porkDishes.glazedPork"),
-          price: "14€00",
+          price: "14€50",
           extra: t("supplement"),
         },
       ],
@@ -126,15 +126,15 @@ export const MenuItemsComponent = () => {
       items: [
         {
           label: t("chickenDishes.lemongrassChicken"),
-          price: "13€50",
+          price: "13€80",
         },
         {
           label: t("chickenDishes.gingerChicken"),
-          price: "13€50",
+          price: "13€80",
         },
         {
           label: t("chickenDishes.curryChicken.label"),
-          price: "13€50",
+          price: "13€80",
           extra: t("supplement"),
         },
       ],
@@ -150,23 +150,23 @@ export const MenuItemsComponent = () => {
       items: [
         {
           label: t("beefDishes.lemongrassBeef"),
-          price: "14€00",
+          price: "14€30",
         },
         {
           label: t("beefDishes.curryBeef"),
-          price: "14€00",
+          price: "14€30",
         },
         {
           label: t("beefDishes.satayBeef.label"),
-          price: "14€00",
+          price: "14€30",
         },
         {
           label: t("beefDishes.imperialBeef"),
-          price: "14€00",
+          price: "14€30",
         },
         {
           label: t("beefDishes.basilBeef"),
-          price: "14€00",
+          price: "14€30",
           extra: t("supplement"),
         },
       ],
@@ -182,23 +182,23 @@ export const MenuItemsComponent = () => {
       items: [
         {
           label: t("prawnsDishes.caramelPrawns"),
-          price: "14€50",
+          price: "14€80",
         },
         {
           label: t("prawnsDishes.curryPrawns"),
-          price: "14€50",
+          price: "14€80",
         },
         {
           label: t("prawnsDishes.basilPrawns.label"),
-          price: "14€50",
+          price: "14€80",
         },
         {
           label: t("prawnsDishes.spicyPrawns"),
-          price: "14€50",
+          price: "14€80",
         },
         {
           label: t("prawnsDishes.sweetSourPrawns"),
-          price: "14€50",
+          price: "14€80",
           extra: t("supplement"),
         },
       ],
@@ -208,19 +208,19 @@ export const MenuItemsComponent = () => {
       items: [
         {
           label: t("fishesDishes.steamedFishe"),
-          price: "14€50",
+          price: "14€80",
         },
         {
           label: t("fishesDishes.curryFish"),
-          price: "14€50",
+          price: "14€80",
         },
         {
           label: t("fishesDishes.basilFish"),
-          price: "14€50",
+          price: "14€80",
         },
         {
           label: t("fishesDishes.spicyFish"),
-          price: "14€50",
+          price: "14€80",
           extra: t("supplement"),
         },
       ],
@@ -240,31 +240,31 @@ export const MenuItemsComponent = () => {
       items: [
         {
           label: t("specialities.boBun"),
-          price: "11€00",
+          price: "11€50",
         },
         {
           label: t("specialities.largeBoBun"),
-          price: "13€00",
+          price: "13€50",
         },
         {
           label: t("specialities.crispyNoodles"),
-          price: "13€50",
+          price: "13€80",
         },
         {
           label: t("specialities.friedNoodles"),
-          price: "13€50",
+          price: "13€80",
         },
         {
           label: t("specialities.prawnsFriedNoodles"),
-          price: "14€50",
+          price: "14€80",
         },
         {
           label: t("specialities.lucLacBeef"),
-          price: "14€50",
+          price: "14€80",
         },
         {
           label: t("specialities.crispyPork"),
-          price: "14€00",
+          price: "14€50",
         },
         {
           label: t("specialities.spicyDuck"),
@@ -291,15 +291,15 @@ export const MenuItemsComponent = () => {
       items: [
         {
           label: t("grills.grilledPork.label"),
-          price: "13€80",
+          price: "14€50",
         },
         {
           label: t("grills.brochettesPork"),
-          price: "14€00",
+          price: "14€50",
         },
         {
           label: t("grills.brochettesBeef.label"),
-          price: "14€50",
+          price: "14€80",
         },
       ],
     },
@@ -308,7 +308,7 @@ export const MenuItemsComponent = () => {
       items: [
         {
           label: t("extra.rice"),
-          price: "2€50",
+          price: "2€80",
         },
         {
           label: t("extra.cantoneseRice"),
