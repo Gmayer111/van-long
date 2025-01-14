@@ -8,7 +8,7 @@ async function main() {
     const initialDishs: Prisma.DishCreateInput[] = [
       {
         label: `dish-${index}`,
-        price: 7,
+        price: Math.floor(Math.random() * 10 + 1),
         DishService: {
           connectOrCreate: {
             where: {
