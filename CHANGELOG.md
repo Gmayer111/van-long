@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.7.0](https://github.com/Gmayer111/van-long/compare/v1.6.0...v1.7.0) (2025-01-17)
+
+
+### Features
+
+* add random id to dishs seed ([#90](https://github.com/Gmayer111/van-long/issues/90)) ([d45f693](https://github.com/Gmayer111/van-long/commit/d45f693ff474beee1ec85243e4eae3eb208d5ee2))
+* convert pictures with nodejs ([#84](https://github.com/Gmayer111/van-long/issues/84)) ([d5cb7b9](https://github.com/Gmayer111/van-long/commit/d5cb7b9fc351371b2b113beb34cd26bb8a2bcca4))
+* replace imageUrl column table name ([#91](https://github.com/Gmayer111/van-long/issues/91)) ([3ad2b36](https://github.com/Gmayer111/van-long/commit/3ad2b366051c38e117c4996883bee3acd6b91eaf))
+
 ## [1.6.0](https://github.com/Gmayer111/van-long/compare/v1.5.0...v1.6.0) (2025-01-06)
 
 
