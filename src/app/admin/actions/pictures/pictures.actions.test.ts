@@ -20,7 +20,7 @@ describe("pictures.actions", () => {
 
   const mockPicture = {
     id: 1,
-    imageUrl: "/path/to/image",
+    pictureUrl: "/path/to/image",
     description: "Description de l'image",
     dishServiceId: 1,
     updatedAt: new Date("01 Jan 1970 00:00:00 GMT"),
@@ -28,7 +28,7 @@ describe("pictures.actions", () => {
   };
 
   let formData = new FormData();
-  formData.append("imageUrl", mockPicture.imageUrl);
+  formData.append("pictureUrl", mockPicture.pictureUrl);
   formData.append("description", mockPicture.description);
 
   describe("when using create", () => {
@@ -39,7 +39,7 @@ describe("pictures.actions", () => {
 
       expect(prismaMock.picture.create).toHaveBeenCalledWith({
         data: {
-          imageUrl: "/path/to/image",
+          pictureUrl: "/path/to/image",
           description: "Description de l'image",
           dishServiceId: 1,
         },
@@ -81,14 +81,14 @@ describe("pictures.actions", () => {
     it("should update picture", async () => {
       prismaMock.picture.update.mockResolvedValue(mockPicture);
 
-      const result = await updatePicture(mockPicture.imageUrl, formData);
+      const result = await updatePicture(mockPicture.pictureUrl, formData);
 
       expect(prismaMock.picture.update).toHaveBeenCalledWith({
         where: {
-          imageUrl: mockPicture.imageUrl,
+          pictureUrl: mockPicture.pictureUrl,
         },
         data: {
-          imageUrl: "/path/to/image",
+          pictureUrl: "/path/to/image",
           description: "Description de l'image",
         },
       });

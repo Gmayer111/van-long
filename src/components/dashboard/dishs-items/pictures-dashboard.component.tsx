@@ -13,7 +13,7 @@ import { TTabProps } from "src/components/tab/tab.component";
 
 type TPicture = {
   id: number;
-  imageUrl: string;
+  pictureUrl: string;
   description: string;
   dishServiceId?: number | null;
   updatedAt?: Date;
@@ -60,7 +60,7 @@ const PicturesDashboard = ({
           fieldElement: "input",
           inputType: "file",
           placeholder: "/chemin/vers/image",
-          defaultValue: selectedPicture && selectedPicture.imageUrl,
+          defaultValue: selectedPicture && selectedPicture.pictureUrl,
           label: "Url de l'image",
           name: "imageUrl",
         },
@@ -97,7 +97,7 @@ const PicturesDashboard = ({
     }
     if (modalActionForm === "editModal" && selectedPicture) {
       const result = await updatePicture(
-        selectedPicture?.imageUrl,
+        selectedPicture?.pictureUrl,
         formData,
         dishServiceTitle
       );
@@ -114,7 +114,7 @@ const PicturesDashboard = ({
     if (selectedPicture) {
       const result = await deletePicture(
         selectedPicture?.id,
-        selectedPicture.imageUrl
+        selectedPicture.pictureUrl
       );
       if (result?.error) {
         showToast({ message: result?.error, type: "alert" });
@@ -133,7 +133,7 @@ const PicturesDashboard = ({
       fields={fields}
       columns={[
         {
-          key: "imageUrl",
+          key: "pictureUrl",
           header: "URL de l'image",
         },
         {
