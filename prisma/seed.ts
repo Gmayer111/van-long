@@ -31,7 +31,7 @@ async function main() {
 
     const initialPictures: Prisma.PictureCreateInput[] = [
       {
-        imageUrl: `/image-${index}`,
+        pictureUrl: `/image-${index}`,
         description: `description ${index}`,
         DishService: {
           connectOrCreate: {

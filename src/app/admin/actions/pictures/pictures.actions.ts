@@ -12,7 +12,7 @@ export async function createPicture(
   try {
     await prisma.picture.create({
       data: {
-        imageUrl: formData.get("imageUrl") as string,
+        pictureUrl: formData.get("pictureUrl") as string,
         description: formData.get("description") as string,
         dishServiceId,
       },
@@ -30,17 +30,17 @@ export async function createPicture(
 }
 
 export async function updatePicture(
-  imageUrl: string,
+  pictureUrl: string,
   formData: FormData,
   path?: string
 ) {
   try {
     await prisma.picture.update({
       where: {
-        imageUrl,
+        pictureUrl,
       },
       data: {
-        imageUrl: formData.get("imageUrl") as string,
+        pictureUrl: formData.get("pictureUrl") as string,
         description: formData.get("description") as string,
       },
     });
