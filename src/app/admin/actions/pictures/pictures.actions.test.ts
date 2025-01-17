@@ -8,9 +8,17 @@ import {
   deletePicture,
   updatePicture,
 } from "./pictures.actions";
+import { PictureFormatter } from "src/utils/picture-formatter";
+
+import { File } from "@web-std/file";
 
 jest.mock("next/cache", () => ({
   revalidatePath: jest.fn(),
+}));
+
+jest.mock("fs/promises", () => ({
+  unlink: jest.fn(),
+  writeFile: jest.fn(),
 }));
 
 describe("pictures.actions", () => {
@@ -18,9 +26,13 @@ describe("pictures.actions", () => {
     jest.restoreAllMocks();
   });
 
+  const file = new File(["hello"], "hello.jpg", {
+    type: "image/jpg",
+  });
+
   const mockPicture = {
     id: 1,
-    pictureUrl: "/path/to/image",
+    pictureUrl: file,
     description: "Description de l'image",
     dishServiceId: 1,
     updatedAt: new Date("01 Jan 1970 00:00:00 GMT"),
@@ -31,15 +43,22 @@ describe("pictures.actions", () => {
   formData.append("pictureUrl", mockPicture.pictureUrl);
   formData.append("description", mockPicture.description);
 
-  describe("when using create", () => {
+  describe("when using create function", () => {
     it("should create new picture", async () => {
-      prismaMock.picture.create.mockResolvedValue(mockPicture);
+      const picture = await PictureFormatter(mockPicture.pictureUrl);
+
+      const pictureData = {
+        ...mockPicture,
+        pictureUrl: picture.pathToPicture,
+      };
+
+      prismaMock.picture.create.mockResolvedValue(pictureData);
 
       const result = await createPicture(mockPicture.dishServiceId, formData);
 
       expect(prismaMock.picture.create).toHaveBeenCalledWith({
         data: {
-          pictureUrl: "/path/to/image",
+          pictureUrl: "/assets/hello.jpg",
           description: "Description de l'image",
           dishServiceId: 1,
         },
@@ -78,17 +97,23 @@ describe("pictures.actions", () => {
   });
 
   describe("when using update method", () => {
-    it("should update picture", async () => {
-      prismaMock.picture.update.mockResolvedValue(mockPicture);
+    it("should update only picture", async () => {
+      const picture = await PictureFormatter(mockPicture.pictureUrl);
 
-      const result = await updatePicture(mockPicture.pictureUrl, formData);
+      const pictureData = {
+        ...mockPicture,
+        pictureUrl: picture.pathToPicture,
+      };
+      prismaMock.picture.update.mockResolvedValue(pictureData);
+
+      const result = await updatePicture("/assets/hello.jpg", formData);
 
       expect(prismaMock.picture.update).toHaveBeenCalledWith({
         where: {
-          pictureUrl: mockPicture.pictureUrl,
+          pictureUrl: "/assets/hello.jpg",
         },
         data: {
-          pictureUrl: "/path/to/image",
+          pictureUrl: "/assets/hello.jpg",
           description: "Description de l'image",
         },
       });
@@ -106,7 +131,13 @@ describe("pictures.actions", () => {
 
   describe("when using delete method", () => {
     it("should delete picture", async () => {
-      prismaMock.picture.delete.mockResolvedValue(mockPicture);
+      const picture = await PictureFormatter(mockPicture.pictureUrl);
+
+      const pictureData = {
+        ...mockPicture,
+        pictureUrl: picture.pathToPicture,
+      };
+      prismaMock.picture.delete.mockResolvedValue(pictureData);
 
       const result = await deletePicture(mockPicture.id);
 
