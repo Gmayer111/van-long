@@ -62,7 +62,7 @@ const PicturesDashboard = ({
           placeholder: "/chemin/vers/image",
           defaultValue: selectedPicture && selectedPicture.pictureUrl,
           label: "Url de l'image",
-          name: "imageUrl",
+          name: "pictureUrl",
         },
       ],
     },
