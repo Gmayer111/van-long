@@ -13,7 +13,9 @@ export async function createPicture(
   urlPath?: string
 ) {
   const pictureFile = formData.get("pictureUrl") as File;
+  console.log("🚀 ~ pictureFile:", pictureFile);
   const picture = await PictureFormatter(pictureFile);
+  console.log("🚀 ~ picture:", picture);
 
   try {
     await writeFile(picture.pathToJoin, picture.buffer as any);
@@ -32,6 +34,7 @@ export async function createPicture(
         return { error: "Picture already exists" };
       }
     }
+    console.log("🚀 ~ error:", error);
     return { error: "Unknown error" };
   }
 }

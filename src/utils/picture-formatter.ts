@@ -11,7 +11,9 @@ import path from "path";
 export const PictureFormatter = async (pictureToConvert: File) => {
   const buffer = Buffer.from(await pictureToConvert.arrayBuffer());
   const fileName = pictureToConvert.name.replaceAll(" ", "_");
-  const pathToJoin = path.join(process.cwd(), "public/assets/" + fileName);
+  console.log("🚀 ~ PictureFormatter ~ fileName:", fileName);
+  const pathToJoin = path.join(process.cwd(), "src/contents/" + fileName);
+  console.log("🚀 ~ PictureFormatter ~ pathToJoin:", pathToJoin);
   const pathToPicture = pathToJoin
     .split("/")
     .filter(
@@ -19,6 +21,7 @@ export const PictureFormatter = async (pictureToConvert: File) => {
         word.includes("jpg") || word.includes("jpeg") || word === "assets"
     )
     .join("/");
+  console.log("🚀 ~ PictureFormatter ~ pathToPicture:", pathToPicture);
 
   return { pathToJoin, pathToPicture, buffer };
 };
