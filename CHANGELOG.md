@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.8.0](https://github.com/Gmayer111/van-long/compare/v1.7.0...v1.8.0) (2025-02-03)
+
+
+### Features
+
+* add vercel blob method ([#95](https://github.com/Gmayer111/van-long/issues/95)) ([f0faa7f](https://github.com/Gmayer111/van-long/commit/f0faa7f733ddda1e3bc177c155da42503501e8b7))
+* create table cells component ([#94](https://github.com/Gmayer111/van-long/issues/94)) ([22dbdad](https://github.com/Gmayer111/van-long/commit/22dbdada206cafe9cca4ab002a22793f6fc67279))
+
+
+### Bug Fixes
+
+* resole problem with defaultLocale value ([#97](https://github.com/Gmayer111/van-long/issues/97)) ([dda6ac3](https://github.com/Gmayer111/van-long/commit/dda6ac306da2516c7bb90067bfd792d591cb47e3))
+
 ## [1.7.0](https://github.com/Gmayer111/van-long/compare/v1.6.0...v1.7.0) (2025-01-17)
 
 
