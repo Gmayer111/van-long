@@ -19,3 +19,5 @@ export default async function middleware(request: NextRequest) {
 export const config = {
   matcher: ["/", "/(fr|en)/:path*", "/((?!admin|_next|_vercel|.*\\..*).*)"],
 };
+
+export { auth as middleware } from "auth";
