@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.0](https://github.com/Gmayer111/van-long/compare/v1.8.0...v1.9.0) (2025-02-11)
+
+
+### Features
+
+* move actions folder ([#100](https://github.com/Gmayer111/van-long/issues/100)) ([adfa799](https://github.com/Gmayer111/van-long/commit/adfa7994d29db6104b60c4ca860e0fb5d6b2dedf))
+
 ## [1.8.0](https://github.com/Gmayer111/van-long/compare/v1.7.0...v1.8.0) (2025-02-03)
 
 
