@@ -3,10 +3,7 @@
  */
 
 import { prismaMock } from "prisma/singleton";
-import {
-  getAllDishServices,
-  getAllDishsService,
-} from "./dish-services.actions";
+import { getAllDishServices } from "./dish-services.actions";
 
 describe("dish-service.actions", () => {
   beforeEach(() => {
@@ -47,7 +44,7 @@ describe("dish-service.actions", () => {
       };
       prismaMock.dishService.findFirst.mockResolvedValue(mockDishsService);
 
-      const result = await getAllDishsService("starters");
+      const result = await getAllDishServices();
 
       expect(prismaMock.dishService.findFirst).toHaveBeenCalledWith({
         where: {
