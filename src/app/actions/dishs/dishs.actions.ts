@@ -2,7 +2,7 @@
 
 import { Prisma } from "@prisma/client";
 import { revalidatePath } from "next/cache";
-import prisma from "../../../../lib/db";
+import prisma from "src/lib/db";
 
 export async function createDish(
   dishServiceId: number,
