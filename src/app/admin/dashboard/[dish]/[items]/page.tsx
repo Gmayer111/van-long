@@ -1,5 +1,5 @@
+import { getAllDishsPictures } from "src/app/actions/dishs-service/dish-services.actions";
 import DishsDashboard from "src/components/dashboard/dishs-items/dishs-dashboard.component";
-import { getAllDishsPictures } from "src/app/admin/actions/dishs-service/dish-services.actions";
 import PicturesDashboard from "src/components/dashboard/dishs-items/pictures-dashboard.component";
 
 export default async function page({
