@@ -10,8 +10,10 @@ import { merriweather } from "src/utils/font";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "src/navigation";
 import { useWindowSize } from "src/hooks/use-window-size";
+import { useSession } from "src/app/providers/session.provider";
 
 export const NavComponent = () => {
+  const session = useSession();
   const size = useWindowSize();
   const t = useTranslations();
   const [menuSize, setMenuSize] = useState(false);
@@ -19,7 +21,7 @@ export const NavComponent = () => {
 
   const [displayResponsiveMenu, setDisplayResponsiveMenu] = useState(false);
 
-  const linkItems: TLinkItemList[] = [
+  let linkItems: TLinkItemList[] = [
     {
       label: t("Header.Navigation.home"),
       path: "/",
@@ -41,6 +43,13 @@ export const NavComponent = () => {
       path: "/contact/#contact-section",
     },
   ];
+
+  if (session) {
+    linkItems.push({
+      label: t("Common.dashboardNavigation"),
+      path: "/admin/dashboard/starters/dishs",
+    });
+  }
 
   useEffect(() => {
     if (size.width < 768) {
