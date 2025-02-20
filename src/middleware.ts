@@ -1,8 +1,29 @@
 import createIntlMiddleware from "next-intl/middleware";
 import { pathnames, localePrefix } from "./navigation";
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
+import { cookies } from "next/headers";
+import { decrypt } from "./lib/sessions";
 
 export default async function middleware(request: NextRequest) {
+  const path = request.nextUrl.pathname;
+  const isProtectedRoute = path.includes("admin");
+  const cookieToken = (await cookies()).get("session")?.value;
+  const session = await decrypt(cookieToken);
+  const hasEqualToken =
+    request.nextUrl.searchParams.get("token") === cookieToken;
+
+  if (isProtectedRoute && !session?.userId) {
+    return NextResponse.redirect(new URL("/", request.nextUrl));
+  }
+
+  if (
+    session?.userId &&
+    hasEqualToken &&
+    request.nextUrl.pathname.startsWith("/fr/admin")
+  ) {
+    return NextResponse.next();
+  }
+
   const defaultLocale = request.cookies.get("NEXT_LOCALE")?.value || "fr";
 
   const handleI18nRouting = createIntlMiddleware({
@@ -17,9 +38,5 @@ export default async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: [
-    "/",
-    "/(fr|en)/:path*",
-    "/((?!admin|auth|_next|_vercel|.*\\..*).*)",
-  ],
+  matcher: ["/", "/(fr|en)/:path*", "/((?!auth|_next|_vercel|.*\\..*).*)"],
 };
