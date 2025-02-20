@@ -3,7 +3,8 @@
     "restaurantName": "Restaurant Van Long",
     "shortRestaurantDescription": "Cuisine vietnamienne traditionnelle",
     "menuNavigation": "LA CARTE",
-    "contactNavigation": "NOUS TROUVER"
+    "contactNavigation": "NOUS TROUVER",
+    "dashboardNavigation": "DASHBOARD"
   },
   "Header": {
     "Navigation": {

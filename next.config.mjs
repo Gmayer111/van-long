@@ -13,6 +13,14 @@ const nextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: "/(fr|en)/admin/dashboard/:path*",
+        destination: "/admin/dashboard/:path*",
+      },
+    ];
+  },
 };
 
 export default withNextIntl(nextConfig);
