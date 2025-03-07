@@ -1,8 +1,8 @@
 import { FaceSmileIcon, HeartIcon } from "@heroicons/react/24/solid";
 import React from "react";
 import DashboardSidebar from "src/components/dashboard/dashboard-sidebar/dashboard-sidebar.component";
-import { ToastProvider } from "src/app/admin/providers/toast-client.provider";
 import { getAllDishServices } from "src/app/actions/dishs-service/dish-services.actions";
+import { ToastProvider } from "../../providers/toast.provider";
 
 type TDashboardLayout = {
   children: React.ReactNode;
