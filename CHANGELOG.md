@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://github.com/Gmayer111/van-long/compare/v1.9.0...v2.0.0) (2025-03-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* create authentication with magic link ([#99](https://github.com/Gmayer111/van-long/issues/99))
+
+### Features
+
+* create authentication with magic link ([#99](https://github.com/Gmayer111/van-long/issues/99)) ([e209e88](https://github.com/Gmayer111/van-long/commit/e209e88ce9f429f5c7c4efa5c2ff5e1963611873))
+
+
+### Bug Fixes
+
+* move toast provider from admin ([#105](https://github.com/Gmayer111/van-long/issues/105)) ([a0b37e4](https://github.com/Gmayer111/van-long/commit/a0b37e4306408b6bddb5c198737fe8b18267e39d))
+
 ## [1.9.0](https://github.com/Gmayer111/van-long/compare/v1.8.0...v1.9.0) (2025-02-11)
 
 
