@@ -3,7 +3,8 @@
     "restaurantName": "Van Long Restaurant",
     "shortRestaurantDescription": "Traditional Vietnamese cuisine",
     "menuNavigation": "MENU",
-    "contactNavigation": "FIND US"
+    "contactNavigation": "FIND US",
+    "dashboardNavigation": "DASHBOARD"
   },
   "Header": {
     "Navigation": {
