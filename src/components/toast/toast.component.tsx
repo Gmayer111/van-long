@@ -1,7 +1,7 @@
 import { BellAlertIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import React from "react";
 import ButtonForm from "../form/form-fields/button/button-form.component";
-import { useToast } from "src/app/admin/providers/toast.provider";
+import { useToast } from "src/app/[locale]/admin/providers/toast.provider";
 
 export type TToastProps = {
   type: "success" | "alert" | undefined;

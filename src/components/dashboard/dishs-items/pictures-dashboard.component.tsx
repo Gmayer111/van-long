@@ -3,13 +3,13 @@ import React, { useEffect, useState } from "react";
 import { TTableGeneric } from "src/components/table/table.component";
 import { TFields } from "../../form/form";
 import TableDashboard from "../table-dashboard.component";
-import { useToast } from "src/app/admin/providers/toast.provider";
 import { TTabProps } from "src/components/tab/tab.component";
 import {
   createPicture,
   deletePicture,
   updatePicture,
 } from "src/app/actions/pictures/pictures.actions";
+import { useToast } from "src/app/[locale]/admin/providers/toast.provider";
 
 type TPicture = {
   id: number;
