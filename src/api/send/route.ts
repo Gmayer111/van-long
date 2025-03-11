@@ -2,7 +2,6 @@ import { Resend } from "resend";
 import EmailTemplate from "src/components/email/email-template.component";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-// console.log("🚀 ~ resend:", resend);
 
 export type TSendEmailPost = {
   userEmail: string;
@@ -15,17 +14,17 @@ export async function postEmail({ tokenUrlParam, userEmail }: TSendEmailPost) {
       from: "Gaël <onboarding@resend.dev>",
       to: userEmail,
       subject: "Connexion au dashboard du restaurant Van Long",
-      html: EmailTemplate({ host: "Restaurant Van Long", url: tokenUrlParam }),
+      html: EmailTemplate({
+        host: "Restaurant Van Long",
+        url: `${process.env.REDIRECT_USER_URL}?token=${tokenUrlParam}`,
+      }),
     });
-    console.log("🚀 ~ postEmail ~ data:", data);
 
     if (error) {
-      console.log("🚀 ~ postEmail ~ error:", error);
       return Response.json({ error }, { status: 500 });
     }
     return Response.json(data);
   } catch (error) {
-    console.log("🚀 ~ postEmail ~ error:", error);
     return Response.json({ error }, { status: 500 });
   }
 }
