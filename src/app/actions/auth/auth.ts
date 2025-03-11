@@ -1,8 +1,8 @@
 "use server";
 
 import { getUserByEmail } from "src/app/actions/users/user.actions";
-import { MailSender } from "src/utils/mail-sender";
 import { createVerificationToken } from "../verification-token/verification-token.actions";
+import { postEmail } from "src/api/send/route";
 
 export async function signin(email: string) {
   const user = await getUserByEmail(email);
@@ -13,17 +13,12 @@ export async function signin(email: string) {
   const userEmail = user?.result?.email;
 
   const verificationToken = await createVerificationToken(user?.result);
+  const verificationTokenError = verificationToken?.error;
 
-  if (verificationToken?.error) {
-    return verificationToken?.error;
-  }
+  if (verificationTokenError) return verificationTokenError;
 
-  try {
-    MailSender({
-      userEmail,
-      tokenUrlParam: verificationToken?.result?.token,
-    });
-  } catch (error) {
-    return { error: "Mail sending failed" };
-  }
+  await postEmail({
+    userEmail: userEmail as string,
+    tokenUrlParam: verificationToken?.result?.token as string,
+  });
 }

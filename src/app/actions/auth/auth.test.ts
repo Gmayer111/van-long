@@ -4,8 +4,6 @@
 import { getUserByEmail } from "src/app/actions/users/user.actions";
 import { createVerificationToken } from "src/app/actions/verification-token/verification-token.actions";
 import { signin } from "./auth";
-import { MailSender } from "src/utils/mail-sender";
-import SMTPTransport from "nodemailer/lib/smtp-transport";
 
 jest.mock("src/app/actions/users/user.actions", () => ({
   getUserByEmail: jest.fn(),
@@ -18,8 +16,8 @@ jest.mock(
   })
 );
 
-jest.mock("src/utils/mail-sender", () => ({
-  MailSender: jest.fn(),
+jest.mock("src/api/send/route", () => ({
+  POST: jest.fn(),
 }));
 
 describe("auth.actions page", () => {
@@ -40,30 +38,6 @@ describe("auth.actions page", () => {
   it("should return error message if verification token method failed", async () => {
     jest.mocked(createVerificationToken).mockResolvedValue({
       error: "Unknown error",
-    });
-  });
-  it("should send email to user", async () => {
-    (
-      MailSender as jest.Mock<Promise<Partial<SMTPTransport.SentMessageInfo>>>
-    ).mockResolvedValue({
-      accepted: [userEmail],
-    });
-    expect(
-      MailSender({
-        userEmail,
-        tokenUrlParam: "token",
-      })
-    ).resolves.toEqual({
-      accepted: [userEmail],
-    });
-  });
-  it("should throw error in case of sending email failed", async () => {
-    (MailSender as jest.Mock).mockImplementation(() => {
-      throw new Error();
-    });
-
-    expect(signin(userEmail)).resolves.toEqual({
-      error: "Mail sending failed",
     });
   });
 });
