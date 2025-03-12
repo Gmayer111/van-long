@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/Gmayer111/van-long/compare/v2.0.0...v2.1.0) (2025-03-11)
+
+
+### Features
+
+* add resend library ([#106](https://github.com/Gmayer111/van-long/issues/106)) ([f8d1eb3](https://github.com/Gmayer111/van-long/commit/f8d1eb3ad0c1aa2f2fe19d67d97c78eca746c818))
+
 ## [2.0.0](https://github.com/Gmayer111/van-long/compare/v1.9.0...v2.0.0) (2025-03-07)
 
 
