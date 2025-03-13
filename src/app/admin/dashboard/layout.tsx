@@ -17,7 +17,7 @@ const DashboardLayout = async ({ children }: TDashboardLayout) => {
     let alternateIcon = index % 2;
     return {
       content: dishService.title,
-      path: `/admin/dashboard/${dishService.title}/dishs`,
+      path: `/admin/dashboard/${dishService.slug}/dishs`,
       icon: alternateIcon === 0 ? <FaceSmileIcon /> : <HeartIcon />,
     };
   });

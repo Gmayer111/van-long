@@ -16,7 +16,7 @@ export async function getAllDishsPictures({
 }) {
   return await prisma.dishService.findFirst({
     where: {
-      title: pathnameParams,
+      slug: pathnameParams,
     },
     include: {
       dishs: dishs,
