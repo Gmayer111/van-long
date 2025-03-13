@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.1](https://github.com/Gmayer111/van-long/compare/v2.1.0...v2.1.1) (2025-03-13)
+
+
+### Bug Fixes
+
+* added slug and modify updatedat value ([#108](https://github.com/Gmayer111/van-long/issues/108)) ([70de4dd](https://github.com/Gmayer111/van-long/commit/70de4dd67e31cc53ea288e1e91fa0850215dba7f))
+
 ## [2.1.0](https://github.com/Gmayer111/van-long/compare/v2.0.0...v2.1.0) (2025-03-11)
 
 
