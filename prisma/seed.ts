@@ -17,6 +17,7 @@ async function main() {
             create: {
               id: index < 10 ? 1 : 2,
               title: index < 10 ? "starters" : "soup",
+              slug: index < 10 ? "starters" : "soup",
             },
           },
         },
@@ -41,6 +42,7 @@ async function main() {
             create: {
               id: index < 10 ? 1 : 2,
               title: index < 10 ? "starters" : "soup",
+              slug: index < 10 ? "starters" : "soup",
             },
           },
         },
