@@ -1,6 +1,6 @@
 model User {
     id        Int      @id @default(autoincrement())
     email     String
-    updatedAt DateTime @updatedAt
+    updatedAt DateTime @default(now())
     createdAt DateTime @default(now())
 }

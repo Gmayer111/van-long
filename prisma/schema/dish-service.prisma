@@ -1,8 +1,9 @@
 model DishService {
     id        Int       @id @default(autoincrement())
     title     String
+    slug      String
     dishs     Dish[]
     pictures  Picture[]
-    updatedAt DateTime  @updatedAt
+    updatedAt DateTime  @default(now())
     createdAt DateTime  @default(now())
 }

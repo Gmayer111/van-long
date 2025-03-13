@@ -4,6 +4,6 @@ model Dish {
     price         Float
     DishService   DishService @relation(fields: [dishServiceId], references: [id])
     dishServiceId Int
-    updatedAt     DateTime    @updatedAt
+    updatedAt     DateTime    @default(now())
     createdAt     DateTime    @default(now())
 }

@@ -3,6 +3,6 @@ model VerificationToken {
     identifier String
     token      String
     expires    DateTime
-    updatedAt  DateTime @updatedAt
+    updatedAt  DateTime @default(now())
     createdAt  DateTime @default(now())
 }
