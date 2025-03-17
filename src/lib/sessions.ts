@@ -40,8 +40,7 @@ export async function createSession(userId: number) {
 }
 
 export const verifySession = async () => {
-  const cookie = (await cookies()).get("session")?.value;
-  const session = await decrypt(cookie);
+  const cookie = (await cookies()).get("navSession")?.value;
 
-  return { isAuth: !session?.userId ? false : true };
+  return { isAuth: cookie !== "logged" ? false : true };
 };
