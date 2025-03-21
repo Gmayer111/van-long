@@ -1,6 +1,7 @@
 model Dish {
     id            Int         @id @default(autoincrement())
-    label         String      @unique
+    frenchLabel   String      @unique
+    englishLabel  String      @unique
     price         Float
     DishService   DishService @relation(fields: [dishServiceId], references: [id])
     dishServiceId Int
