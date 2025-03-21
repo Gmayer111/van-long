@@ -12,7 +12,8 @@ export async function createDish(
   try {
     await prisma.dish.create({
       data: {
-        label: formData.get("label") as string,
+        englishLabel: formData.get("englishLabel") as string,
+        frenchLabel: formData.get("frenchLabel") as string,
         price: Number(formData.get("price")),
         dishServiceId,
       },
@@ -30,17 +31,18 @@ export async function createDish(
 }
 
 export async function updateDish(
-  label: string,
+  id: number,
   formData: FormData,
   path?: string
 ) {
   try {
     await prisma.dish.update({
       where: {
-        label,
+        id,
       },
       data: {
-        label: formData.get("label") as string,
+        englishLabel: formData.get("englishLabel") as string,
+        frenchLabel: formData.get("frenchLabel") as string,
         price: Number(formData.get("price")),
       },
     });

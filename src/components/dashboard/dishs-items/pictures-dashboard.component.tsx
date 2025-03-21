@@ -14,7 +14,8 @@ import { useToast } from "src/app/providers/toast.provider";
 type TPicture = {
   id: number;
   pictureUrl: string;
-  description: string;
+  frenchDescription: string;
+  englishDescription: string;
   dishServiceId?: number | null;
   updatedAt?: Date;
   createdAt?: Date;
@@ -73,9 +74,17 @@ const PicturesDashboard = ({
           fieldElement: "input",
           inputType: "text",
           placeholder: "Rouleau de printemps",
-          defaultValue: selectedPicture && selectedPicture.description,
+          defaultValue: selectedPicture && selectedPicture.frenchDescription,
           label: "Description de l'image",
-          name: "description",
+          name: "frenchDescription",
+        },
+        {
+          fieldElement: "input",
+          inputType: "text",
+          placeholder: "Rouleau de printemps",
+          defaultValue: selectedPicture && selectedPicture.englishDescription,
+          label: "Description de l'image",
+          name: "englishDescription",
         },
       ],
     },
@@ -137,8 +146,12 @@ const PicturesDashboard = ({
           header: "URL de l'image",
         },
         {
-          key: "description",
-          header: "Description de l'image",
+          key: "englishDescription",
+          header: "Description de l'image en EN",
+        },
+        {
+          key: "frenchDescription",
+          header: "Description de l'image en FR",
         },
         {
           key: "actions",

@@ -32,7 +32,8 @@ describe("pictures.actions", () => {
   const mockPicture = {
     id: 1,
     pictureUrl: file,
-    description: "Description de l'image",
+    frenchDescription: "Description de l'image en FR",
+    englishDescription: "Description de l'image en EN",
     dishServiceId: 1,
     updatedAt: new Date("01 Jan 1970 00:00:00 GMT"),
     createdAt: new Date("01 Jan 1970 00:00:00 GMT"),
@@ -40,7 +41,8 @@ describe("pictures.actions", () => {
 
   let formData = new FormData();
   formData.append("pictureUrl", mockPicture.pictureUrl);
-  formData.append("description", mockPicture.description);
+  formData.append("frenchDescription", mockPicture.frenchDescription);
+  formData.append("englishDescription", mockPicture.englishDescription);
 
   const mockBlob = {
     pathname: mockPicture.pictureUrl.name,
@@ -84,12 +86,15 @@ describe("pictures.actions", () => {
       await expect(
         createPicture(mockPicture.dishServiceId, formData)
       ).resolves.toEqual({
-        id: 1,
-        pictureUrl: "https://path-to-picture.jpg",
-        description: "Description de l'image",
-        dishServiceId: 1,
-        updatedAt: new Date("01 Jan 1970 00:00:00 GMT"),
-        createdAt: new Date("01 Jan 1970 00:00:00 GMT"),
+        result: {
+          id: 1,
+          pictureUrl: "https://path-to-picture.jpg",
+          frenchDescription: "Description de l'image en FR",
+          englishDescription: "Description de l'image en EN",
+          dishServiceId: 1,
+          updatedAt: new Date("01 Jan 1970 00:00:00 GMT"),
+          createdAt: new Date("01 Jan 1970 00:00:00 GMT"),
+        },
       });
     });
 
@@ -148,7 +153,8 @@ describe("pictures.actions", () => {
         {
           id: 1,
           pictureUrl: "https://current-path-to-picture.jpg",
-          description: "Description de l'image",
+          frenchDescription: "Description de l'image en FR",
+          englishDescription: "Description de l'image en EN",
           dishServiceId: 1,
           updatedAt: new Date("01 Jan 1970 00:00:00 GMT"),
           createdAt: new Date("01 Jan 1970 00:00:00 GMT"),
@@ -190,12 +196,15 @@ describe("pictures.actions", () => {
       // Then
       await expect(updatePicture(currentPictureUrl, formData)).resolves.toEqual(
         {
-          id: 1,
-          pictureUrl: newPicture.name,
-          description: "Description de l'image",
-          dishServiceId: 1,
-          updatedAt: new Date("01 Jan 1970 00:00:00 GMT"),
-          createdAt: new Date("01 Jan 1970 00:00:00 GMT"),
+          result: {
+            id: 1,
+            pictureUrl: newPicture.name,
+            frenchDescription: "Description de l'image en FR",
+            englishDescription: "Description de l'image en EN",
+            dishServiceId: 1,
+            updatedAt: new Date("01 Jan 1970 00:00:00 GMT"),
+            createdAt: new Date("01 Jan 1970 00:00:00 GMT"),
+          },
         }
       );
     });
