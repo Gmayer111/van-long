@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.2.0](https://github.com/Gmayer111/van-long/compare/v2.1.0...v2.2.0) (2025-03-21)
+
+
+### Features
+
+* add dishs pictures english properties ([#112](https://github.com/Gmayer111/van-long/issues/112)) ([2c6d1c3](https://github.com/Gmayer111/van-long/commit/2c6d1c3f1accca4877a5b56b42c8f2c109d31316))
+* add restaurant item & rename sidebar component ([#111](https://github.com/Gmayer111/van-long/issues/111)) ([5aa7a4c](https://github.com/Gmayer111/van-long/commit/5aa7a4c3ee8e2aaeee138533034182f57a2ffb1b))
+* hide session nav dahsboard ([#110](https://github.com/Gmayer111/van-long/issues/110)) ([5bb2764](https://github.com/Gmayer111/van-long/commit/5bb2764102ac09e8c8d75678f9f9d7586ca24918))
+
+
+### Bug Fixes
+
+* added slug and modify updatedat value ([#108](https://github.com/Gmayer111/van-long/issues/108)) ([70de4dd](https://github.com/Gmayer111/van-long/commit/70de4dd67e31cc53ea288e1e91fa0850215dba7f))
+
 ## [2.1.0](https://github.com/Gmayer111/van-long/compare/v2.0.0...v2.1.0) (2025-03-11)
 
 
