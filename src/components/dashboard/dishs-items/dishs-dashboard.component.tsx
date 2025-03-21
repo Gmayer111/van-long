@@ -13,7 +13,8 @@ import { useToast } from "src/app/providers/toast.provider";
 
 type TDish = {
   id: number;
-  label: string;
+  frenchLabel: string;
+  englishLabel: string;
   price: number;
   dishServiceId?: number;
   updatedAt?: Date;
@@ -60,9 +61,17 @@ const DishsDashboard = ({
           fieldElement: "input",
           inputType: "text",
           placeholder: "Rouleaux ...",
-          defaultValue: selectedDish && selectedDish.label,
-          label: "Nom de l'entrée",
-          name: "label",
+          defaultValue: selectedDish && selectedDish.frenchLabel,
+          label: "Nom de l'assiette en FR",
+          name: "frenchLabel",
+        },
+        {
+          fieldElement: "input",
+          inputType: "text",
+          placeholder: "Rouleaux ...",
+          defaultValue: selectedDish && selectedDish.englishLabel,
+          label: "Nom de l'assiette en EN",
+          name: "englishLabel",
         },
       ],
     },
@@ -97,7 +106,7 @@ const DishsDashboard = ({
     }
     if (modalActionForm === "editModal" && selectedDish) {
       const result = await updateDish(
-        selectedDish.label,
+        selectedDish.id,
         formData,
         dishServiceTitle
       );
@@ -130,8 +139,12 @@ const DishsDashboard = ({
       fields={fields}
       columns={[
         {
-          key: "label",
-          header: "Nom",
+          key: "frenchLabel",
+          header: "Nom de l'assiette en FR",
+        },
+        {
+          key: "englishLabel",
+          header: "Nom de l'assiette en EN",
         },
         {
           key: "price",
