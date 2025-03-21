@@ -19,13 +19,16 @@ export async function createPicture(
     const result = await prisma.picture.create({
       data: {
         pictureUrl: url,
-        description: formData.get("description") as string,
+        frenchDescription: formData.get("frenchDescription") as string,
+        englishDescription: formData.get("englishDescription") as string,
         dishServiceId,
       },
     });
+    console.log("🚀 ~ result:", result);
     revalidatePath(`/admin/dahsboard/${urlPath}`);
     return { result };
   } catch (error) {
+    console.log("🚀 ~ error:", error);
     if (error instanceof Prisma.PrismaClientKnownRequestError) {
       if (error.code === "P2002") {
         return { error: "Picture already exists" };
@@ -60,7 +63,8 @@ export async function updatePicture(
       },
       data: {
         pictureUrl: picturePathToJoin,
-        description: formData.get("description") as string,
+        frenchDescription: formData.get("frenchDescription") as string,
+        englishDescription: formData.get("englishDescription") as string,
       },
     });
     revalidatePath(`/admin/dahsboard/${urlPath}`);
