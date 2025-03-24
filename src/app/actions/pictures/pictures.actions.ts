@@ -19,8 +19,8 @@ export async function createPicture(
     const result = await prisma.picture.create({
       data: {
         pictureUrl: url,
-        frenchDescription: formData.get("frenchDescription") as string,
-        englishDescription: formData.get("englishDescription") as string,
+        descriptionFR: formData.get("descriptionFR") as string,
+        descriptionEN: formData.get("descriptionEN") as string,
         dishServiceId,
       },
     });
@@ -63,8 +63,8 @@ export async function updatePicture(
       },
       data: {
         pictureUrl: picturePathToJoin,
-        frenchDescription: formData.get("frenchDescription") as string,
-        englishDescription: formData.get("englishDescription") as string,
+        descriptionFR: formData.get("descriptionFR") as string,
+        descriptionEN: formData.get("descriptionEN") as string,
       },
     });
     revalidatePath(`/admin/dahsboard/${urlPath}`);

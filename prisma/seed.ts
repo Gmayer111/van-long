@@ -7,8 +7,8 @@ async function main() {
   for (let index = 0; index < 20; index++) {
     const initialDishs: Prisma.DishCreateInput[] = [
       {
-        frenchLabel: `assiette-${index}`,
-        englishLabel: `dish-${index}`,
+        labelFR: `assiette-${index}`,
+        labelEN: `dish-${index}`,
         price: Math.floor(Math.random() * 10 + 1),
         DishService: {
           connectOrCreate: {
@@ -17,7 +17,8 @@ async function main() {
             },
             create: {
               id: index < 10 ? 1 : 2,
-              title: index < 10 ? "starters" : "soup",
+              titleFR: index < 10 ? "entrées" : "soupes",
+              titleEN: index < 10 ? "starters" : "soup",
               slug: index < 10 ? "starters" : "soup",
             },
           },
@@ -34,8 +35,8 @@ async function main() {
     const initialPictures: Prisma.PictureCreateInput[] = [
       {
         pictureUrl: `/image-${index}`,
-        frenchDescription: `description fr ${index}`,
-        englishDescription: `description en ${index}`,
+        descriptionFR: `description fr ${index}`,
+        descriptionEN: `description en ${index}`,
         DishService: {
           connectOrCreate: {
             where: {
@@ -43,7 +44,8 @@ async function main() {
             },
             create: {
               id: index < 10 ? 1 : 2,
-              title: index < 10 ? "starters" : "soup",
+              titleFR: index < 10 ? "entrées" : "soupes",
+              titleEN: index < 10 ? "starters" : "soup",
               slug: index < 10 ? "starters" : "soup",
             },
           },

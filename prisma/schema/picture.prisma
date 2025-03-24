@@ -1,10 +1,10 @@
 model Picture {
-    id                 Int          @id @default(autoincrement())
-    pictureUrl         String       @unique
-    frenchDescription  String
-    englishDescription String
-    DishService        DishService? @relation(fields: [dishServiceId], references: [id])
-    dishServiceId      Int?
-    updatedAt          DateTime     @default(now())
-    createdAt          DateTime     @default(now())
+    id            Int          @id @default(autoincrement())
+    pictureUrl    String       @unique
+    descriptionFR String
+    descriptionEN String
+    DishService   DishService? @relation(fields: [dishServiceId], references: [id])
+    dishServiceId Int?
+    updatedAt     DateTime     @default(now())
+    createdAt     DateTime     @default(now())
 }

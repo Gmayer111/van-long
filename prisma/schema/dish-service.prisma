@@ -1,6 +1,7 @@
 model DishService {
     id        Int       @id @default(autoincrement())
-    title     String
+    titleFR   String
+    titleEN   String
     slug      String
     dishs     Dish[]
     pictures  Picture[]
