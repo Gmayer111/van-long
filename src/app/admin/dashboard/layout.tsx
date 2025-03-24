@@ -29,7 +29,7 @@ const DashboardLayout = async ({ children }: { children: ReactNode }) => {
       menuItems: dishServices.map((dishService, index) => {
         let alternateIcon = index % 2;
         return {
-          content: dishService.title,
+          content: dishService.titleFR,
           path: `/admin/dashboard/${dishService.slug}/dishs`,
           icon: alternateIcon === 0 ? <FaceSmileIcon /> : <HeartIcon />,
         };
