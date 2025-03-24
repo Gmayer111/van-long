@@ -16,8 +16,8 @@ describe("dishs.actions", () => {
 
   const mockDish = {
     id: 1,
-    frenchLabel: "Soupe Pho",
-    englishLabel: "Pho soup",
+    labelFR: "Soupe Pho",
+    labelEN: "Pho soup",
     price: 12,
     dishServiceId: 1,
     updatedAt: new Date("01 Jan 1970 00:00:00 GMT"),
@@ -25,8 +25,8 @@ describe("dishs.actions", () => {
   };
 
   let formData = new FormData();
-  formData.append("frenchLabel", mockDish.frenchLabel);
-  formData.append("englishLabel", mockDish.englishLabel);
+  formData.append("labelFR", mockDish.labelFR);
+  formData.append("labelEN", mockDish.labelEN);
   formData.append("price", mockDish.price.toString());
 
   describe("when using create", () => {
@@ -37,8 +37,9 @@ describe("dishs.actions", () => {
 
       expect(prismaMock.dish.create).toHaveBeenCalledWith({
         data: {
-          frenchLabel: "Soupe Pho",
-          englishLabel: "Pho soup",
+          labelFR: "Soupe Pho",
+          labelEN: "Pho soup",
+
           price: 12,
           dishServiceId: 1,
         },
@@ -80,8 +81,9 @@ describe("dishs.actions", () => {
           id: mockDish.id,
         },
         data: {
-          frenchLabel: "Soupe Pho",
-          englishLabel: "Pho soup",
+          labelFR: "Soupe Pho",
+          labelEN: "Pho soup",
+
           price: 12,
         },
       });

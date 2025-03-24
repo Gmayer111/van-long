@@ -12,8 +12,8 @@ export async function createDish(
   try {
     await prisma.dish.create({
       data: {
-        englishLabel: formData.get("englishLabel") as string,
-        frenchLabel: formData.get("frenchLabel") as string,
+        labelEN: formData.get("labelEN") as string,
+        labelFR: formData.get("labelFR") as string,
         price: Number(formData.get("price")),
         dishServiceId,
       },
@@ -41,8 +41,8 @@ export async function updateDish(
         id,
       },
       data: {
-        englishLabel: formData.get("englishLabel") as string,
-        frenchLabel: formData.get("frenchLabel") as string,
+        labelEN: formData.get("labelEN") as string,
+        labelFR: formData.get("labelFR") as string,
         price: Number(formData.get("price")),
       },
     });
