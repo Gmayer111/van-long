@@ -5,41 +5,41 @@ import { TFields } from "../../form/form";
 import TableDashboard from "../table-dashboard.component";
 import { TTabProps } from "src/components/tab/tab.component";
 import {
-  createDish,
-  deleteDish,
-  updateDish,
-} from "src/app/actions/dishs/dishs.actions";
+  createPicture,
+  deletePicture,
+  updatePicture,
+} from "src/app/actions/pictures/pictures.actions";
 import { useToast } from "src/app/providers/toast.provider";
 
-type TDish = {
+type TPicture = {
   id: number;
-  frenchLabel: string;
-  englishLabel: string;
-  price: number;
-  dishServiceId?: number;
+  pictureUrl: string;
+  descriptionFR: string;
+  descriptionEN: string;
+  dishServiceId?: number | null;
   updatedAt?: Date;
   createdAt?: Date;
 };
 
 export type TTableData = TTableGeneric<
-  TDish & {
+  TPicture & {
     actions: string;
   }
 >;
 
-export type TDishsDashboardProps = {
-  dishs: TDish[] | undefined;
+export type TPicturesDashboardProps = {
+  pictures: TPicture[] | undefined;
   dishServiceId: number | undefined;
   dishServiceTitle: string | undefined;
 };
 
-const DishsDashboard = ({
+const PicturesDashboard = ({
   dishServiceTitle,
-  dishs,
+  pictures,
   dishServiceId,
   tabItems,
-}: TDishsDashboardProps & TTabProps) => {
-  const [selectedDish, setSelectedDish] = useState<TDish | undefined>(
+}: TPicturesDashboardProps & TTabProps) => {
+  const [selectedPicture, setSelectedPicture] = useState<TPicture | undefined>(
     undefined
   );
   const [modalActionForm, setModalActionForm] = useState("");
@@ -47,11 +47,11 @@ const DishsDashboard = ({
 
   useEffect(() => {
     if (modalActionForm === "createModal") {
-      setSelectedDish(undefined);
+      setSelectedPicture(undefined);
     }
   }, [modalActionForm]);
 
-  if (!dishs) return <div>Chargement...</div>;
+  if (!pictures) return <div>Chargement...</div>;
 
   const fields: TFields[] = [
     {
@@ -59,19 +59,11 @@ const DishsDashboard = ({
       items: [
         {
           fieldElement: "input",
-          inputType: "text",
-          placeholder: "Rouleaux ...",
-          defaultValue: selectedDish && selectedDish.frenchLabel,
-          label: "Nom de l'assiette en FR",
-          name: "frenchLabel",
-        },
-        {
-          fieldElement: "input",
-          inputType: "text",
-          placeholder: "Rouleaux ...",
-          defaultValue: selectedDish && selectedDish.englishLabel,
-          label: "Nom de l'assiette en EN",
-          name: "englishLabel",
+          inputType: "file",
+          placeholder: "/chemin/vers/image",
+          defaultValue: selectedPicture && selectedPicture.pictureUrl,
+          label: "Url de l'image",
+          name: "pictureUrl",
         },
       ],
     },
@@ -80,11 +72,19 @@ const DishsDashboard = ({
       items: [
         {
           fieldElement: "input",
-          inputType: "number",
-          placeholder: "10€",
-          defaultValue: selectedDish && selectedDish.price,
-          label: "Prix de l'entrée",
-          name: "price",
+          inputType: "text",
+          placeholder: "Rouleau de printemps",
+          defaultValue: selectedPicture && selectedPicture.descriptionFR,
+          label: "Description de l'image",
+          name: "descriptionFR",
+        },
+        {
+          fieldElement: "input",
+          inputType: "text",
+          placeholder: "Rouleau de printemps",
+          defaultValue: selectedPicture && selectedPicture.descriptionEN,
+          label: "Description de l'image",
+          name: "descriptionEN",
         },
       ],
     },
@@ -92,7 +92,7 @@ const DishsDashboard = ({
 
   const handleSubmitAuthor = async (formData: FormData) => {
     if (modalActionForm === "createModal" && dishServiceId) {
-      const result = await createDish(
+      const result = await createPicture(
         dishServiceId,
         formData,
         dishServiceTitle
@@ -104,9 +104,9 @@ const DishsDashboard = ({
       }
       setModalActionForm("");
     }
-    if (modalActionForm === "editModal" && selectedDish) {
-      const result = await updateDish(
-        selectedDish.id,
+    if (modalActionForm === "editModal" && selectedPicture) {
+      const result = await updatePicture(
+        selectedPicture?.pictureUrl,
         formData,
         dishServiceTitle
       );
@@ -120,8 +120,11 @@ const DishsDashboard = ({
   };
 
   const handleDeleteAuthor = async () => {
-    if (selectedDish) {
-      const result = await deleteDish(selectedDish?.id, dishServiceTitle);
+    if (selectedPicture) {
+      const result = await deletePicture(
+        selectedPicture?.id,
+        selectedPicture.pictureUrl
+      );
       if (result?.error) {
         showToast({ message: result?.error, type: "alert" });
       } else {
@@ -135,20 +138,20 @@ const DishsDashboard = ({
     <TableDashboard
       tabItems={tabItems}
       title={`Les ${dishServiceTitle}`}
-      data={dishs as Array<TTableData>}
+      data={pictures as Array<TTableData>}
       fields={fields}
       columns={[
         {
-          key: "frenchLabel",
-          header: "Nom de l'assiette en FR",
+          key: "pictureUrl",
+          header: "URL de l'image",
         },
         {
-          key: "englishLabel",
-          header: "Nom de l'assiette en EN",
+          key: "descriptionEN",
+          header: "Description de l'image en EN",
         },
         {
-          key: "price",
-          header: "Prix",
+          key: "descriptionFR",
+          header: "Description de l'image en FR",
         },
         {
           key: "actions",
@@ -159,9 +162,9 @@ const DishsDashboard = ({
       setModalActionForm={setModalActionForm}
       handleDeleteModalAction={handleDeleteAuthor}
       handleCreatEditModalFormAction={handleSubmitAuthor}
-      selectedItem={setSelectedDish}
+      selectedItem={setSelectedPicture}
     />
   );
 };
 
-export default DishsDashboard;
+export default PicturesDashboard;
