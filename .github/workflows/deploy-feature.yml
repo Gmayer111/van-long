@@ -3,6 +3,12 @@ name: Deploy feature
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+  PREVIEW_DATABASE_URL: ${{ secrets.PREVIEW_DATABASE_URL }}
+  PREVIEW_DIRECT_URL: ${{ secrets.PREVIEW_DIRECT_URL }}
+  GH_TOKEN: ${{ secrets.GH_TOKEN }}
+  NEON_API_KEY: ${{ secrets.NEON_API_KEY }}
+  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }}
 
 on:
   pull_request:
@@ -15,14 +21,28 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
           node-version: "18"
           cache: "npm"
 
+      - name: Run Migrations
+        run: |
+          touch .env
+
+          echo DATABASE_URL=${{ env.PREVIEW_DATABASE_URL }} >> .env
+          echo DIRECT_URL=${{ env.PREVIEW_DIRECT_URL }} >> .env
+
+          npx prisma generate
+          npx prisma migrate deploy
+
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
+
+      #- name: Deploy Preview to Vercel
+      #id: deploy
+      # run: postgresql://${{ env.PREVIEW_NEON_DATABASE_USERNAME }}:${{ env.PREVIEW_NEON_DATABASE_PASSWORD }}@${{ env.PREVIEW_NEON_DATABASE_HOST }}/${{ env.PREVIEW_NEON_DATABASE_NAME }}?sslmode=require
 
       - name: Deploy
         run: |
