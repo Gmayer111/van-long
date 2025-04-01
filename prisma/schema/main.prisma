@@ -1,14 +1,11 @@
 generator client {
     provider        = "prisma-client-js"
     previewFeatures = ["prismaSchemaFolder"]
+    binaryTargets   = ["native", "rhel-openssl-1.0.x"]
 }
 
-// datasource db {
-//     provider = "postgresql"
-//     url      = env("DATABASE_URL") // uses connection pooling
-// }
 datasource db {
     provider  = "postgresql"
     url       = env("DATABASE_URL")
-    directUrl = env("DATABASE_URL_UNPOOLED")
+    directUrl = env("DIRECT_URL")
 }
