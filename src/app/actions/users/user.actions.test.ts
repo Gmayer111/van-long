@@ -4,7 +4,7 @@
 
 import { prismaMock } from "prisma/singleton";
 import { getUserByEmail } from "./user.actions";
-import { Prisma } from "@prisma/client";
+import { Prisma } from "prisma/generated/prisma/client";
 
 describe("user.actions", () => {
   beforeEach(() => {

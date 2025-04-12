@@ -1,7 +1,7 @@
 /**
  * @jest-environment node
  */
-import { Prisma } from "@prisma/client";
+import { Prisma } from "prisma/generated/prisma/client";
 import { prismaMock } from "prisma/singleton";
 import {
   createPicture,

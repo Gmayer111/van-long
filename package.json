@@ -10,7 +10,7 @@
     "postinstall": "prisma generate && prisma migrate deploy"
   },
   "prisma": {
-    "schema": "prisma/schema/schema.prisma",
+    "schema": "./prisma/schema",
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   },
   "engines": {
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.1.5",
-    "@prisma/client": "5.21.0",
+    "@prisma/client": "^6.6.0",
     "@types/nodemailer": "^6.4.17",
     "@vercel/blob": "^0.27.1",
     "@web-std/file": "^3.0.3",
@@ -30,7 +30,7 @@
     "nodemailer": "^6.10.0",
     "path": "^0.12.7",
     "prettier": "^3.2.5",
-    "prisma": "^5.21.0",
+    "prisma": "^6.6.0",
     "react": "^18",
     "react-dom": "^18",
     "react-responsive-carousel": "^3.2.23",

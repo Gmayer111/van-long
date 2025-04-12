@@ -13,9 +13,9 @@ export default async function middleware(request: NextRequest) {
   const hasEqualToken =
     request.nextUrl.searchParams.get("token") === currentSession;
 
-  if (isProtectedRoute && !session?.userId) {
-    return NextResponse.redirect(new URL("/", request.nextUrl));
-  }
+  // if (isProtectedRoute && !session?.userId) {
+  //   return NextResponse.redirect(new URL("/", request.nextUrl));
+  // }
 
   if (
     session?.userId &&
