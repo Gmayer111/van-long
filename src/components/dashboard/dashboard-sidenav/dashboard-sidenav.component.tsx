@@ -20,8 +20,8 @@ const DashboardSidenav = ({ sidenavItems }: TDashboardSidenavProps) => {
   return (
     <aside className="dashboard-sidebar-container">
       <div>
-        {sidenavItems.map((sidenavItem) => (
-          <ul>
+        {sidenavItems.map((sidenavItem, index) => (
+          <ul key={index}>
             {sidenavItem.menuItems.map((item, index) => (
               <li key={`${item}-${index}`}>
                 <Link href={item.path}>
