@@ -5,14 +5,16 @@ export async function getAllDishServices() {
   return await prisma.dishService.findMany({});
 }
 
-export async function getAllDishsPictures({
+export async function getAllDishsServiceItems({
   pathnameParams,
   dishs,
   pictures,
+  extras,
 }: {
   pathnameParams: string;
   dishs?: boolean;
   pictures?: boolean;
+  extras?: boolean;
 }) {
   return await prisma.dishService.findFirst({
     where: {
@@ -21,6 +23,7 @@ export async function getAllDishsPictures({
     include: {
       dishs: dishs,
       pictures: pictures,
+      extras: extras,
     },
   });
 }
