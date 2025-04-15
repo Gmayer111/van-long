@@ -24,11 +24,9 @@ export async function createPicture(
         dishServiceId,
       },
     });
-    console.log("🚀 ~ result:", result);
     revalidatePath(`/admin/dahsboard/${urlPath}`);
     return { result };
   } catch (error) {
-    console.log("🚀 ~ error:", error);
     if (error instanceof Prisma.PrismaClientKnownRequestError) {
       if (error.code === "P2002") {
         return { error: "Picture already exists" };

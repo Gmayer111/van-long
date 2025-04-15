@@ -17,6 +17,10 @@
     "noUncheckedIndexedAccess": true,
     "incremental": true,
     "baseUrl": ".",
+    "paths": {
+      "src/*": ["src/*"],
+      "prisma/*": ["prisma/*"]
+    },
     "plugins": [
       {
         "name": "next"
