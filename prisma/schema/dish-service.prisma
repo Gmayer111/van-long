@@ -5,6 +5,7 @@ model DishService {
     slug      String
     dishs     Dish[]
     pictures  Picture[]
+    extras    Extra[]
     updatedAt DateTime  @default(now())
     createdAt DateTime  @default(now())
 }

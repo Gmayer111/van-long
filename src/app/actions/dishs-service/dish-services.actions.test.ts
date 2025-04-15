@@ -1,9 +1,11 @@
 /**
  * @jest-environment node
  */
-
+import {
+  getAllDishServices,
+  getAllDishsServiceItems,
+} from "./dish-services.actions";
 import { prismaMock } from "prisma/singleton";
-import { getAllDishServices } from "./dish-services.actions";
 
 describe("dish-service.actions", () => {
   beforeEach(() => {
@@ -15,13 +17,17 @@ describe("dish-service.actions", () => {
       const mockDishServices = [
         {
           id: 1,
-          title: "starters",
+          titleFR: "Entrées",
+          titleEN: "starters",
+          slug: "starters",
           updatedAt: new Date("01 Jan 1970 00:00:00 GMT"),
           createdAt: new Date("01 Jan 1970 00:00:00 GMT"),
         },
         {
           id: 2,
-          title: "soup",
+          titleFR: "Soupes",
+          titleEN: "soups",
+          slug: "starters",
           updatedAt: new Date("01 Jan 1970 00:00:00 GMT"),
           createdAt: new Date("01 Jan 1970 00:00:00 GMT"),
         },
@@ -38,20 +44,27 @@ describe("dish-service.actions", () => {
     it("should return all dish with dish-service", async () => {
       const mockDishsService = {
         id: 1,
-        title: "starters",
+        titleFR: "Entrées",
+        titleEN: "Starters",
+        slug: "starters",
         updatedAt: new Date("01 Jan 1970 00:00:00 GMT"),
         createdAt: new Date("01 Jan 1970 00:00:00 GMT"),
       };
       prismaMock.dishService.findFirst.mockResolvedValue(mockDishsService);
 
-      const result = await getAllDishServices();
+      const result = await getAllDishsServiceItems({
+        pathnameParams: "starters",
+        dishs: true,
+        pictures: false,
+      });
 
       expect(prismaMock.dishService.findFirst).toHaveBeenCalledWith({
         where: {
-          title: "starters",
+          slug: "starters",
         },
         include: {
           dishs: true,
+          pictures: false,
         },
       });
       expect(result).toBe(mockDishsService);
