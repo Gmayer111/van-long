@@ -1,5 +1,6 @@
-import { getAllDishsPictures } from "src/app/actions/dishs-service/dish-services.actions";
+import { getAllDishsServiceItems } from "src/app/actions/dishs-service/dish-services.actions";
 import DishsDashboard from "src/components/dashboard/dashboard-items/dishs-dashboard.component";
+import ExtrasDashboard from "src/components/dashboard/dashboard-items/extras-dashboard.component";
 import PicturesDashboard from "src/components/dashboard/dashboard-items/pictures-dashboard.component";
 
 export default async function page({
@@ -8,17 +9,16 @@ export default async function page({
   params: Promise<{ dish: string; items: string }>;
 }) {
   const urlParams = await params;
+  const urlParamItems = urlParams.items;
 
-  const dishsService = await getAllDishsPictures({
+  const dishsService = await getAllDishsServiceItems({
     pathnameParams: urlParams.dish,
-    dishs: urlParams.items === "dishs" && true,
-    pictures: urlParams.items === "pictures" && true,
+    dishs: urlParamItems === "dishs",
+    pictures: urlParamItems === "pictures",
+    extras: urlParamItems === "extras",
   });
 
   if (!dishsService) return <div>Chargement...</div>;
-
-  const dishs = dishsService?.dishs;
-  const pictures = dishsService?.pictures;
 
   const tabItems = [
     {
@@ -29,21 +29,42 @@ export default async function page({
       content: "pictures",
       path: `/admin/dashboard/${dishsService.slug}/pictures`,
     },
+    {
+      content: "extras",
+      path: `/admin/dashboard/${dishsService.slug}/extras`,
+    },
   ];
 
-  return dishs ? (
-    <DishsDashboard
-      tabItems={tabItems}
-      dishServiceTitle={dishsService?.titleFR}
-      dishServiceId={dishsService?.id}
-      dishs={dishs}
-    />
-  ) : (
-    <PicturesDashboard
-      tabItems={tabItems}
-      dishServiceTitle={dishsService?.titleFR}
-      dishServiceId={dishsService?.id}
-      pictures={pictures}
-    />
-  );
+  switch (urlParamItems) {
+    case "dishs":
+      return (
+        <DishsDashboard
+          tabItems={tabItems}
+          dishServiceTitle={dishsService?.titleFR}
+          dishServiceId={dishsService?.id}
+          dishs={dishsService.dishs}
+        />
+      );
+    case "pictures":
+      return (
+        <PicturesDashboard
+          tabItems={tabItems}
+          dishServiceTitle={dishsService?.titleFR}
+          dishServiceId={dishsService?.id}
+          pictures={dishsService.pictures}
+        />
+      );
+    case "extras":
+      return (
+        <ExtrasDashboard
+          tabItems={tabItems}
+          dishServiceTitle={dishsService?.titleFR}
+          dishServiceId={dishsService?.id}
+          extras={dishsService.extras}
+        />
+      );
+
+    default:
+      break;
+  }
 }
