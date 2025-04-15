@@ -151,13 +151,15 @@ describe("pictures.actions", () => {
       // Then
       await expect(updatePicture(currentPictureUrl, formData)).resolves.toEqual(
         {
-          id: 1,
-          pictureUrl: "https://current-path-to-picture.jpg",
-          descriptionFR: "Description de l'image en FR",
-          descriptionEN: "Description de l'image en EN",
-          dishServiceId: 1,
-          updatedAt: new Date("01 Jan 1970 00:00:00 GMT"),
-          createdAt: new Date("01 Jan 1970 00:00:00 GMT"),
+          result: {
+            id: 1,
+            pictureUrl: "https://current-path-to-picture.jpg",
+            descriptionFR: "Description de l'image en FR",
+            descriptionEN: "Description de l'image en EN",
+            dishServiceId: 1,
+            updatedAt: new Date("01 Jan 1970 00:00:00 GMT"),
+            createdAt: new Date("01 Jan 1970 00:00:00 GMT"),
+          },
         }
       );
     });
