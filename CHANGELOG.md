@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.2.0](https://github.com/Gmayer111/van-long/compare/v2.1.0...v2.2.0) (2025-04-15)
+
+
+### Features
+
+* add dishs pictures english properties ([#112](https://github.com/Gmayer111/van-long/issues/112)) ([2c6d1c3](https://github.com/Gmayer111/van-long/commit/2c6d1c3f1accca4877a5b56b42c8f2c109d31316))
+* add locales tables properties ([#113](https://github.com/Gmayer111/van-long/issues/113)) ([fc87464](https://github.com/Gmayer111/van-long/commit/fc87464249525df44c002716c23148e405b1f70f))
+* add restaurant item & rename sidebar component ([#111](https://github.com/Gmayer111/van-long/issues/111)) ([5aa7a4c](https://github.com/Gmayer111/van-long/commit/5aa7a4c3ee8e2aaeee138533034182f57a2ffb1b))
+* create extra table ([#116](https://github.com/Gmayer111/van-long/issues/116)) ([5766b24](https://github.com/Gmayer111/van-long/commit/5766b24790f037f1206990261945bd1bb13bb8d7))
+* hide session nav dahsboard ([#110](https://github.com/Gmayer111/van-long/issues/110)) ([5bb2764](https://github.com/Gmayer111/van-long/commit/5bb2764102ac09e8c8d75678f9f9d7586ca24918))
+
+
+### Bug Fixes
+
+* add key to ul sidenav ([#118](https://github.com/Gmayer111/van-long/issues/118)) ([7804207](https://github.com/Gmayer111/van-long/commit/7804207433bc838952aef38d8e2b80ce4dacbe13))
+* added slug and modify updatedat value ([#108](https://github.com/Gmayer111/van-long/issues/108)) ([70de4dd](https://github.com/Gmayer111/van-long/commit/70de4dd67e31cc53ea288e1e91fa0850215dba7f))
+* update prisma tests path ([#117](https://github.com/Gmayer111/van-long/issues/117)) ([8bacb58](https://github.com/Gmayer111/van-long/commit/8bacb587a48378b6f97ba2e58d36d192c7ca2eea))
+
 ## [2.1.0](https://github.com/Gmayer111/van-long/compare/v2.0.0...v2.1.0) (2025-03-11)
 
 
