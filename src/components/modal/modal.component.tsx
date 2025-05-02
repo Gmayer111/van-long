@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 import CloseIcon from "public/assets/icons/close-icon";
 import { useRef } from "react";
 import { UseClickOutside } from "src/hooks/use-click-outside";
@@ -26,7 +27,9 @@ const ModalComponent = ({ isOpen, toggle }: TModalComponentProps) => {
           <h2>{t("takeAway")}</h2>
           <p>
             {t.rich("mainParagraph", {
-              spanLines: (chunks) => <span>{chunks}</span>,
+              spanLines: (chunks) => (
+                <Link href={`tel:+${chunks}`}>{chunks}</Link>
+              ),
             })}
           </p>
           <div>{t("visaAccepted")}</div>
