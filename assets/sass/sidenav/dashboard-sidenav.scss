@@ -1,4 +1,4 @@
-.dashboard-sidebar-container {
+.dashboard-sidenav-container {
   background-color: lightpink;
   position: fixed;
   top: 0;
@@ -8,7 +8,7 @@
   height: 100vh;
 }
 
-.dashboard-sidebar-container div {
+.dashboard-sidenav-container div {
   overflow-y: auto;
   padding: 1.25rem 0.75rem;
   height: 100%;
@@ -16,11 +16,11 @@
   border-right: 1px solid $grey-200;
 }
 
-.dashboard-sidebar-container div ul {
+.dashboard-sidenav-container div ul {
   margin-top: 1rem;
 }
 
-.dashboard-sidebar-container div ul li a {
+.dashboard-sidenav-container div ul li a {
   display: flex;
   align-items: center;
   padding: 0.75rem;
@@ -31,21 +31,21 @@
   text-decoration: none;
 }
 
-.dashboard-sidebar-container div ul li a:hover {
+.dashboard-sidenav-container div ul li a:hover {
   background-color: $grey-100;
 }
 
-.dashboard-sidebar-container div ul li a svg {
+.dashboard-sidenav-container div ul li a svg {
   width: 1.5rem;
   height: 1.5rem;
   color: $grey-400;
 }
 
-.dashboard-sidebar-container div ul li a span {
+.dashboard-sidenav-container div ul li a span {
   margin-left: 0.75rem;
 }
 
-.dashboard-sidebar-container div ul:nth-child(2) {
+.dashboard-sidenav-container div ul:nth-child(2) {
   border-top: 1px solid $grey-200;
   padding-top: 1.25rem;
   margin-top: 1.25rem;
