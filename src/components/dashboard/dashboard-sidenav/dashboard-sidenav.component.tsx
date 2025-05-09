@@ -18,7 +18,7 @@ export type TSidenavItems = {
 
 const DashboardSidenav = ({ sidenavItems }: TDashboardSidenavProps) => {
   return (
-    <aside className="dashboard-sidebar-container">
+    <aside className="dashboard-sidenav-container">
       <div>
         {sidenavItems.map((sidenavItem, index) => (
           <ul key={index}>
