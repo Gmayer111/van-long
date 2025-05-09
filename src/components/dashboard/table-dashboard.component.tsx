@@ -8,8 +8,8 @@ import CreateModalDashboard from "./modal-dashboard/create-modal-dashboard.compo
 import CancelModalDashboard from "./modal-dashboard/cancel-modal-dashboard.component";
 import { TFields } from "../form/form";
 import DropdownButton from "../form/form-fields/dropdown-button/dropdown-button.component";
-import { useTitle } from "src/utils/string-formatter";
-import Tab, { TTabProps } from "../tab/tab.component";
+import { useDishServiceTitle } from "src/app/providers/dish-service-title.provider";
+import { useParams } from "next/navigation";
 
 export type TTableDashboardProps = {
   title: string;
@@ -31,13 +31,19 @@ const TableDashboard = <T, K extends keyof T>({
   handleDeleteModalAction,
   setModalActionForm,
   modalActionForm,
-  tabItems,
 }: Omit<TTableProps<T, K>, "handleAction" | "selectedItem"> &
-  TTableDashboardProps &
-  TTabProps) => {
+  TTableDashboardProps) => {
+  const { items } = useParams<{ items: string }>();
   const [displayModal, setDisplayModal] = useState("");
   const [isCreateEditModal, setIsCreateEditModal] = useState("");
   const [isDeleteModal, setIsDeleteModal] = useState("");
+  const { getTitle } = useDishServiceTitle();
+
+  useEffect(() => {
+    if (getTitle) {
+      getTitle(title);
+    }
+  }, [title]);
 
   useEffect(() => {
     if (displayModal === "createModal" || displayModal === "editModal") {
@@ -81,9 +87,7 @@ const TableDashboard = <T, K extends keyof T>({
   }));
 
   return (
-    <div className="table-dashboard-container">
-      <h1>{title}</h1>
-      <Tab tabItems={tabItems} />
+    <div>
       <TableRoot>
         <TableHeader>
           <ButtonForm
@@ -101,7 +105,6 @@ const TableDashboard = <T, K extends keyof T>({
           handleAction={() => setDisplayModal("editModal")}
         />
       </TableRoot>
-
       <CreateModalDashboard
         modalFields={fields}
         isCreateEditModal={isCreateEditModal}
@@ -109,8 +112,8 @@ const TableDashboard = <T, K extends keyof T>({
         handleCreateEditAction={handleCreatEditModalFormAction}
         modalHeaderTitle={
           isCreateEditModal === "createModal"
-            ? `Ajouter une ${useTitle(title)}`
-            : `Modifier une ${useTitle(title)}`
+            ? `Ajouter ${items} dans les ${title}`
+            : `Modifier ${items} dans les ${title}`
         }
       />
       <CancelModalDashboard
