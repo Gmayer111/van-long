@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { TTableGeneric } from "src/components/table/table.component";
 import { TFields } from "../../form/form";
 import TableDashboard from "../table-dashboard.component";
-import { TTabProps } from "src/components/tab/tab.component";
 import {
   createDish,
   deleteDish,
@@ -30,15 +29,14 @@ export type TTableData = TTableGeneric<
 export type TDishsDashboardProps = {
   dishs: TDish[] | undefined;
   dishServiceId: number | undefined;
-  dishServiceTitle: string | undefined;
+  dishServiceTitle: string;
 };
 
 const DishsDashboard = ({
   dishServiceTitle,
   dishs,
   dishServiceId,
-  tabItems,
-}: TDishsDashboardProps & TTabProps) => {
+}: TDishsDashboardProps) => {
   const [selectedDish, setSelectedDish] = useState<TDish | undefined>(
     undefined
   );
@@ -51,7 +49,7 @@ const DishsDashboard = ({
     }
   }, [modalActionForm]);
 
-  if (!dishs) return <div>Chargement...</div>;
+  if (!dishs) return <div>Chargement des assiettes...</div>;
 
   const fields: TFields[] = [
     {
@@ -133,8 +131,7 @@ const DishsDashboard = ({
 
   return (
     <TableDashboard
-      tabItems={tabItems}
-      title={`Les ${dishServiceTitle}`}
+      title={dishServiceTitle}
       data={dishs as Array<TTableData>}
       fields={fields}
       columns={[

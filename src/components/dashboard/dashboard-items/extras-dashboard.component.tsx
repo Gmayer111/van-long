@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { TTableGeneric } from "src/components/table/table.component";
 import { TFields } from "../../form/form";
 import TableDashboard from "../table-dashboard.component";
-import { TTabProps } from "src/components/tab/tab.component";
 import { useToast } from "src/app/providers/toast.provider";
 import {
   createExtra,
@@ -29,15 +28,14 @@ export type TTableData = TTableGeneric<
 export type TExtrasDashboardProps = {
   extras: TExtra[] | undefined;
   dishServiceId: number | undefined;
-  dishServiceTitle: string | undefined;
+  dishServiceTitle: string;
 };
 
 const ExtrasDashboard = ({
   dishServiceTitle,
   extras,
   dishServiceId,
-  tabItems,
-}: TExtrasDashboardProps & TTabProps) => {
+}: TExtrasDashboardProps) => {
   const [selectedExtra, setSelectedExtra] = useState<TExtra | undefined>(
     undefined
   );
@@ -49,6 +47,8 @@ const ExtrasDashboard = ({
       setSelectedExtra(undefined);
     }
   }, [modalActionForm]);
+
+  if (!extras) return <div>Chargement des extras ...</div>;
 
   const fields: TFields[] = [
     {
@@ -122,8 +122,7 @@ const ExtrasDashboard = ({
 
   return (
     <TableDashboard
-      tabItems={tabItems}
-      title={`Les ${dishServiceTitle}`}
+      title={dishServiceTitle}
       data={extras as Array<TTableData>}
       fields={fields}
       columns={[
