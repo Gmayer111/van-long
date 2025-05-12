@@ -4,11 +4,11 @@ on: [pull_request]
 
 env:
   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-  NEON_API_KEY: ${{ secrets.NEON_API_KEY }} # You can generate a an API key in your account settings
-  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your project settings
-  NEON_DATABASE_USERNAME: ${{ secrets.PG_USERNAME }} # change this to your database username
-  NEON_DATABASE_NAME: ${{ secrets.PG_DATABASE }} # change this to your database name
-  GH_TOKEN: ${{ secrets.GH_TOKEN }} # Required for commenting on pull requests for private repos
+  NEON_API_KEY: ${{ secrets.NEON_API_KEY }}
+  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }}
+  NEON_DATABASE_USERNAME: ${{ secrets.PG_USERNAME }}
+  NEON_DATABASE_NAME: ${{ secrets.PG_DATABASE }}
+  GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
 jobs:
   deploy-preview:
@@ -26,7 +26,6 @@ jobs:
         uses: neondatabase/create-branch-action@v5
         with:
           project_id: ${{ env.NEON_PROJECT_ID }}
-          # parent: dev # optional (defaults to your primary branch)
           branch_name: preview/pr-${{ github.event.number }}-${{ steps.branch-name.outputs.current_branch }}
           username: ${{ env.NEON_DATABASE_USERNAME }}
           database: ${{ env.NEON_DATABASE_NAME }}
@@ -58,7 +57,6 @@ jobs:
       - name: Comment on Pull Request
         uses: thollander/actions-comment-pull-request@v2
         with:
-          # GITHUB_TOKEN: ${{ env.GH_TOKEN }}
           message: |
             Vercel Preview URL :rocket: : ${{ steps.deploy.outputs.preview_url }}
             Neon branch :elephant: : https://console.neon.tech/app/projects/${{ env.NEON_PROJECT_ID }}/branches/${{ steps.create-branch.outputs.branch_id }}

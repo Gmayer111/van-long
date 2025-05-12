@@ -1,8 +1,13 @@
 name: Merge Release Branch to Prod
 
 env:
+  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+  BETA_DATABASE_URL: ${{ secrets.BETA_DATABASE_URL }}
+  BETA_DIRECT_URL: ${{ secrets.BETA_DIRECT_URL }}
+  DATABASE_URL: ${{ secrets.DATABASE_URL }}
+  DIRECT_URL: ${{ secrets.DIRECT_URL }}
 on:
   push:
     branches:
@@ -45,8 +50,33 @@ jobs:
           node-version: "18"
           cache: "npm"
 
+      - name: Run Migrations to Beta
+        if: env.target_env == 'beta'
+        run: |
+          touch .env
+
+          echo DATABASE_URL=${{ env.BETA_DATABASE_URL }} >> .env
+          echo DIRECT_URL=${{ env.BETA_DIRECT_URL }} >> .env
+
+          npx prisma generate
+          npx prisma migrate deploy
+
+      - name: Run Migrations to Production
+        if: env.target_env == 'production'
+        run: |
+          touch .env
+
+          echo DATABASE_URL=${{ env.DATABASE_URL }} >> .env
+          echo DIRECT_URL=${{ env.DIRECT_URL }} >> .env
+
+          npx prisma generate
+          npx prisma migrate deploy
+
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
+
+      - name: Build Project Artifacts
+        run: vercel build --token=${{ env.VERCEL_TOKEN }}
 
       - name: Deploy Project to Production
         if: env.target_env == 'production'
