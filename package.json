@@ -10,7 +10,7 @@
     "postinstall": "prisma generate && prisma migrate deploy"
   },
   "prisma": {
-    "schema": "./prisma/schema",
+    "schema": "prisma/schema",
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   },
   "engines": {

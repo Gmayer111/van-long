@@ -1,6 +1,6 @@
 "use server";
 
-import { Prisma } from "../../../../prisma/generated/prisma/client";
+import { Prisma } from "prisma/generated/prisma";
 import prisma from "src/lib/db";
 
 export async function getUserByEmail(email: string) {

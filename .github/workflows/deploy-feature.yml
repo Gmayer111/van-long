@@ -48,6 +48,9 @@ jobs:
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=preview --token=${{ env.VERCEL_TOKEN }}
 
+      - name: Setup redirect user URL env variable
+        run: echo ${{ steps.deploy.outputs.preview_url }}/fr/admin/dashboard/starters/dishs | tr -d '\n' | vercel env add REDIRECT_USER_URL preview --token=${{ env.VERCEL_TOKEN }}
+
       - name: Build Project Artifacts
         run: vercel build --token=${{ env.VERCEL_TOKEN }}
 
