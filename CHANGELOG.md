@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://github.com/Gmayer111/van-long/compare/v2.2.0...v2.3.0) (2025-05-21)
+
+
+### Features
+
+* update deploy feature to preview env ([#115](https://github.com/Gmayer111/van-long/issues/115)) ([f50afd4](https://github.com/Gmayer111/van-long/commit/f50afd443eb807af51f23c2f619f4bca5cc58d21))
+
 ## [2.2.0](https://github.com/Gmayer111/van-long/compare/v2.1.0...v2.2.0) (2025-04-15)
 
 
