@@ -4,7 +4,7 @@
 
 import { prismaMock } from "prisma/singleton";
 import { createExtra, deleteExtra, updateExtra } from "./extras.actions";
-import { Prisma } from "@prisma/client";
+import { Prisma } from "prisma/generated/prisma";
 
 jest.mock("next/cache", () => ({
   revalidatePath: jest.fn(),

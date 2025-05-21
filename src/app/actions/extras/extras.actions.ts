@@ -1,7 +1,7 @@
 "use server";
 
-import { Prisma } from "@prisma/client";
 import { revalidatePath } from "next/cache";
+import { Prisma } from "prisma/generated/prisma";
 import prisma from "src/lib/db";
 
 export async function createExtra(

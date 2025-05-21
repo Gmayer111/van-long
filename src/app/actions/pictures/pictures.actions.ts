@@ -1,9 +1,9 @@
 "use server";
 
-import { Prisma } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 import { del, put } from "@vercel/blob";
 import prisma from "src/lib/db";
+import { Prisma } from "prisma/generated/prisma";
 
 export async function createPicture(
   dishServiceId: number,
