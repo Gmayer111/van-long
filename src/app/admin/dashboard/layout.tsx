@@ -8,12 +8,11 @@ import DashboardSidenav, {
   TMenuItems,
 } from "src/components/dashboard/dashboard-sidenav/dashboard-sidenav.component";
 import { getAllDishServices } from "src/app/actions/dishs-service/dish-services.actions";
-import { ToastProvider } from "../../providers/toast.provider";
 
 const DashboardLayout = async ({ children }: { children: ReactNode }) => {
   const dishServices = await getAllDishServices();
 
-  if (!dishServices) return <div>Chargement...</div>;
+  if (!dishServices) return <div> ...</div>;
 
   const sidenavItems: TMenuItems[] = [
     {
@@ -38,12 +37,10 @@ const DashboardLayout = async ({ children }: { children: ReactNode }) => {
   ];
 
   return (
-    <ToastProvider>
-      <div className="dashboard-layout">
-        <DashboardSidenav sidenavItems={sidenavItems} />
-        {children}
-      </div>
-    </ToastProvider>
+    <div className="dashboard-layout">
+      <DashboardSidenav sidenavItems={sidenavItems} />
+      {children}
+    </div>
   );
 };
 
