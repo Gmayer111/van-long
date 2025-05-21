@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.1](https://github.com/Gmayer111/van-long/compare/v2.3.0...v2.3.1) (2025-05-21)
+
+
+### Bug Fixes
+
+* remove build project step ([#122](https://github.com/Gmayer111/van-long/issues/122)) ([b69235a](https://github.com/Gmayer111/van-long/commit/b69235aeb6f04ff684aaf68cfc160f94c9474364))
+
 ## [2.3.0](https://github.com/Gmayer111/van-long/compare/v2.2.0...v2.3.0) (2025-05-21)
 
 
