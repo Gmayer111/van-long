@@ -64,6 +64,11 @@
     margin-bottom: 20px;
   }
 
+  section:first-child a {
+    border: none;
+    background-color: transparent;
+  }
+
   section:last-child {
     position: relative;
     display: flex;
@@ -80,7 +85,7 @@
     border-top-right-radius: 50px;
   }
 
-  a {
+  section:last-child a {
     position: absolute;
     border-radius: 50px;
     border: none;
@@ -93,7 +98,7 @@
     text-decoration: none;
   }
 
-  a:hover {
+  section:last-child a:hover {
     background-color: $red-900;
     color: white;
   }

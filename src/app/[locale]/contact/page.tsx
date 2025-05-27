@@ -26,7 +26,7 @@ const ContactPage = () => {
             <span>{t("restaurantName")}</span>
             <span>9 rue du Champ de l'Aloutette</span>
             <span>75013 Paris</span>
-            <Link href={""}>+33 1 43 36 05 16</Link>
+            <a href="tel:+33 1 43 36 05 16">01 43 36 05 16</a>
           </div>
         </div>
         <div>
