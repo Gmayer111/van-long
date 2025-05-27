@@ -26,7 +26,7 @@ const ModalComponent = ({ isOpen, toggle }: TModalComponentProps) => {
           <h2>{t("takeAway")}</h2>
           <p>
             {t.rich("mainParagraph", {
-              spanLines: (chunks) => <span>{chunks}</span>,
+              spanLines: (chunks) => <a href={`tel:+${chunks}`}>{chunks}</a>,
             })}
           </p>
           <div>{t("visaAccepted")}</div>

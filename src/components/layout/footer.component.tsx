@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 import React from "react";
 import { merriweather } from "src/utils/font";
 
@@ -15,7 +16,7 @@ const FooterComponent = () => {
           <div>
             <span>9 rue du Champ de l'Aloutette</span>
             <span>75013 Paris</span>
-            <span>+33 1 43 36 05 16</span>
+            <a href="tel:+33 1 43 36 05 16">01 43 36 05 16</a>
           </div>
         </div>
         <div>
