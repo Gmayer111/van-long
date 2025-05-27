@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.0](https://github.com/Gmayer111/van-long/compare/v2.4.0...v2.5.0) (2025-05-27)
+
+
+### Features
+
+* allow to click on phone number ([#120](https://github.com/Gmayer111/van-long/issues/120)) ([4878f40](https://github.com/Gmayer111/van-long/commit/4878f40817b49ceea81226f734c04984eaed398e))
+
 ## [2.4.0](https://github.com/Gmayer111/van-long/compare/v2.3.1...v2.4.0) (2025-05-21)
 
 
