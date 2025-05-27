@@ -183,3 +183,46 @@
     }
   }
 }
+/*
+Click To Call anchor
+*/
+.click-to-call-container {
+  z-index: 3;
+  position: fixed;
+  right: 0;
+  top: 200px;
+  border: 1px solid $red-900;
+  border-radius: 0.5rem;
+  font-weight: $font-medium;
+  font-size: $text-sm;
+  padding: 0.625rem 1.25rem;
+  text-align: center;
+  margin-inline-end: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: $red-900;
+  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.click-to-call-container svg {
+  width: 25px;
+  height: 25px;
+}
+
+.click-to-call-container:hover {
+  background-color: $red-800;
+}
+
+.click-to-call-container span {
+  margin: 0 0.7rem;
+}
+
+@media (max-width: 768px) {
+  .click-to-call-container {
+    top: 65px;
+  }
+}
