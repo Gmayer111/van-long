@@ -30,6 +30,10 @@
     font-size: 1.8rem;
   }
 
+  > div:first-child > div:first-child a {
+    color: #fff;
+  }
+
   > div:first-child > div:nth-child(2) {
     align-items: center;
     border-left: 0.5px solid white;
