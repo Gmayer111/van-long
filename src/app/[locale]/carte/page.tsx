@@ -1,52 +1,93 @@
-"use client";
-
 import Image from "next/image";
 import { merriweather } from "src/utils/font";
-import { MenuItemsComponent } from "./menu-data";
-import { useTranslations } from "next-intl";
+import { getAllDishServicesMenuItems } from "src/app/actions/dishs-service/dish-services.actions";
+import { getLocale } from "next-intl/server";
 
-const MenuPage = () => {
-  const data = MenuItemsComponent();
-  const t = useTranslations("MenuPage");
+enum ServerLocale {
+  fr = "FR",
+  en = "EN",
+}
+
+function convertToLocaleEnum(str: string): ServerLocale {
+  const localeValue = ServerLocale[str as keyof typeof ServerLocale];
+  return localeValue;
+}
+
+const MenuPage = async () => {
+  const dishServicesItems = await getAllDishServicesMenuItems();
+
+  const currentLocale = await getLocale();
+  const locale = convertToLocaleEnum(currentLocale);
+
+  const menuData = {
+    FR: dishServicesItems.map((dishServiceItems) => ({
+      dishServiceTitlte: dishServiceItems.titleFR,
+      dishs: dishServiceItems.dishs.map((item) => ({
+        label: item.labelFR,
+        price: item.price,
+      })),
+      extras: dishServiceItems.extras.map((extra) => ({
+        extra: extra.labelFR,
+      })),
+      pictures: dishServiceItems.pictures.map((picture) => ({
+        url: picture.pictureUrl,
+        description: picture.descriptionFR,
+      })),
+    })),
+    EN: dishServicesItems.map((dishServiceItems) => ({
+      dishServiceTitlte: dishServiceItems.titleEN,
+      dishs: dishServiceItems.dishs.map((item) => ({
+        label: item.labelEN,
+        price: item.price,
+      })),
+      extras: dishServiceItems.extras.map((extra) => ({
+        extra: extra.labelEN,
+      })),
+      pictures: dishServiceItems.pictures.map((picture) => ({
+        url: picture.pictureUrl,
+        description: picture.descriptionEN,
+      })),
+    })),
+  };
+
   return (
     <section
       id="menu-section"
       className={`${merriweather.className} menuPageContainer`}
     >
       <div>
-        <h2>{t('mainTitle')}</h2>
-        {data.map((menuItem) => (
-          <div key={menuItem.title}>
+        {/* <h2>{t('mainTitle')}</h2>  */}
+        {menuData[locale].map((menuItem) => (
+          <div key={menuItem.dishServiceTitlte}>
             <div>
               <div className="divider">
                 <hr />
-                <h3>{menuItem.title}</h3>
+                <h3>{menuItem.dishServiceTitlte}</h3>
                 <hr />
               </div>
               <ul>
-                {menuItem.items.map((item) => (
-                  <>
-                    <li key={item.label}>
-                      <span>{item.label}</span>
-                      <span>{item.price}</span>
-                    </li>
-                    {item.extra && <span>{item.extra}</span>}
-                  </>
+                {menuItem.dishs.map((dish) => (
+                  <li key={dish.label}>
+                    <span>{dish.label}</span>
+                    <span>{dish.price}</span>
+                  </li>
                 ))}
               </ul>
+              {menuItem.extras &&
+                menuItem.extras.map((extra) => <span>{extra.extra}</span>)}
             </div>
-            {menuItem.picture && (
+            {menuItem.pictures && (
               <div
                 className={
-                  menuItem.picture.length > 1
+                  menuItem.pictures.length > 1
                     ? "picturesContainer"
                     : "pictureContainer"
                 }
               >
-                {menuItem.picture.map((picture) => (
+                {menuItem.pictures.map((picture) => (
                   <div key={picture.description}>
                     <Image
-                      src={`/assets/images/menu/${picture.path}.jpg`}
+                      src={picture.url}
                       width={180}
                       height={180}
                       alt={picture.description}
