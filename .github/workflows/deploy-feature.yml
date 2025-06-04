@@ -38,6 +38,8 @@ jobs:
           echo DATABASE_URL=${{ steps.create-branch.outputs.db_url_with_pooler }} >> .env
           echo DIRECT_URL=${{ steps.create-branch.outputs.db_url }} >> .env
 
+          yarn install
+
           npx prisma generate
           npx prisma migrate deploy
 
