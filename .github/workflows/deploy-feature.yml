@@ -15,35 +15,26 @@ env:
   NEON_DATABASE_USERNAME: ${{ secrets.PG_USERNAME }}
   NEON_DATABASE_NAME: ${{ secrets.PG_DATABASE }}
   GH_TOKEN: ${{ secrets.GH_TOKEN }}
+  DATABASE_URL: ${{ secrets.DATABASE_URL }}
+  DIRECT_URL: ${{ secrets.DIRECT_URL }}
 
 jobs:
-  setup:
-    name: Setup
-    outputs:
-      branch: ${{ steps.branch_name.outputs.current_branch }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get branch name
-        id: branch_name
-        uses: tj-actions/branch-names@v8
-
   deploy-preview:
     permissions: write-all
-    needs: setup
-    if: |
-      github.event_name == 'pull_request' && (
-      github.event.action == 'synchronize'
-      || github.event.action == 'opened'
-      || github.event.action == 'reopened')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Get branch name
+        id: branch-name
+        uses: tj-actions/branch-names@v8
+
       - name: Create Neon Branch
         id: create-branch
         uses: neondatabase/create-branch-action@v5
         with:
           project_id: ${{ env.NEON_PROJECT_ID }}
-          branch_name: preview/pr-${{ github.event.number }}-${{ needs.setup.outputs.branch }}
+          branch_name: preview/pr-${{ github.event.number }}-${{ steps.branch-name.outputs.current_branch }}
           username: ${{ env.NEON_DATABASE_USERNAME }}
           database: ${{ env.NEON_DATABASE_NAME }}
           api_key: ${{ env.NEON_API_KEY }}
@@ -51,7 +42,6 @@ jobs:
       - name: Run Migrations
         run: |
           touch .env
-
           echo DATABASE_URL=${{ steps.create-branch.outputs.db_url_with_pooler }} >> .env
           echo DIRECT_URL=${{ steps.create-branch.outputs.db_url }} >> .env
 
@@ -77,12 +67,12 @@ jobs:
         uses: thollander/actions-comment-pull-request@v2
         with:
           message: |
-            Vercel Preview URL :rocket: : ${{ steps.deploy.outputs.preview_url }}
-            Neon branch :elephant: : https://console.neon.tech/app/projects/${{ env.NEON_PROJECT_ID }}/branches/${{ steps.create-branch.outputs.branch_id }}
+            Vercel Preview URL 🚀 : ${{ steps.deploy.outputs.preview_url }}
+
+            Neon branch 🐘 : https://console.neon.tech/app/projects/${{ env.NEON_PROJECT_ID }}/branches/${{ steps.create-branch.outputs.branch_id }}
 
   delete_neon_branch:
     name: Delete Neon Branch
-    needs: setup
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
     steps:
@@ -90,5 +80,5 @@ jobs:
         uses: neondatabase/delete-branch-action@v3
         with:
           project_id: ${{ env.NEON_PROJECT_ID }}
-          branch: preview/pr-${{ github.event.number }}-${{ needs.setup.outputs.branch }}
+          branch: preview/pr-${{ github.event.number }}-${{ needs.deploy-preview.outputs.branch }}
           api_key: ${{ env.NEON_API_KEY }}

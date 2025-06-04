@@ -1,6 +1,6 @@
 {
   "name": "van-long",
-  "version": "2.6.0",
+  "version": "2.5.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -10,8 +10,7 @@
     "postinstall": "prisma generate && prisma migrate deploy"
   },
   "prisma": {
-    "schema": "prisma/schema",
-    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+    "schema": "prisma/schema"
   },
   "engines": {
     "yarn": "^1.22.17",
