@@ -1,4 +1,4 @@
-name: Clean up Preview Deployment
+name: Clean up Preview branch Deployment
 on:
   pull_request:
     types: [closed]
