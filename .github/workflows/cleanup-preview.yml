@@ -1,8 +1,7 @@
-name: Clean up Preview branch Deployment
+name: Clean up Preview Deployment
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    types: [closed]
 
 jobs:
   delete-preview:
