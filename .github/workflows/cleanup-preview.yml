@@ -12,5 +12,5 @@ jobs:
         uses: neondatabase/delete-branch-action@v3.1.3
         with:
           project_id: ${{ secrets.NEON_PROJECT_ID }}
-          branch_id: br-floral-resonance-a2e2y31y
+          branch: ${{ secrets.BRANCH_ID }}
           api_key: ${{ secrets.NEON_API_KEY }}
