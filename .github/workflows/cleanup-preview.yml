@@ -1,8 +1,7 @@
 name: Clean up Preview Deployment
 on:
-  push:
-    branches:
-      - "main"
+  pull_request:
+    types: [closed]
 
 jobs:
   delete-preview:
@@ -12,5 +11,5 @@ jobs:
         uses: neondatabase/delete-branch-action@v3.1.3
         with:
           project_id: ${{ vars.NEON_PROJECT_ID }}
-          branch: ${{ secrets.BRANCH_ID }}
+          branch: preview/pr-${{ github.event.number }}-${{ github.event.pull_request.head.ref }}
           api_key: ${{ secrets.NEON_API_KEY }}
