@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.6.0](https://github.com/Gmayer111/van-long/compare/v2.5.0...v2.6.0) (2025-06-07)
+
+
+### Features
+
+* updating workflows ([#127](https://github.com/Gmayer111/van-long/issues/127)) ([61cf048](https://github.com/Gmayer111/van-long/commit/61cf048fe4861426e90ee0a2373e0cc26e429a17))
+
+
+### Bug Fixes
+
+* add env in cleanup workflow ([#130](https://github.com/Gmayer111/van-long/issues/130)) ([879bf65](https://github.com/Gmayer111/van-long/commit/879bf657a789f6b94cbb381b445e26f054e01566))
+* add yarn install before migrations ([#129](https://github.com/Gmayer111/van-long/issues/129)) ([c453fc8](https://github.com/Gmayer111/van-long/commit/c453fc8a616d5569311fba9d209af25da7d8ee6a))
+* modify cleanup workflow ([#131](https://github.com/Gmayer111/van-long/issues/131)) ([8d8ecc4](https://github.com/Gmayer111/van-long/commit/8d8ecc4e34c205ce3f3c4b36232ca37c6a6d8fcb))
+* modify cleanup workflow ([#132](https://github.com/Gmayer111/van-long/issues/132)) ([7d40613](https://github.com/Gmayer111/van-long/commit/7d406131d625404b0890e8eb7bdfef7c78cd542e))
+* update cleanup workflow ([#134](https://github.com/Gmayer111/van-long/issues/134)) ([85d2169](https://github.com/Gmayer111/van-long/commit/85d2169841bd7c99d9d708b5fefec52e32feba42))
+* update cleanup workflow ([#135](https://github.com/Gmayer111/van-long/issues/135)) ([3b50d6f](https://github.com/Gmayer111/van-long/commit/3b50d6f83e04bb5c583ca452a3e31f49cbd29b34))
+* update cleanup-preview.yml ([bbba729](https://github.com/Gmayer111/van-long/commit/bbba729d73cf849c0477e9089bd9bc15005e184b))
+* update cleanup-preview.yml ([0929def](https://github.com/Gmayer111/van-long/commit/0929def2749c8ba9bfbbaaf6272c387efd107b8d))
+* update cleanup-preview.yml ([00eb263](https://github.com/Gmayer111/van-long/commit/00eb2639aeb5b32960ee9f38bb30bbdaba94d921))
+
 ## [2.5.0](https://github.com/Gmayer111/van-long/compare/v2.4.0...v2.5.0) (2025-05-27)
 
 
