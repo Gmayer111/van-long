@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Delete Neon Branch via API
         run: |
-          echo "Trying to delete branch: $NEON_PROJECT_ID"
+          echo "Trying to delete branch: ${{ secrets.NEON_PROJECT_ID }}"
           curl -X 'DELETE' \
             "https://console.neon.tech/api/v2/projects/$NEON_PROJECT_ID/branches/$BRANCH" \
             -H 'accept: application/json' \
