@@ -14,7 +14,7 @@ jobs:
           NEON_API_KEY: ${{ secrets.NEON_API_KEY }}
           BRANCH: preview/pr-${{ github.event.number }}-${{ github.event.pull_request.head.ref }}
         run: |
-          BRANCH_NAME= preview/pr-${{ github.event.number }}-${{ github.event.pull_request.head.ref }}
+          BRANCH_NAME= toto
           echo "Trying to delete branch: $BRANCH_NAME"
           curl -X 'DELETE' \
             "https://console.neon.tech/api/v2/projects/$NEON_PROJECT_ID/branches/$BRANCH" \
