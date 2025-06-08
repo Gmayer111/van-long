@@ -16,6 +16,6 @@ jobs:
         run: |
           echo "Trying to delete branch: ${{ secrets.NEON_PROJECT_ID }}"
           curl -X 'DELETE' \
-            "https://console.neon.tech/api/v2/projects/$NEON_PROJECT_ID/branches/$BRANCH_NAME" \
+            "https://console.neon.tech/api/v1/projects/$NEON_PROJECT_ID/branches/$BRANCH_NAME" \
             -H 'accept: application/json' \
             -H "Authorization: Bearer $NEON_API_KEY" | jq
