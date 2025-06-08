@@ -1,21 +1,15 @@
 name: Clean up Preview Deployment
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    types: [closed]
 
 jobs:
   delete-preview:
     runs-on: ubuntu-latest
     steps:
-      - name: Delete Neon Branch via API
-        env:
-          NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }}
-          NEON_API_KEY: ${{ secrets.NEON_API_KEY }}
-          BRANCH_NAME: preview/pr-${{ github.event.number }}-${{ github.event.pull_request.head.ref }}
-        run: |
-          echo "Trying to delete branch: ${{ secrets.NEON_PROJECT_ID }}"
-          curl -X 'DELETE' \
-            "https://console.neon.tech/api/v1/projects/$NEON_PROJECT_ID/branches/$BRANCH_NAME" \
-            -H 'accept: application/json' \
-            -H "Authorization: Bearer $NEON_API_KEY" | jq
+      - name: Delete Neon Branch
+        uses: neondatabase/delete-branch-action@v3.1.3
+        with:
+          project_id: ${{ secrets.NEON_PROJECT_ID }}
+          branch: preview/pr-${{ github.event.number }}-${{ github.event.pull_request.head.ref }}
+          api_key: ${{ secrets.NEON_API_KEY }}
