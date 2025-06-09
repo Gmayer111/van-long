@@ -85,4 +85,4 @@ jobs:
         if: env.target_env == 'beta'
         run: |
           DEPLOYMENT_URL=$(vercel deploy --token=${{ secrets.VERCEL_TOKEN }})
-          vercel alias $DEPLOYMENT_URL ${{ vars.BETA_URL }} --token=${{ secrets.VERCEL_TOKEN }} --scope=${{ env.VERCEL_ORG_ID }}
+          vercel alias $DEPLOYMENT_URL ${{ vars.BETA_URL }} --token=${{ secrets.VERCEL_TOKEN }}
