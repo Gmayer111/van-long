@@ -5,6 +5,16 @@ export async function getAllDishServices() {
   return await prisma.dishService.findMany({});
 }
 
+export async function getAllDishServicesMenuItems() {
+  return await prisma.dishService.findMany({
+    include: {
+      dishs: true,
+      pictures: true,
+      extras: true,
+    },
+  });
+}
+
 export async function getAllDishsServiceItems({
   pathnameParams,
   dishs,
