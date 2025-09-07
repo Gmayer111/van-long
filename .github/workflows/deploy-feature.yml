@@ -1,94 +1,44 @@
-name: Create/Delete Branch for Pull Request
+name: Deploy feature
+
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
 on:
   pull_request:
-    types:
-      - opened
-      - reopened
-      - synchronize
-      - closed
-
-env:
-  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-  NEON_API_KEY: ${{ secrets.NEON_API_KEY }}
-  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }}
-  NEON_DATABASE_USERNAME: ${{ secrets.PG_USERNAME }}
-  NEON_DATABASE_NAME: ${{ secrets.PG_DATABASE }}
-  GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    types: [opened, synchronize, reopened]
 
 jobs:
-  setup:
-    name: Setup
-    outputs:
-      branch: ${{ steps.branch_name.outputs.current_branch }}
+  deploy:
+    name: Deploy on PR update
     runs-on: ubuntu-latest
-    steps:
-      - name: Get branch name
-        id: branch_name
-        uses: tj-actions/branch-names@v8
 
-  deploy-preview:
-    permissions: write-all
-    needs: setup
-    if: |
-      github.event_name == 'pull_request' && (
-      github.event.action == 'synchronize'
-      || github.event.action == 'opened'
-      || github.event.action == 'reopened')
-    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Create Neon Branch
-        id: create-branch
-        uses: neondatabase/create-branch-action@v5
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
         with:
-          project_id: ${{ env.NEON_PROJECT_ID }}
-          branch_name: preview/pr-${{ github.event.number }}-${{ needs.setup.outputs.branch }}
-          username: ${{ env.NEON_DATABASE_USERNAME }}
-          database: ${{ env.NEON_DATABASE_NAME }}
-          api_key: ${{ env.NEON_API_KEY }}
-
-      - name: Run Migrations
-        run: |
-          touch .env
-
-          echo DATABASE_URL=${{ steps.create-branch.outputs.db_url_with_pooler }} >> .env
-          echo DIRECT_URL=${{ steps.create-branch.outputs.db_url }} >> .env
-
-          yarn install
-
-          npx prisma generate
-          npx prisma migrate deploy
+          node-version: "22"
+          cache: "npm"
 
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
 
-      - name: Pull Vercel Environment Information
-        run: vercel pull --yes --environment=preview --token=${{ env.VERCEL_TOKEN }}
+      - name: Deploy
+        run: |
+          DEPLOYMENT_URL=$(vercel deploy --token=${{ secrets.VERCEL_TOKEN }})
+          echo "DEPLOYMENT_URL=$DEPLOYMENT_URL" >> $GITHUB_ENV
 
-      - name: Build Project Artifacts
-        run: vercel build --token=${{ env.VERCEL_TOKEN }}
-
-      - name: Deploy Preview to Vercel
-        id: deploy
-        run: echo preview_url=$(vercel deploy --prebuilt --token=${{ env.VERCEL_TOKEN }}) >> $GITHUB_OUTPUT
-
-      - name: Comment on Pull Request
-        uses: thollander/actions-comment-pull-request@v2
+      - name: Add PR Comment
+        uses: actions/github-script@v6
         with:
-          message: |
-            Vercel Preview URL :rocket: : ${{ steps.deploy.outputs.preview_url }}
-            Neon branch :elephant: : https://console.neon.tech/app/projects/${{ env.NEON_PROJECT_ID }}/branches/${{ steps.create-branch.outputs.branch_id }}
-
-  delete_neon_branch:
-    name: Delete Neon Branch
-    needs: setup
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Delete Neon Branch
-        uses: neondatabase/delete-branch-action@v3
-        with:
-          project_id: ${{ env.NEON_PROJECT_ID }}
-          branch: preview/pr-${{ github.event.number }}-${{ needs.setup.outputs.branch }}
-          api_key: ${{ env.NEON_API_KEY }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const deploymentUrl = process.env.DEPLOYMENT_URL;
+            const comment = `:rocket: Branch deployed at ${deploymentUrl}`;
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            })

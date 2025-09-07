@@ -1,0 +1,63 @@
+model DishService {
+  id        Int       @id @default(autoincrement())
+  titleFR   String
+  titleEN   String
+  slug      String
+  dishs     Dish[]
+  pictures  Picture[]
+  extras    Extra[]
+  updatedAt DateTime  @default(now())
+  createdAt DateTime  @default(now())
+}
+
+model Dish {
+  id            Int         @id @default(autoincrement())
+  labelFR       String      @unique
+  labelEN       String      @unique
+  price         Float
+  DishService   DishService @relation(fields: [dishServiceId], references: [id])
+  dishServiceId Int
+  updatedAt     DateTime    @default(now())
+  createdAt     DateTime    @default(now())
+}
+
+model Extra {
+  id            Int         @id @default(autoincrement())
+  labelFR       String      @unique
+  labelEN       String      @unique
+  dishServiceId Int
+  updatedAt     DateTime    @default(now())
+  createdAt     DateTime    @default(now())
+  DishService   DishService @relation(fields: [dishServiceId], references: [id])
+}
+
+model Picture {
+  id            Int          @id @default(autoincrement())
+  pictureUrl    String       @unique
+  descriptionFR String
+  descriptionEN String
+  DishService   DishService? @relation(fields: [dishServiceId], references: [id])
+  dishServiceId Int?
+  updatedAt     DateTime     @default(now())
+  createdAt     DateTime     @default(now())
+}
+
+generator client {
+  provider      = "prisma-client-js"
+  output        = "../../prisma/generated/prisma"
+  moduleFormat  = "esm"
+  binaryTargets = ["native", "rhel-openssl-1.0.x"]
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String
+  updatedAt DateTime @default(now())
+  createdAt DateTime @default(now())
+}
