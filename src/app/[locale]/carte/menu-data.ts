@@ -27,7 +27,7 @@ export const MenuItemsComponent = () => {
         },
         {
           label: t("starters.haKao"),
-          price: "7€00",
+          price: "7€50",
         },
         {
           label: t("starters.banhCuon"),
