@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.7.0](https://github.com/Gmayer111/van-long/compare/v2.6.0...v2.7.0) (2025-09-08)
+
+
+### Features
+
+* create new dishservice query designed for menu page ([#126](https://github.com/Gmayer111/van-long/issues/126)) ([c75ffdc](https://github.com/Gmayer111/van-long/commit/c75ffdcca9debf613f45246b47c8fc4b1ac3a1ec))
+
 ## [2.6.0](https://github.com/Gmayer111/van-long/compare/v2.5.0...v2.6.0) (2025-06-09)
 
 
