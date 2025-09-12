@@ -6,8 +6,8 @@ env:
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
   BETA_DATABASE_URL: ${{ secrets.BETA_DATABASE_URL }}
   BETA_DIRECT_URL: ${{ secrets.BETA_DIRECT_URL }}
-  DATABASE_URL: ${{ secrets.DATABASE_URL }}
-  DIRECT_URL: ${{ secrets.DIRECT_URL }}
+  PROD_DATABASE_URL: ${{ secrets.PROD_DATABASE_URL }}
+  PROD_DIRECT_URL: ${{ secrets.PROD_DIRECT_URL }}
 on:
   push:
     branches:
@@ -68,8 +68,8 @@ jobs:
         run: |
           touch .env
 
-          echo DATABASE_URL=${{ env.DATABASE_URL }} >> .env
-          echo DIRECT_URL=${{ env.DIRECT_URL }} >> .env
+          echo DATABASE_URL=${{ env.PROD_DATABASE_URL }} >> .env
+          echo DIRECT_URL=${{ env.PROD_DIRECT_URL }} >> .env
 
           yarn install
 
