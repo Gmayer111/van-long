@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.7.0](https://github.com/Gmayer111/van-long/compare/v2.6.0...v2.7.0) (2025-09-13)
+
+
+### Features
+
+* create new dishservice query designed for menu page ([9935ed4](https://github.com/Gmayer111/van-long/commit/9935ed4267c7e8a63f107f1b3c358a6ad989d3a3))
+* import data from db to menu ([3f35d54](https://github.com/Gmayer111/van-long/commit/3f35d548b0cddde6b925a5b764e99ce36bdc6a37))
+* remove seed file ([8055753](https://github.com/Gmayer111/van-long/commit/8055753d31078b05f4efda5df5ed7a1b494acc2b))
+
 ## [2.6.0](https://github.com/Gmayer111/van-long/compare/v2.5.0...v2.6.0) (2025-06-09)
 
 
