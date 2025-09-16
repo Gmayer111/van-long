@@ -56,6 +56,7 @@ const MenuPage = async () => {
       className={`${merriweather.className} menuPageContainer`}
     >
       <div>
+        {/* <h2>{t('mainTitle')}</h2>  */}
         {menuData[locale].map((menuItem) => (
           <div key={menuItem.dishServiceTitlte}>
             <div>
@@ -68,7 +69,7 @@ const MenuPage = async () => {
                 {menuItem.dishs.map((dish) => (
                   <li key={dish.label}>
                     <span>{dish.label}</span>
-                    <span>{dish.price} €</span>
+                    <span>{dish.price}</span>
                   </li>
                 ))}
               </ul>
