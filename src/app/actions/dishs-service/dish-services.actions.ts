@@ -20,11 +20,13 @@ export async function getAllDishsServiceItems({
   dishs,
   pictures,
   extras,
+  dishServiceId,
 }: {
   pathnameParams: string;
   dishs?: boolean;
   pictures?: boolean;
   extras?: boolean;
+  dishServiceId?: number;
 }) {
   return await prisma.dishService.findFirst({
     where: {
@@ -33,7 +35,14 @@ export async function getAllDishsServiceItems({
     include: {
       dishs: dishs,
       pictures: pictures,
-      extras: extras,
+      extras: {
+        where: {
+          dishServiceId,
+        },
+        include: {
+          extra: extras,
+        },
+      },
     },
   });
 }

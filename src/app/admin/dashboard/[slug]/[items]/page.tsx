@@ -1,4 +1,5 @@
 import { getAllDishsServiceItems } from "src/app/actions/dishs-service/dish-services.actions";
+import { getAllExtras } from "src/app/actions/extras/extras.actions";
 import DishsDashboard from "src/components/dashboard/dashboard-items/dishs-dashboard.component";
 import ExtrasDashboard from "src/components/dashboard/dashboard-items/extras-dashboard.component";
 import PicturesDashboard from "src/components/dashboard/dashboard-items/pictures-dashboard.component";
@@ -18,6 +19,11 @@ export default async function page({
   });
 
   if (!dishsService) return <div>Chargement...</div>;
+
+  const extrasItems = {
+    dishServiceExtras: dishsService.extras.map((extra) => extra.extra),
+    extras: await getAllExtras(),
+  };
 
   switch (items) {
     case "dishs":
@@ -39,9 +45,10 @@ export default async function page({
     case "extras":
       return (
         <ExtrasDashboard
+          extras={extrasItems.extras}
           dishServiceTitle={dishsService.titleFR}
           dishServiceId={dishsService.id}
-          extras={dishsService.extras}
+          dishServiceExtras={extrasItems.dishServiceExtras}
         />
       );
 
