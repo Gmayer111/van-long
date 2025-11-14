@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.0](https://github.com/Gmayer111/van-long/compare/v3.0.0...v3.1.0) (2025-11-14)
+
+
+### Features
+
+* amend extra behavior ([#151](https://github.com/Gmayer111/van-long/issues/151)) ([afd1201](https://github.com/Gmayer111/van-long/commit/afd120145b972eba25b228d1460dfa4c40b5a2f3))
+
 ## [3.0.0](https://github.com/Gmayer111/van-long/compare/v2.7.0...v3.0.0) (2025-09-15)
 
 
