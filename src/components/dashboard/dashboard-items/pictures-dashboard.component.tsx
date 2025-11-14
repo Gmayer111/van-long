@@ -49,8 +49,6 @@ const PicturesDashboard = ({
     }
   }, [modalActionForm]);
 
-  if (!pictures) return <div>Chargement des images...</div>;
-
   const fields: TFields[] = [
     {
       columnSide: "left",
