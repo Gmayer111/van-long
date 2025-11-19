@@ -1,9 +1,8 @@
 model Extra {
-  id            Int         @id @default(autoincrement())
-  labelFR       String      @unique
-  labelEN       String      @unique
-  dishServiceId Int
-  updatedAt     DateTime    @default(now())
-  createdAt     DateTime    @default(now())
-  DishService   DishService @relation(fields: [dishServiceId], references: [id])
+  id           Int                    @id @default(autoincrement())
+  labelFR      String                 @unique
+  labelEN      String                 @unique
+  dishServices DishServicesOnExtras[]
+  updatedAt    DateTime               @default(now())
+  createdAt    DateTime               @default(now())
 }

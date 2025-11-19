@@ -4,17 +4,27 @@ import { revalidatePath } from "next/cache";
 import { Prisma } from "prisma/generated/prisma";
 import prisma from "src/lib/db";
 
+export async function getAllExtras() {
+  return await prisma.extra.findMany();
+}
+
 export async function createExtra(
   dishServiceId: number,
   formData: FormData,
   path?: string
 ) {
   try {
-    await prisma.extra.create({
+    const extra = await prisma.extra.create({
       data: {
         labelEN: formData.get("labelEN") as string,
         labelFR: formData.get("labelFR") as string,
+      },
+    });
+    const extraId = extra.id;
+    await prisma.dishServicesOnExtras.create({
+      data: {
         dishServiceId,
+        extraId,
       },
     });
 

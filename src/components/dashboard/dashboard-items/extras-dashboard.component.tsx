@@ -9,6 +9,7 @@ import {
   deleteExtra,
   updateExtra,
 } from "src/app/actions/extras/extras.actions";
+import { createDishServicesOnExtras } from "src/app/actions/dishs-services-on-extras/dishs-services-on-extras.actions";
 
 type TExtra = {
   id: number;
@@ -26,6 +27,7 @@ export type TTableData = TTableGeneric<
 >;
 
 export type TExtrasDashboardProps = {
+  dishServiceExtras: TExtra[] | undefined;
   extras: TExtra[] | undefined;
   dishServiceId: number | undefined;
   dishServiceTitle: string;
@@ -33,8 +35,9 @@ export type TExtrasDashboardProps = {
 
 const ExtrasDashboard = ({
   dishServiceTitle,
-  extras,
+  dishServiceExtras,
   dishServiceId,
+  extras,
 }: TExtrasDashboardProps) => {
   const [selectedExtra, setSelectedExtra] = useState<TExtra | undefined>(
     undefined
@@ -48,8 +51,6 @@ const ExtrasDashboard = ({
     }
   }, [modalActionForm]);
 
-  if (!extras) return <div>Chargement des extras ...</div>;
-
   const fields: TFields[] = [
     {
       columnSide: "left",
@@ -59,8 +60,17 @@ const ExtrasDashboard = ({
           inputType: "text",
           placeholder: "* Servis avec du riz nature",
           defaultValue: selectedExtra && selectedExtra.labelFR,
-          label: "Extra en FR",
+          label: "Ajouter un nouveau extra en FR",
           name: "labelFR",
+        },
+        {
+          fieldElement: "select",
+          name: "extraId",
+          label: "Sélectionner un extra existant",
+          selectOptions: extras?.map((extra) => ({
+            content: extra.labelFR,
+            value: extra.id,
+          })),
         },
       ],
     },
@@ -72,7 +82,7 @@ const ExtrasDashboard = ({
           inputType: "text",
           placeholder: "* Served w/ Jasmine rice",
           defaultValue: selectedExtra && selectedExtra.labelEN,
-          label: "Extra en EN",
+          label: "Ajouter un nouveau extra en EN",
           name: "labelEN",
         },
       ],
@@ -80,16 +90,31 @@ const ExtrasDashboard = ({
   ];
 
   const handleSubmitExtra = async (formData: FormData) => {
+    const extraId = Number(formData.get("extraId"));
+
     if (modalActionForm === "createModal" && dishServiceId) {
-      const result = await createExtra(
-        dishServiceId,
-        formData,
-        dishServiceTitle
-      );
-      if (result?.error) {
-        showToast({ message: result?.error, type: "alert" });
+      if (extraId !== 0) {
+        const result = await createDishServicesOnExtras(
+          dishServiceId,
+          extraId,
+          dishServiceTitle
+        );
+        if (result?.error) {
+          showToast({ message: result?.error, type: "alert" });
+        } else {
+          showToast({ message: "Ajout existant effectué", type: "success" });
+        }
       } else {
-        showToast({ message: "Ajout effectué", type: "success" });
+        const result = await createExtra(
+          dishServiceId,
+          formData,
+          dishServiceTitle
+        );
+        if (result?.error) {
+          showToast({ message: result?.error, type: "alert" });
+        } else {
+          showToast({ message: "Nouvel ajout effectué", type: "success" });
+        }
       }
       setModalActionForm("");
     }
@@ -123,7 +148,7 @@ const ExtrasDashboard = ({
   return (
     <TableDashboard
       title={dishServiceTitle}
-      data={extras as Array<TTableData>}
+      data={dishServiceExtras as Array<TTableData>}
       fields={fields}
       columns={[
         {

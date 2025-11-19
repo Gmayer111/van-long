@@ -66,25 +66,27 @@ const TableDashboard = <T, K extends keyof T>({
     }
   }, [modalActionForm]);
 
-  const dataRows = data.map((value) => ({
-    ...value,
-    actions: (
-      <DropdownButton
-        listItems={[
-          {
-            content: "Modifier",
-            onClickAction: () => setDisplayModal("editModal"),
-          },
-          {
-            content: "Supprimer",
-            onClickAction: () => setDisplayModal("deleteModal"),
-          },
-        ]}
-        type="button"
-        hasIconButton={true}
-      />
-    ),
-  }));
+  const dataRows =
+    data &&
+    data.map((value) => ({
+      ...value,
+      actions: (
+        <DropdownButton
+          listItems={[
+            {
+              content: "Modifier",
+              onClickAction: () => setDisplayModal("editModal"),
+            },
+            {
+              content: "Supprimer",
+              onClickAction: () => setDisplayModal("deleteModal"),
+            },
+          ]}
+          type="button"
+          hasIconButton={true}
+        />
+      ),
+    }));
 
   return (
     <div>
@@ -97,7 +99,6 @@ const TableDashboard = <T, K extends keyof T>({
             Ajouter
           </ButtonForm>
         </TableHeader>
-
         <Table
           selectedItem={selectedItem}
           columns={columns}

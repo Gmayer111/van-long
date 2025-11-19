@@ -2,6 +2,7 @@ import Image from "next/image";
 import { merriweather } from "src/utils/font";
 import { getAllDishServicesMenuItems } from "src/app/actions/dishs-service/dish-services.actions";
 import { getLocale } from "next-intl/server";
+import { getAllDishServicesOnExtras } from "src/app/actions/dishs-services-on-extras/dishs-services-on-extras.actions";
 
 enum ServerLocale {
   fr = "FR",
@@ -15,7 +16,7 @@ function convertToLocaleEnum(str: string): ServerLocale {
 
 const MenuPage = async () => {
   const dishServicesItems = await getAllDishServicesMenuItems();
-
+  const dishServicesOnExtras = await getAllDishServicesOnExtras();
   const currentLocale = await getLocale();
   const locale = convertToLocaleEnum(currentLocale);
 
@@ -26,8 +27,10 @@ const MenuPage = async () => {
         label: item.labelFR,
         price: item.price,
       })),
-      extras: dishServiceItems.extras.map((extra) => ({
-        extra: extra.labelFR,
+      extras: dishServicesOnExtras.map((dishServiceOnExtra) => ({
+        extra:
+          dishServiceItems.id === dishServiceOnExtra.dishServiceId &&
+          dishServiceOnExtra.extra.labelFR,
       })),
       pictures: dishServiceItems.pictures.map((picture) => ({
         url: picture.pictureUrl,
@@ -40,8 +43,10 @@ const MenuPage = async () => {
         label: item.labelEN,
         price: item.price,
       })),
-      extras: dishServiceItems.extras.map((extra) => ({
-        extra: extra.labelEN,
+      extras: dishServicesOnExtras.map((dishServiceOnExtra) => ({
+        extra:
+          dishServiceItems.id === dishServiceOnExtra.dishServiceId &&
+          dishServiceOnExtra.extra.labelEN,
       })),
       pictures: dishServiceItems.pictures.map((picture) => ({
         url: picture.pictureUrl,
@@ -72,8 +77,13 @@ const MenuPage = async () => {
                   </li>
                 ))}
               </ul>
-              {menuItem.extras &&
-                menuItem.extras.map((extra) => <span>{extra.extra}</span>)}
+              {menuItem.extras && (
+                <ul>
+                  {menuItem.extras.map((extra) => (
+                    <li className="extra-list">{extra.extra}</li>
+                  ))}
+                </ul>
+              )}
             </div>
             {menuItem.pictures && (
               <div
