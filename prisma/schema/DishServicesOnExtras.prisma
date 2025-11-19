@@ -1,0 +1,10 @@
+model DishServicesOnExtras {
+    dishService   DishService @relation(fields: [dishServiceId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+    dishServiceId Int
+    extra         Extra       @relation(fields: [extraId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+    extraId       Int
+    updatedAt     DateTime    @default(now())
+    createdAt     DateTime    @default(now())
+
+    @@id([dishServiceId, extraId])
+}

@@ -1,11 +1,11 @@
 model DishService {
-    id        Int       @id @default(autoincrement())
+    id        Int                    @id @default(autoincrement())
     titleFR   String
     titleEN   String
     slug      String
     dishs     Dish[]
     pictures  Picture[]
-    extras    Extra[]
-    updatedAt DateTime  @default(now())
-    createdAt DateTime  @default(now())
+    extras    DishServicesOnExtras[]
+    updatedAt DateTime               @default(now())
+    createdAt DateTime               @default(now())
 }

@@ -49,8 +49,6 @@ const DishsDashboard = ({
     }
   }, [modalActionForm]);
 
-  if (!dishs) return <div>Chargement des assiettes...</div>;
-
   const fields: TFields[] = [
     {
       columnSide: "left",
