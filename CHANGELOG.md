@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.0](https://github.com/Gmayer111/van-long/compare/v3.0.0...v3.1.0) (2025-11-19)
+
+
+### Features
+
+* amend extra and dishservice relation ([#156](https://github.com/Gmayer111/van-long/issues/156)) ([a3ed644](https://github.com/Gmayer111/van-long/commit/a3ed644c8946e837bc53b54eb563b73110d17b63))
+
 ## [3.0.0](https://github.com/Gmayer111/van-long/compare/v2.7.0...v3.0.0) (2025-09-15)
 
 
