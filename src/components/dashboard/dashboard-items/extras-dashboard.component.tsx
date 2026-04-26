@@ -10,6 +10,7 @@ import {
   updateExtra,
 } from "src/app/actions/extras/extras.actions";
 import { createDishServicesOnExtras } from "src/app/actions/dishs-services-on-extras/dishs-services-on-extras.actions";
+import { TTabProps } from "src/components/tab/tab.component";
 
 type TExtra = {
   id: number;
@@ -38,9 +39,10 @@ const ExtrasDashboard = ({
   dishServiceExtras,
   dishServiceId,
   extras,
-}: TExtrasDashboardProps) => {
+  tabItems,
+}: TExtrasDashboardProps & TTabProps) => {
   const [selectedExtra, setSelectedExtra] = useState<TExtra | undefined>(
-    undefined
+    undefined,
   );
   const [modalActionForm, setModalActionForm] = useState("");
   const { showToast } = useToast();
@@ -97,7 +99,7 @@ const ExtrasDashboard = ({
         const result = await createDishServicesOnExtras(
           dishServiceId,
           extraId,
-          dishServiceTitle
+          dishServiceTitle,
         );
         if (result?.error) {
           showToast({ message: result?.error, type: "alert" });
@@ -108,7 +110,7 @@ const ExtrasDashboard = ({
         const result = await createExtra(
           dishServiceId,
           formData,
-          dishServiceTitle
+          dishServiceTitle,
         );
         if (result?.error) {
           showToast({ message: result?.error, type: "alert" });
@@ -122,7 +124,7 @@ const ExtrasDashboard = ({
       const result = await updateExtra(
         selectedExtra.id,
         formData,
-        dishServiceTitle
+        dishServiceTitle,
       );
       if (result?.error) {
         showToast({ message: result?.error, type: "alert" });
@@ -169,6 +171,7 @@ const ExtrasDashboard = ({
       handleDeleteModalAction={handleDeleteExtra}
       handleCreatEditModalFormAction={handleSubmitExtra}
       selectedItem={setSelectedExtra}
+      tabItems={tabItems}
     />
   );
 };

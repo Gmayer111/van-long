@@ -9,6 +9,7 @@ import {
   updateDish,
 } from "src/app/actions/dishs/dishs.actions";
 import { useToast } from "src/app/providers/toast.provider";
+import { TTabProps } from "src/components/tab/tab.component";
 
 type TDish = {
   id: number;
@@ -36,9 +37,10 @@ const DishsDashboard = ({
   dishServiceTitle,
   dishs,
   dishServiceId,
-}: TDishsDashboardProps) => {
+  tabItems,
+}: TDishsDashboardProps & TTabProps) => {
   const [selectedDish, setSelectedDish] = useState<TDish | undefined>(
-    undefined
+    undefined,
   );
   const [modalActionForm, setModalActionForm] = useState("");
   const { showToast } = useToast();
@@ -91,7 +93,7 @@ const DishsDashboard = ({
       const result = await createDish(
         dishServiceId,
         formData,
-        dishServiceTitle
+        dishServiceTitle,
       );
       if (result?.error) {
         showToast({ message: result?.error, type: "alert" });
@@ -104,7 +106,7 @@ const DishsDashboard = ({
       const result = await updateDish(
         selectedDish.id,
         formData,
-        dishServiceTitle
+        dishServiceTitle,
       );
       if (result?.error) {
         showToast({ message: result?.error, type: "alert" });
@@ -155,6 +157,7 @@ const DishsDashboard = ({
       handleDeleteModalAction={handleDeleteAuthor}
       handleCreatEditModalFormAction={handleSubmitAuthor}
       selectedItem={setSelectedDish}
+      tabItems={tabItems}
     />
   );
 };
