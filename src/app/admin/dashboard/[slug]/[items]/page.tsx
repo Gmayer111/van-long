@@ -1,8 +1,6 @@
 import { getAllDishsServiceItems } from "src/app/actions/dishs-service/dish-services.actions";
 import { getAllExtras } from "src/app/actions/extras/extras.actions";
-import DishsDashboard from "src/components/dashboard/dashboard-items/dishs-dashboard.component";
-import ExtrasDashboard from "src/components/dashboard/dashboard-items/extras-dashboard.component";
-import PicturesDashboard from "src/components/dashboard/dashboard-items/pictures-dashboard.component";
+import DishServicesDashboard from "src/components/dashboard/dashboard-items/dish-services-dashboard.component";
 
 export default async function page({
   params,
@@ -25,34 +23,32 @@ export default async function page({
     extras: await getAllExtras(),
   };
 
-  switch (items) {
-    case "dishs":
-      return (
-        <DishsDashboard
-          dishServiceTitle={dishsService.titleFR}
-          dishServiceId={dishsService.id}
-          dishs={dishsService.dishs}
-        />
-      );
-    case "pictures":
-      return (
-        <PicturesDashboard
-          dishServiceTitle={dishsService.titleFR}
-          dishServiceId={dishsService.id}
-          pictures={dishsService.pictures}
-        />
-      );
-    case "extras":
-      return (
-        <ExtrasDashboard
-          extras={extrasItems.extras}
-          dishServiceTitle={dishsService.titleFR}
-          dishServiceId={dishsService.id}
-          dishServiceExtras={extrasItems.dishServiceExtras}
-        />
-      );
+  const tabItems = [
+    {
+      content: "dishs",
+      path: `/admin/dashboard/${slug}/dishs`,
+    },
+    {
+      content: "pictures",
+      path: `/admin/dashboard/${slug}/pictures`,
+    },
+    {
+      content: "extras",
+      path: `/admin/dashboard/${slug}/extras`,
+    },
+  ];
 
-    default:
-      break;
-  }
+  const dishServiceTitle = dishsService.titleFR.replace("Nos", "Les");
+
+  return (
+    <div>
+      <DishServicesDashboard
+        dishsService={dishsService}
+        extrasItems={extrasItems}
+        items={items}
+        tabItems={tabItems}
+        title={dishServiceTitle}
+      />
+    </div>
+  );
 }

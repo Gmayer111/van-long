@@ -1,12 +1,19 @@
 "use client";
-import { createContext, ReactNode, useContext, useState } from "react";
+import {
+  createContext,
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  useContext,
+  useState,
+} from "react";
 
 export const DishServiceTitleContext = createContext<{
-  getTitle?: (title?: string) => void;
-  dishServiceTitle?: string;
+  showTitle: boolean;
+  setShowTitle: Dispatch<SetStateAction<boolean>>;
 }>({
-  getTitle: () => {},
-  dishServiceTitle: undefined,
+  showTitle: true,
+  setShowTitle: () => {},
 });
 
 export const DishServiceTitleProvider = ({
@@ -14,19 +21,13 @@ export const DishServiceTitleProvider = ({
 }: {
   children: ReactNode;
 }) => {
-  const [dishServiceTitle, setDishServiceTitle] = useState<
-    string | undefined
-  >();
-
-  const getTitle = (title?: string) => {
-    setDishServiceTitle(title);
-  };
+  const [showTitle, setShowTitle] = useState<boolean>(true);
 
   return (
-    <DishServiceTitleContext.Provider value={{ getTitle, dishServiceTitle }}>
+    <DishServiceTitleContext.Provider value={{ showTitle, setShowTitle }}>
       {children}
     </DishServiceTitleContext.Provider>
   );
 };
 
-export const useDishServiceTitle = () => useContext(DishServiceTitleContext);
+export const useTitleProvider = () => useContext(DishServiceTitleContext);

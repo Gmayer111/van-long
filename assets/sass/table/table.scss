@@ -1,7 +1,9 @@
 .table-root-container {
   background-color: white;
   position: relative;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
   overflow: hidden;
   border-radius: 0.5rem;
   width: 1160px;
@@ -72,8 +74,42 @@ tbody tr td:last-child {
   align-items: center;
   justify-content: center;
   padding: 1rem 0.875rem;
-  // pointer-events: none;
-  // cursor: none;
+}
+
+.block-show-edit-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+}
+
+.edit-title-form-container {
+  width: 100%;
+}
+
+.edit-title-form-container form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 95%;
+  margin: 0 0 1rem 0;
+}
+
+.edit-title .input-container {
+  margin: 0;
+}
+
+.buttons-block-edit-title {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 0 4rem 1rem 0;
+  float: inline-end;
 }
 
 @media screen and (min-width: 1536px) {

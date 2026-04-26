@@ -9,6 +9,7 @@ import {
   updatePicture,
 } from "src/app/actions/pictures/pictures.actions";
 import { useToast } from "src/app/providers/toast.provider";
+import { TTabProps } from "src/components/tab/tab.component";
 
 type TPicture = {
   id: number;
@@ -36,9 +37,10 @@ const PicturesDashboard = ({
   dishServiceTitle,
   pictures,
   dishServiceId,
-}: TPicturesDashboardProps) => {
+  tabItems,
+}: TPicturesDashboardProps & TTabProps) => {
   const [selectedPicture, setSelectedPicture] = useState<TPicture | undefined>(
-    undefined
+    undefined,
   );
   const [modalActionForm, setModalActionForm] = useState("");
   const { showToast } = useToast();
@@ -91,7 +93,7 @@ const PicturesDashboard = ({
       const result = await createPicture(
         dishServiceId,
         formData,
-        dishServiceTitle
+        dishServiceTitle,
       );
       if (result?.error) {
         showToast({ message: result?.error, type: "alert" });
@@ -104,7 +106,7 @@ const PicturesDashboard = ({
       const result = await updatePicture(
         selectedPicture?.pictureUrl,
         formData,
-        dishServiceTitle
+        dishServiceTitle,
       );
       if (result?.error) {
         showToast({ message: result?.error, type: "alert" });
@@ -119,7 +121,7 @@ const PicturesDashboard = ({
     if (selectedPicture) {
       const result = await deletePicture(
         selectedPicture?.id,
-        selectedPicture.pictureUrl
+        selectedPicture.pictureUrl,
       );
       if (result?.error) {
         showToast({ message: result?.error, type: "alert" });
@@ -158,6 +160,7 @@ const PicturesDashboard = ({
       handleDeleteModalAction={handleDeleteAuthor}
       handleCreatEditModalFormAction={handleSubmitAuthor}
       selectedItem={setSelectedPicture}
+      tabItems={tabItems}
     />
   );
 };
