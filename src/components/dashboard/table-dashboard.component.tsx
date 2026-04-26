@@ -8,8 +8,9 @@ import CreateModalDashboard from "./modal-dashboard/create-modal-dashboard.compo
 import CancelModalDashboard from "./modal-dashboard/cancel-modal-dashboard.component";
 import { TFields } from "../form/form";
 import DropdownButton from "../form/form-fields/dropdown-button/dropdown-button.component";
-import { useDishServiceTitle } from "src/app/providers/dish-service-title.provider";
 import { useParams } from "next/navigation";
+import Tab, { TTabProps } from "../tab/tab.component";
+import { useTitleProvider } from "src/app/providers/dish-service-title.provider";
 
 export type TTableDashboardProps = {
   title: string;
@@ -31,19 +32,15 @@ const TableDashboard = <T, K extends keyof T>({
   handleDeleteModalAction,
   setModalActionForm,
   modalActionForm,
+  tabItems,
 }: Omit<TTableProps<T, K>, "handleAction" | "selectedItem"> &
-  TTableDashboardProps) => {
+  TTableDashboardProps &
+  TTabProps) => {
   const { items } = useParams<{ items: string }>();
   const [displayModal, setDisplayModal] = useState("");
   const [isCreateEditModal, setIsCreateEditModal] = useState("");
   const [isDeleteModal, setIsDeleteModal] = useState("");
-  const { getTitle } = useDishServiceTitle();
-
-  useEffect(() => {
-    if (getTitle) {
-      getTitle(title);
-    }
-  }, [title]);
+  const { showTitle } = useTitleProvider();
 
   useEffect(() => {
     if (displayModal === "createModal" || displayModal === "editModal") {
@@ -90,6 +87,8 @@ const TableDashboard = <T, K extends keyof T>({
 
   return (
     <div>
+      {showTitle && <h1 className="dashboard-title">{title}</h1>}
+      {tabItems && <Tab tabItems={tabItems} />}
       <TableRoot>
         <TableHeader>
           <ButtonForm
@@ -113,8 +112,8 @@ const TableDashboard = <T, K extends keyof T>({
         handleCreateEditAction={handleCreatEditModalFormAction}
         modalHeaderTitle={
           isCreateEditModal === "createModal"
-            ? `Ajouter ${items} dans les ${title}`
-            : `Modifier ${items} dans les ${title}`
+            ? `Ajouter ${items} dans ${title}`
+            : `Modifier ${items} dans ${title}`
         }
       />
       <CancelModalDashboard
