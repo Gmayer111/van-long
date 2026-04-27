@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.2.0](https://github.com/Gmayer111/van-long/compare/v3.1.0...v3.2.0) (2026-04-27)
+
+
+### Features
+
+* create update title action ([#159](https://github.com/Gmayer111/van-long/issues/159)) ([78883d4](https://github.com/Gmayer111/van-long/commit/78883d4a5616aa8136751a3c496a30ed52d932e1))
+
 ## [3.1.0](https://github.com/Gmayer111/van-long/compare/v3.0.0...v3.1.0) (2025-11-19)
 
 
