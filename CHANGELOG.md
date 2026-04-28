@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.2.1](https://github.com/Gmayer111/van-long/compare/v3.2.0...v3.2.1) (2026-04-28)
+
+
+### Bug Fixes
+
+* resolve extra map menu issue ([#161](https://github.com/Gmayer111/van-long/issues/161)) ([d556cc4](https://github.com/Gmayer111/van-long/commit/d556cc44fda4ec097328f8e6897a5dba0add084f))
+
 ## [3.2.0](https://github.com/Gmayer111/van-long/compare/v3.1.0...v3.2.0) (2026-04-27)
 
 
