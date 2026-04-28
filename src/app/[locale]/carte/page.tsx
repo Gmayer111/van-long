@@ -79,9 +79,9 @@ const MenuPage = async () => {
               </ul>
               {menuItem.extras && (
                 <ul>
-                  {menuItem.extras.map((extra) => (
-                    <li className="extra-list">{extra.extra}</li>
-                  ))}
+                  {menuItem.extras.map((extra) =>
+                    extra.extra && <li className="extra-list">{extra.extra}</li>
+                  )}
                 </ul>
               )}
             </div>
